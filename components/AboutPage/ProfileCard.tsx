@@ -90,13 +90,9 @@ export default function ProfileCard() {
         <div class="flex flex-row pb-2">
           {languageSvg}
           <div class="inline-block align-middle">
-            <span>
-              🇺🇸 (native)
-            </span>
+            🇺🇸 (native)
             <br />
-            <span>
-              🇫🇷 (beginner)
-            </span>
+            🇫🇷 (beginner)
           </div>
         </div>
       </div>
