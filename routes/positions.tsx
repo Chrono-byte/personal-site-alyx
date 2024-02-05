@@ -3,10 +3,14 @@ import Footer from "../components/Footer/Footer.tsx";
 
 export default function Home() {
   return (
-    <div class="flex-auto mx-8 my-4">
+    <div class="flex-col px-4 pt-4 md:px-36 md:pt-4">
       <Header subdirectory={["positions"]} />
+
+      {/* index all files in static/md/ */}
+      {/* then parse markdown */}
 
       <Footer />
     </div>
+
   );
 }

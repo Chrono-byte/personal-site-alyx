@@ -51,19 +51,18 @@ const languageSvg = (
 export default function ProfileCard() {
   return (
     <div
-      className={"flex flex-col profile-card shrink max-w-fit"}
+      className={"flex flex-col profile-card"}
     >
-      <div style={{ width: "75%" }}>
+      <div class="pb-4">
         <img
           src="/25267581.png"
           alt="image of female knight holding a sword"
           style={{ border: "6px solid #555", borderRadius: "29.97%" }}
         />
       </div>
-      <div class="flex flex-col pb-2">
-        <a className="">Michael Gummere</a>
-        <br />
-        <a className="">@chrono__ / @chrono-byte</a>
+      <div class="flex flex-col flex-nowrap pb-4">
+        <a className="text-base">Michael Gummere</a>
+        <a className="text-xs">chrono__ / @chrono-byte</a>
       </div>
       <ul class="max-w-lg text-sm">
         <div class="flex flex-auto pb-2">
@@ -80,10 +79,20 @@ export default function ProfileCard() {
         </div>
         <div class="flex flex-auto pb-2">
           {languageSvg}
-          🇺🇸 <a className="white" style={{ fontSize: "smaller" }}>(native)</a>
-          {" "}
-          / 🇫🇷{" "}
-          <a className="white" style={{ fontSize: "smaller" }}>(beginner)</a>
+          <ul>
+            <li>
+              🇺🇸{" "}
+              <a className="white" style={{ fontSize: "smaller" }}>
+                (native)
+              </a>
+            </li>
+            <li>
+              🇫🇷{" "}
+              <a className="white" style={{ fontSize: "smaller" }}>
+                (beginner)
+              </a>
+            </li>
+          </ul>
         </div>
       </ul>
     </div>
