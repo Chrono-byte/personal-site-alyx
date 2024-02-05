@@ -1,10 +1,10 @@
 export default function About() {
   return (
-    <div class="flex flex-col gap-1 md:gap-3 shrink [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
+    <div class="flex flex-col gap-1 md:gap-3 shrink [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
       <div class="text-white background-card">
         <p>
           Hi I'm Michael. I am a freshman engineering technology student at{" "}
-          <span style="color:#daaa00">Purdue University in Indianapolis</span>.
+          <span class="" style="color:#daaa00">Purdue University in Indianapolis</span>.
         </p>
         <p>
           I'm a self-taught software developer and have worked on a variety of

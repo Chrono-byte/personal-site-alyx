@@ -51,7 +51,7 @@ const languageSvg = (
 export default function ProfileCard() {
   return (
     <div
-      class="flex flex-col profile-card [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]"
+      class="flex flex-col profile-card [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]"
       style={{
         background: "rgba(10, 8, 0, 0.70)",
         color: "#f0f0f0",
