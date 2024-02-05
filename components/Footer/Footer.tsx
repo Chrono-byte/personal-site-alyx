@@ -12,9 +12,9 @@ export default function Footer() {
     {
       title: "Socials",
       children: [
+        { name: "Discord", href: "#" },
         { name: "Email", href: "mailto:me@michaelgummere.com" },
         { name: "Twitter (X)", href: "https://twitter.com/chronobyte_" },
-        { name: "Discord", href: "#" },
         { name: "Mastodon", href: "https://mastodon.social/@chronomly" },
       ],
     },
@@ -61,7 +61,7 @@ export default function Footer() {
           </div>
 
           <a
-            href="https://github.com/denoland/fresh"
+            href="https://github.com/Chrono-byte/personal-site-alyx"
             class="inline-block hover:text-black"
             aria-label="GitHub"
           >

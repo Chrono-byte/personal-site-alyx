@@ -1,7 +1,7 @@
 import Breadcrumb from "./Breadcrumb.tsx";
 
 export default function Header(
-  { subdirectory, fileID }: { subdirectory?: string; fileID?: string },
+  { subdirectory, fileID }: { subdirectory?: string[]; fileID?: string },
 ) {
   const menus = [
     {

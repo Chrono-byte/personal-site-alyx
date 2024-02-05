@@ -1,4 +1,4 @@
-import Countdown from "../islands/updateTime.tsx";
+import Countdown from "../../islands/updateTime.tsx";
 
 const collegeSvg = (
   <svg

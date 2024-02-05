@@ -1,7 +1,7 @@
 import Header from "../components/Header/Header.tsx";
 import Footer from "../components/Footer/Footer.tsx";
-import ProfileCard from "../components/ProfileCard.tsx";
-import About from "../components/About.tsx";
+import ProfileCard from "../components/AboutPage/ProfileCard.tsx";
+import About from "../components/AboutPage/About.tsx";
 
 export default function Home() {
   return (
