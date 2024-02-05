@@ -22,17 +22,19 @@ export default function Footer() {
 
   return (
     <div>
-      <div class="bg-#e9debb flex flex-col md:flex-row w-full max-w-screen-lg gap-8 md:gap-16 px-8 py-8 text-sm">
+      <div class="bg-#e9debb flex flex-col md:flex-row w-full max-w-screen-lg gap-8 md:gap-16 px-8 py-8 text-sm [text-shadow:_0_1px_0_rgb(255_255_255_/_40%)]">
         <div class="flex-1">
           <div class="flex items-center gap-1">
             {/* <CMark class="inline-block" aria-hidden="true" /> */}
             {/* <LemonIcon class="inline-block" aria-hidden="true" /> */}
             <div class="font-bold text-2xl">
-              Chrono
+              Michael Gummere
             </div>
           </div>
           <div class="text-gray-900">
-            {/* Stack-less Developer. */}
+            Chrono
+            <br />
+            Stack-less Developer.
           </div>
         </div>
 
