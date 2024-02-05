@@ -5,10 +5,10 @@ import About from "../components/About.tsx";
 
 export default function Home() {
   return (
-    <div class="flex-1 mx-8 my-4">
+    <div class="flex-col mx-8 my-4">
       <Header />
 
-      <div class="shrink flex gap-2 pl-6 pr-6">
+      <div class="shrink flex flex-row flex-wrap gap-3 pl-3 pr-3">
           <ProfileCard />
 
           <About />

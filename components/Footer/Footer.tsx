@@ -5,15 +5,15 @@ export default function Footer() {
     {
       title: "Find my projects here!",
       children: [
-        { name: "GitHub", href: "#" },
         { name: "sourcehut", href: "#" },
+        { name: "GitHub", href: "#" },
       ],
     },
     {
       title: "Socials",
       children: [
-        { name: "Twitter (X)", href: "#" },
-        { name: "Discord", href: "#" },
+        { name: "Email", href: "mailto:me@michaelgummere.com" },
+        { name: "Twitter (X)", href: "https://twitter.com/chronobyte_" },
       ],
     },
   ];

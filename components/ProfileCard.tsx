@@ -51,15 +51,18 @@ const languageSvg = (
 export default function ProfileCard() {
   return (
     <div
-      className={"col-span-1 row-span-full profile-card"}
-      style={"width: 50%"}
+      className={"flex-auto profile-card"}
+      style={{
+        // fit-content
+        width: "fit-content",
+      }}
     >
       <div>
         <img
           src="/25267581.png"
           alt="image of female knight holding a sword"
-          // width="36.3%"
-          width="100%"
+          width="50.3%"
+          //   width="100%"
           style={{ border: "6px solid #555", borderRadius: "29.97%" }}
         />
       </div>
@@ -77,7 +80,8 @@ export default function ProfileCard() {
         Indianapolis, IN, USA
       </div>
       <div>
-        {clockSvg}<Countdown />
+        {clockSvg}
+        <Countdown />
       </div>
       <div>
         {languageSvg}

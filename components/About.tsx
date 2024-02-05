@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <article class="about background-card col-span-full row-span-full">
+    <div class="about background-card max-w-5xl">
       <p>
         I'm a software developer/engineering student and freshman at <a class="gold">IUPUI</a>. I'm currently working on a real-time chat application from scratch using Node.js, and WebSockets. I competed in the <a class="crimson">VEX Robotics Competition</a> for 4 years as a programmer and designer. My team worked hard in the
         incredibly difficult Indiana region and managed to qualify for the State
@@ -33,6 +33,6 @@ export default function About() {
           <a class="discord" title="@chrono__">Discord</a>.
         </li>
       </ul>
-    </article>
+    </div>
   );
 }

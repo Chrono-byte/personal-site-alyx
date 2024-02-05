@@ -59,8 +59,6 @@ code {
 }
 
 .background-card {
-    grid-area: content;
-
     background: rgba(0, 0, 0, 0.45);
     border-radius: 0.8rem;
     border: 6.45px solid #555;
@@ -86,7 +84,6 @@ code {
 
 .about {
     color: #f0f0f0;
-    min-height: fit-content;
 }
 
 .post {
