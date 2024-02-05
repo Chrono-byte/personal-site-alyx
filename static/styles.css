@@ -68,14 +68,11 @@ code {
 
 .profile-card {
     background: rgba(10, 8, 0, 0.4);
+    color: #f0f0f0;
+
     border-radius: 0.8rem;
     border: 6.45px solid #555;
-
     padding: 25px;
-
-    min-width: 17vw;
-
-    color: #f0f0f0;
 }
 
 .about p {

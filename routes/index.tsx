@@ -8,7 +8,7 @@ export default function Home() {
     <div class="flex-col mx-8 my-4">
       <Header />
 
-      <div class="shrink flex flex-row flex-wrap gap-3 pl-3 pr-3">
+      <div class="shrink flex flex-wrap md:flex-nowrap gap-3 pl-3 pr-3">
           <ProfileCard />
 
           <About />

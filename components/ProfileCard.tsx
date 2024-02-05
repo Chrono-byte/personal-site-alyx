@@ -1,6 +1,6 @@
 import Countdown from "../islands/updateTime.tsx";
 
-const femaleKnightSvg = (
+const collegeSvg = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
@@ -51,44 +51,41 @@ const languageSvg = (
 export default function ProfileCard() {
   return (
     <div
-      className={"flex-auto profile-card"}
-      style={{
-        // fit-content
-        width: "fit-content",
-      }}
+      className={"flex-auto profile-card shrink max-w-fit"}
     >
-      <div>
+      <div style={{ width: "30%"}}>
         <img
           src="/25267581.png"
           alt="image of female knight holding a sword"
-          width="50.3%"
-          //   width="100%"
           style={{ border: "6px solid #555", borderRadius: "29.97%" }}
         />
       </div>
-      <div>
-        <a className="name">Michael Gummere</a>
+      <div className={"max-w-fit"}>
+        <a className="">Michael Gummere</a>
         <br />
-        <a className="name-alt">@chrono__ / @chrono-byte</a>
+        <a className="">@chrono__ / @chrono-byte</a>
       </div>
-      <div>
-        {femaleKnightSvg}
-        <a className="gold">IUPUI</a>
-      </div>
-      <div>
-        {locationSvg}
-        Indianapolis, IN, USA
-      </div>
-      <div>
-        {clockSvg}
-        <Countdown />
-      </div>
-      <div>
-        {languageSvg}
-        🇺🇸 <a className="white" style={{ fontSize: "smaller" }}>(native)</a>
-        {" "}
-        / 🇫🇷 <a className="white" style={{ fontSize: "smaller" }}>(beginner)</a>
-      </div>
+      <ul class="max-w-lg">
+        <div>
+          {collegeSvg}
+          <a className="gold">Purdue University in Indianapolis</a>
+        </div>
+        <div>
+          {locationSvg}
+          Indianapolis, IN, USA
+        </div>
+        <div>
+          {clockSvg}
+          <Countdown />
+        </div>
+        <div>
+          {languageSvg}
+          🇺🇸 <a className="white" style={{ fontSize: "smaller" }}>(native)</a>
+          {" "}
+          / 🇫🇷{" "}
+          <a className="white" style={{ fontSize: "smaller" }}>(beginner)</a>
+        </div>
+      </ul>
     </div>
   );
 }
