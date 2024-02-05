@@ -1,11 +1,12 @@
 export default function About() {
   return (
-    <div class="flex flex-col gap-1 md:gap-3 shrink [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
+    <div class="flex flex-col gap-1 md:gap-3 shrink text-sm [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
       <div class="text-white background-card">
         <p>
           Hi I'm Michael. I am a freshman engineering technology student at{" "}
           <span class="" style="color:#daaa00">Purdue University in Indianapolis</span>.
         </p>
+        <br />
         <p>
           I'm a self-taught software developer and have worked on a variety of
           different projects since I was 12. I have been programming for{" "}
@@ -18,7 +19,6 @@ export default function About() {
           a self made chat app. I'm currently working on a few projects as well
           as my degree.
         </p>
-        <br />
       </div>
       <div class="text-white background-card">
         <ul>
