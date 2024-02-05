@@ -17,11 +17,9 @@
 body {
     color: #363f47;
     background-color: #e9debb;
-
     font-weight: 100;
     font-family: "Comic Mono";
     font-size: calc(0.63rem + 0.2vw);
-
     line-height: 2.23rem;
 }
 
@@ -32,9 +30,7 @@ body {
 header h2 {
     color: #000;
     margin: 0 0 0.5rem 0;
-
     line-height: 1.5;
-
     border-bottom: 3px solid #000;
     padding-bottom: 0.1rem;
 }
@@ -43,7 +39,6 @@ header a,
 header p {
     margin: 0;
     color: #000;
-
     line-height: 1.5;
     margin-top: 0;
 }
@@ -54,29 +49,22 @@ header p {
 
 code {
     border-radius: 1em;
-
     white-space: pre;
 }
 
 .background-card {
-    background: rgba(0, 0, 0, 0.45);
+    background: rgba(0, 0, 0, 0.60);
     border-radius: 0.8rem;
     border: 6.45px solid #555;
-
     padding: 25px;
 }
 
 .profile-card {
     background: rgba(10, 8, 0, 0.4);
     color: #f0f0f0;
-
     border-radius: 0.8rem;
     border: 6.45px solid #555;
     padding: 25px;
-}
-
-.about p {
-    margin: 0;
 }
 
 .about {
