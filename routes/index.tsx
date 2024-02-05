@@ -2,6 +2,7 @@ import Header from "../components/Header/Header.tsx";
 import Footer from "../components/Footer/Footer.tsx";
 import ProfileCard from "../components/AboutPage/ProfileCard.tsx";
 import About from "../components/AboutPage/About.tsx";
+import { Head } from "$fresh/runtime.ts";
 
 export default function Home() {
   return (
@@ -9,9 +10,9 @@ export default function Home() {
       <Header />
 
       <div class="shrink flex flex-wrap gap-1 pl-3 pr-1 md:flex-nowrap md:gap-3 md:pl-3 md:pr-3">
-          <ProfileCard />
+        <ProfileCard />
 
-          <About />
+        <About />
       </div>
 
       <Footer />

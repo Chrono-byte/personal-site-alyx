@@ -31,8 +31,8 @@ export default function Footer() {
               Chrono
             </div>
           </div>
-          <div class="text-gray-500">
-            Stack-less Developer.
+          <div class="text-gray-900">
+            {/* Stack-less Developer. */}
           </div>
         </div>
 

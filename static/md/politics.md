@@ -57,8 +57,6 @@ In politics, it can be useful to know which particular ideology someone subscrib
 
 ### Capitalism
 
-> "We Shouldn't Fear Change Itself." — Misty (Cyberpunk 2077)
-
 I consider myself to be a [capitalist](https://en.wikipedia.org/wiki/Capitalism).
 
 At a high-level, capitalism seems to be the best-known economic system to generate wealth. I believe the responsibility of any economic system should, first and foremost, be to allocate resources in an economy as efficiently as possible to create the largest possible base from which to draw taxes to redistribute to those who need it most. I recognize in many Western countries, especially the United States, we seem to have a big problem with the "redistribution" part.

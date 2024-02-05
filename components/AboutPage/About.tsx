@@ -1,30 +1,30 @@
 export default function About() {
   return (
-    <div class="flex flex-col gap-1 md:gap-3 shrink">
-      <div class="about background-card">
+    <div class="flex flex-col gap-1 md:gap-3 shrink [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
+      <div class="text-white background-card">
         <p>
-          I am a freshman engineering technology student at{" "}
-          <a class="gold">Purdue University in Indianapolis</a>.
+          Hi I'm Michael. I am a freshman engineering technology student at{" "}
+          <span style="color:#daaa00">Purdue University in Indianapolis</span>.
         </p>
         <p>
           I'm a self-taught software developer and have worked on a variety of
           different projects since I was 12. I have been programming for{" "}
           {new Date().getFullYear() - 2016} years and have experience with{" "}
-          <a class="text-blue-200">C++</a>,{"  "}
-          <a class="js">JavaScript</a>, and some light{" "}
-          <a class="text-blue-300">TypeScript</a> and{" "}
-          <a class="js" style={{ color: "yellow" }}>Python</a>{" "}
+          <span class="text-blue-200">C++</span>,{"  "}
+          <span class="text-yellow-400">JavaScript</span>, and some light{" "}
+          <span class="text-blue-300">TypeScript</span> and{" "}
+          <span class="text-yellow-200">Python</span>{" "}
           knowledge. I've worked on a few websites, a few Discord bots, and even
           a self made chat app. I'm currently working on a few projects as well
           as my degree.
         </p>
         <br />
       </div>
-      <div class="about background-card">
+      <div class="text-white background-card">
         <ul>
           <li>
-            📚 I'm currently pursueing my BS in Mechanical Engineering
-            Technology. I hope to one day work in motorsports in stage rally or
+            📚 I'm currently pursuing my BS in Mechanical Engineering
+            Technology. I hope to one day work in motor sports in stage rally or
             open wheel racing.
           </li>
           <li>
@@ -36,10 +36,13 @@ export default function About() {
           </li>
           <li>
             📫 If you want to reach me, you can{" "}
-            <a class="email text-blue-400" title="Mail address in the footer!">
+            <span
+              class="email text-blue-400"
+              title="Mail address in the footer!"
+            >
               email
-            </a>, or DM me on{" "}
-            <a class="text-violet-700" title="@chrono__">Discord</a>.
+            </span>, or DM me on{" "}
+            <span class="text-violet-300" title="@chrono__">Discord</span>.
           </li>
         </ul>
       </div>

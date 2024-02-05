@@ -22,5 +22,5 @@ export default function Countdown() {
     }).split(", ")[1];
 
   // Otherwise, we render the current time in format HH:MM:SS.
-  return <span>{currentTime}, {currentDate}</span>;
+  return <span class="inline-block align-middle">{currentTime}, {currentDate}</span>;
 }
