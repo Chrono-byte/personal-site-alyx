@@ -48,13 +48,6 @@ However, I also have concerns about the potential negative consequences of some 
 
 Overall, the relationship between social liberalism and leftism is complex and multifaceted, and I love to explore this more.
 
-### "Omni-Liberalism"
-
-In politics, it can be useful to know which particular ideology someone subscribes to. However, I do not fall perfectly in line with any particular ideology. I describe myself as an _Omni-Liberal_, which is a made-up, tongue-in-cheek term to encapsulate the general position of:
-
-1. Having the core values of liberalism (e.g. freedom and equality).
-2. Taking the best parts of all different kinds of political ideologies and using them together in a pragmatic way.
-
 ### Capitalism
 
 I consider myself to be a [capitalist](https://en.wikipedia.org/wiki/Capitalism).
