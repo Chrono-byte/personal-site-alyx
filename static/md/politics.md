@@ -80,3 +80,8 @@ Populism is usually defined as "the people" versus "the elites." This happens on
 I do not support [socialism](https://en.wikipedia.org/wiki/Socialism) or [communism](https://en.wikipedia.org/wiki/Communism). I believe that these systems are fundamentally flawed and have been proven to be ineffective at producing wealth and improving the lives of the people. Many people online fundamentally refuse to accept this, and I believe that this is a big part of the reason why the left is so divided. Many online socialists refuse to engage with even those who would be solid liberals. I've personally experienced this with numerous individuals I've previously and currently consider to be close friends of mine.
 
 One such fundamental flaw in my opinion is similar to that of the core flaw of laissez-faire capitalism. Many people who espouse socialist ideas believe that those in power would be perfect individuals, who would only act in the interest of the system as a whole, and not self-interested as people often act.
+
+# Voting
+Voting is important.
+
+People in America (and around the world) have problems right now that need to be solved. And that's best done by working within the current system, building coalitions with like-minded people, and voting for the best candidates (at both a local and a national level). 
