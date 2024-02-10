@@ -4,7 +4,9 @@ export default function About() {
       <div class="text-white background-card">
         <p>
           Hi I'm Michael. I am a freshman engineering technology student at{" "}
-          <span class="" style="color:#daaa00">Purdue University in Indianapolis</span>.
+          <span class="" style="color:#daaa00">
+            Purdue University in Indianapolis
+          </span>.
         </p>
         <br />
         <p>
@@ -12,8 +14,8 @@ export default function About() {
           different projects since I was 12. I have been programming for{" "}
           {new Date().getFullYear() - 2016} years and have experience with{" "}
           <span class="text-blue-200">C++</span>,{"  "}
+          <span class="text-blue-300">TypeScript</span>,{" "}
           <span class="text-yellow-400">JavaScript</span>, and some light{" "}
-          <span class="text-blue-300">TypeScript</span> and{" "}
           <span class="text-yellow-200">Python</span>{" "}
           knowledge. I've worked on a few websites, a few Discord bots, and even
           a self made chat app. I'm currently working on a few projects as well

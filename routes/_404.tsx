@@ -4,7 +4,7 @@ import Header from "../components/Header/Header.tsx";
 
 export default function Error404() {
   return (
-    <div class="flex-auto mx-8 my-4">
+    <div class="flex-col px-4 pt-4 md:px-36 md:pt-4">
       <Head>
         <title>404 - Page not found</title>
       </Head>
