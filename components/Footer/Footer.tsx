@@ -11,7 +11,7 @@ export default function Footer() {
     },
     {
       title: "Socials",
-      children: 
+      children: [
         { name: "Email", href: "mailto:me@michaelgummere.com" },
         { name: "Twitter (X)", href: "https://twitter.com/chronobyte_" },
         { name: "Mastodon", href: "https://mastodon.social/@chronomly" },
