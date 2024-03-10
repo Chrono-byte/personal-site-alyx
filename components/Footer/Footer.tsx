@@ -5,14 +5,13 @@ export default function Footer() {
     {
       title: "Find my projects here!",
       children: [
-        { name: "sourcehut", href: "#" },
-        { name: "GitHub", href: "#" },
+        { name: "sourcehut", href: "https://sr.ht/~chrono/" },
+        { name: "GitHub", href: "https://github.com/Chrono-byte" },
       ],
     },
     {
       title: "Socials",
-      children: [
-        { name: "Discord", href: "#" },
+      children: 
         { name: "Email", href: "mailto:me@michaelgummere.com" },
         { name: "Twitter (X)", href: "https://twitter.com/chronobyte_" },
         { name: "Mastodon", href: "https://mastodon.social/@chronomly" },
@@ -63,11 +62,18 @@ export default function Footer() {
           </div>
 
           <a
-            href="https://github.com/Chrono-byte/personal-site-alyx"
+            href="https://github.com/Chrono-byte"
             class="inline-block hover:text-black"
             aria-label="GitHub"
           >
             <BrandGithub aria-hidden="true" />
+          </a>
+          <a
+            href="https://twitter.com.com/chronobyte__"
+            class="inline-block hover:text-black"
+            aria-label="Twitter"
+          >
+            <BrandX aria-hidden="true" />
           </a>
         </div>
       </div>
