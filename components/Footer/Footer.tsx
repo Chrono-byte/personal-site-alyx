@@ -1,4 +1,6 @@
-import BrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.3/tsx/brand-github.tsx";
+import BrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-github.tsx";
+import BrandTwitter from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-x.tsx";
+import BrandMastodon from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-mastodon.tsx";
 
 export default function Footer() {
   const menus = [
@@ -9,14 +11,14 @@ export default function Footer() {
         { name: "GitHub", href: "https://github.com/Chrono-byte" },
       ],
     },
-    {
-      title: "Socials",
-      children: [
-        { name: "Email", href: "mailto:me@michaelgummere.com" },
-        { name: "Twitter (X)", href: "https://twitter.com/chronobyte_" },
-        { name: "Mastodon", href: "https://mastodon.social/@chronomly" },
-      ],
-    },
+    // {
+    //   title: "Socials",
+    //   children: [
+        // { name: "Email", href: "mailto:me@michaelgummere.com" },
+        // { name: "Twitter (X)", href: "https://twitter.com/chronobyte_" },
+        // { name: "Mastodon", href: "https://mastodon.social/@chronomly" },
+    //   ],
+    // },
   ];
 
   return (
@@ -73,7 +75,14 @@ export default function Footer() {
             class="inline-block hover:text-black"
             aria-label="Twitter"
           >
-            <BrandX aria-hidden="true" />
+            <BrandTwitter aria-hidden="true" />
+          </a>
+          <a
+            href="https://mastodon.social/@chronomly"
+            class="inline-block hover:text-black"
+            aria-label="Twitter"
+          >
+            <BrandMastodon aria-hidden="true" />
           </a>
         </div>
       </div>

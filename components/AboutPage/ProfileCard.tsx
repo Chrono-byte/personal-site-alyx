@@ -91,8 +91,8 @@ export default function ProfileCard() {
           {languageSvg}
           <div class="inline-block align-middle">
             🇺🇸 (native)
-            <br />
-            🇫🇷 (beginner)
+            {/* <br /> */}
+            {/* 🇫🇷 (beginner) */}
           </div>
         </div>
       </div>
