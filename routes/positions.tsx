@@ -10,11 +10,11 @@ export default function Home() {
       {/* then parse markdown */}
 
       i worky on website just go to{" "}
-      <a href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/politics.md">
+      <a class="text-blue-400" href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/politics.md">
         github
       </a>{" "}
       and{" "}
-      <a href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/philosophy.md">
+      <a class="text-blue-400" href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/philosophy.md">
         look
       </a>{" "}
       at the files
