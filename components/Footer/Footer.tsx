@@ -71,7 +71,7 @@ export default function Footer() {
             <BrandGithub aria-hidden="true" />
           </a>
           <a
-            href="https://twitter.com.com/chronobyte__"
+            href="https://twitter.com/chronobyte__"
             class="inline-block hover:text-black"
             aria-label="Twitter"
           >
