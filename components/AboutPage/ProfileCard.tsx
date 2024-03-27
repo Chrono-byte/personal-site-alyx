@@ -36,18 +36,6 @@ const clockSvg = (
   />
 );
 
-const languageSvg = (
-  <img
-    src="/svg/language.svg"
-    alt="language icon"
-    style={{
-      width: "30px",
-      height: "30px",
-    }}
-    class="pr-3"
-  />
-);
-
 export default function ProfileCard() {
   return (
     <div
@@ -77,24 +65,16 @@ export default function ProfileCard() {
       <div class="flex flex-col max-w-lg text-sm">
         <p class="flex flex-row pb-2">
           {collegeSvg}
-          <span style="">Purdue University in Indianapolis</span>
+          <span style="">Indiana University Indianapolis</span>
         </p>
         <p class="flex flex-row pb-2">
           {locationSvg}
-          <span class="inline-block align-middle">Indianapolis, IN, USA</span>
+          <span class="inline-block align-middle">Greater Indianapolis, IN, USA</span>
         </p>
         <p class="flex flex-row pb-2">
           {clockSvg}
           <Countdown />
         </p>
-        <div class="flex flex-row pb-2">
-          {languageSvg}
-          <div class="inline-block align-middle">
-            🇺🇸 (native)
-            {/* <br /> */}
-            {/* 🇫🇷 (beginner) */}
-          </div>
-        </div>
       </div>
     </div>
   );

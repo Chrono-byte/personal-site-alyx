@@ -4,8 +4,9 @@ export default function About() {
       <div class="text-white background-card">
         <p>
           Hi I'm Michael. I am an engineering technology student at{" "}
-          <span class="" style="color:#daaa00">
-            Purdue University in Indianapolis
+          <span class="" style="">
+          {/* color:#daaa00 */}
+            Indiana University Indianapolis
           </span>.
         </p>
         <br />
@@ -30,9 +31,9 @@ export default function About() {
           <li>
             💬 I'm cripplingly addicted to Overwatch 2 in a not-a-joke way.
           </li>
-          <li>
+          {/* <li> */}
             {/* 🌱 I’m currently learning about | | and | |. */}
-          </li>
+          {/* </li> */}
           <li>
             📫 If you want to reach me, you can{" "}
             <a
