@@ -3,7 +3,7 @@ export default function About() {
     <div class="flex flex-col gap-1 md:gap-3 shrink text-sm [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
       <div class="text-white background-card">
         <p>
-          Hi I'm Michael. I am a student at Indiana University Indianapolis
+          Hi I'm Michael. I am a student at Indiana University Indianapolis.
         </p>
         <br />
         <p>
