@@ -21,8 +21,7 @@ export default function About() {
       <div class="text-white background-card">
         <ul>
           <li>
-            📚 I'm currently pursuing my BS in Mechanical Engineering
-            Technology.
+            📚 I'm currently pursuing my bachelors.
           </li>
           <li>
             💬 I'm cripplingly addicted to Overwatch 2 in a not-a-joke way.
