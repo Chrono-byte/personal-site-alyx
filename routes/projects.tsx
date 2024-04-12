@@ -22,8 +22,10 @@ for (const project in projectsData) {
       title: element.title,
       date: element.date,
       description: element.description,
-      links: element.links,
+      links: element.links ? element.links : []
     };
+
+    projectsData[project] = projectObject;
   }
 }
 
