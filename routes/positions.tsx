@@ -15,14 +15,14 @@ export default function Home() {
           i worky on website just go to github and look at the files for{" "}
           <a
             class="text-blue-400"
-            href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/politics.md"
+            href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/philosophy.md"
           >
             philosophy
           </a>{" "}
           and{"  "}
           <a
             class="text-blue-400"
-            href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/philosophy.md"
+            href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/politics.md"
           >
             politics
           </a>
