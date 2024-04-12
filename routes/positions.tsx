@@ -9,15 +9,26 @@ export default function Home() {
       {/* index all files in static/md/ */}
       {/* then parse markdown */}
 
-      i worky on website just go to{" "}
-      <a class="text-blue-400" href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/politics.md">
-        github
-      </a>{" "}
-      and{" "}
-      <a class="text-blue-400" href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/philosophy.md">
-        look
-      </a>{" "}
-      at the files
+      <div class="flex justify-center items-center">
+
+        <div class="background-card text-white shrink text-sm md:max-w-screen-xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
+          i worky on website just go to github and look at the files for{" "}
+          <a
+            class="text-blue-400"
+            href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/politics.md"
+          >
+            philosophy
+          </a>{" "}
+          and{"  "}
+          <a
+            class="text-blue-400"
+            href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/philosophy.md"
+          >
+            politics
+          </a>
+          .
+        </div>
+      </div>
 
       <Footer />
     </div>
