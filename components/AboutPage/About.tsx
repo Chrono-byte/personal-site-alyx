@@ -12,10 +12,9 @@ export default function About() {
           {new Date().getFullYear() - 2016} years and have experience with{" "}
           <span class="text-blue-200">C++</span>,{"  "}
           <span class="text-blue-300">TypeScript</span>,{" "}
-          <span class="text-yellow-400">JavaScript</span>{" "}
-          knowledge. I've worked on a few websites, a few Discord bots, and even
-          a self made chat app. I'm currently working on a few projects as well
-          as my degree.
+          <span class="text-yellow-400">JavaScript</span>. I've worked on a few
+          websites, a few Discord bots, and even a self made chat app. I'm
+          currently working on a few projects as well as my degree.
         </p>
       </div>
       <div class="text-white background-card">
