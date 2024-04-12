@@ -2,7 +2,7 @@ type Project = {
   title: string;
   date: string;
   description: string;
-  links: object | undefined;
+  links: Record<string, string | undefined>;
 };
 
 export default function ProjectBlock(project: Project) {
