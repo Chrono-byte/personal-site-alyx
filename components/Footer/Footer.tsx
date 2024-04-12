@@ -77,13 +77,6 @@ export default function Footer() {
           >
             <BrandTwitter aria-hidden="true" />
           </a>
-          <a
-            href="https://mastodon.social/@chronomly"
-            class="inline-block hover:text-black"
-            aria-label="Twitter"
-          >
-            <BrandMastodon aria-hidden="true" />
-          </a>
         </div>
       </div>
     </div>
