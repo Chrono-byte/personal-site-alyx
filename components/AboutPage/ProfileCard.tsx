@@ -25,7 +25,7 @@ export default function ProfileCard() {
       </div>
       <div class="pb-4">
         <p className="text-base pb-0">Michael Gummere</p>
-        <p className="text-sm pb-0">@chrono / @chronobyte</p>
+        <p className="text-sm pb-0">@chrono__ / @chronobyte_</p>
       </div>
       <div class="flex flex-col max-w-lg text-sm">
         <p class="flex flex-row pb-2">

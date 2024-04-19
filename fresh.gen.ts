@@ -10,6 +10,7 @@ import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $positions from "./routes/positions.tsx";
 import * as $projects from "./routes/projects.tsx";
+import * as $discordSummon from "./islands/discordSummon.tsx";
 import * as $updateTime from "./islands/updateTime.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
@@ -25,6 +26,7 @@ const manifest = {
     "./routes/projects.tsx": $projects,
   },
   islands: {
+    "./islands/discordSummon.tsx": $discordSummon,
     "./islands/updateTime.tsx": $updateTime,
   },
   baseUrl: import.meta.url,

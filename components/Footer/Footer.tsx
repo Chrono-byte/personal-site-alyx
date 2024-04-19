@@ -11,14 +11,14 @@ export default function Footer() {
         { name: "GitHub", href: "https://github.com/Chrono-byte" },
       ],
     },
-    // {
-    //   title: "Socials",
-    //   children: [
+    {
+      title: "Socials",
+      children: [
         // { name: "Email", href: "mailto:me@michaelgummere.com" },
         // { name: "Twitter (X)", href: "https://twitter.com/chronobyte_" },
-        // { name: "Mastodon", href: "https://mastodon.social/@chronomly" },
-    //   ],
-    // },
+        { name: "Twitch", href: "https://twitch.tv/chronobyte_" },
+      ],
+    },
   ];
 
   return (
@@ -69,7 +69,7 @@ export default function Footer() {
             <BrandGithub aria-hidden="true" />
           </a>
           <a
-            href="https://twitter.com/chronobyte__"
+            href="https://twitter.com/chronobyte_"
             class="inline-block hover:text-black"
             aria-label="Twitter"
           >
