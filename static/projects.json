@@ -2,7 +2,7 @@
   {
     "title": "michaelgummere.com",
     "date": "2023-2024",
-    "description": "Personal website created using React, TypeScript, and TailwindCSS. I created this website to showcase my projects and skills.",
+    "description": "Personal website created using Deno Fresh, TypeScript, and TailwindCSS. I created this website to showcase my projects and skills.",
     "links": {
       "GitHub": "https://github.com/Chrono-byte/personal-site-alyx"
     }
@@ -26,7 +26,7 @@
   },
   {
     "title": "Katana",
-    "date": "2022",
+    "date": "Aug 2022-Jan 2023",
     "description": "Prototype datastore that takes in strings as arrays, stored in a json file.",
     "links": {
       "GitHub": "https://github.com/Chrono-byte/Katana"
