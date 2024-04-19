@@ -9,7 +9,7 @@ export default function Home() {
       <Header />
 
       <div class="flex justify-center items-center">
-        <div class="shrink flex flex-wrap gap-1 pl-3 pr-1 md:flex-nowrap md:gap-3 md:pl-3 md:pr-3 md:max-w-screen-xl">
+        <div class="flex flex-wrap gap-3 px-3 justify-center md:flex-nowrap md:gap-x-3 md:w-fit">
           <ProfileCard />
 
           <About />

@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <div class="flex flex-col gap-1 md:gap-3 shrink text-sm [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
+    <div class="flex flex-col gap-1 md:gap-3 shrink text-base max-w-4xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
       <div class="text-white background-card">
         <p>
           Hi I'm Michael. I am a student at Indiana University Indianapolis.

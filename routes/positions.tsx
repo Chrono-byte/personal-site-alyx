@@ -10,23 +10,27 @@ export default function Home() {
       {/* then parse markdown */}
 
       <div class="flex justify-center items-center">
-
-        <div class="background-card text-white shrink text-sm md:max-w-screen-xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
-          i worky on website just go to github and look at the files for{" "}
-          <a
-            class="text-blue-400"
-            href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/philosophy.md"
-          >
-            philosophy
-          </a>{" "}
-          and{"  "}
-          <a
-            class="text-blue-400"
-            href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/politics.md"
-          >
-            politics
-          </a>
-          .
+        <div class="flex flex-col gap-3 px-3 justify-center md:flex-nowrap md:gap-x-3 md:w-fit">
+          <div class="background-card text-white shrink text-sm md:max-w-screen-xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
+            i worky on website just go to github and look at the files for{" "}
+            <a
+              class="text-blue-400"
+              href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/philosophy.md"
+            >
+              philosophy
+            </a>{" "}
+            and{"  "}
+            <a
+              class="text-blue-400"
+              href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/politics.md"
+            >
+              politics
+            </a>
+            .
+            <br />
+            <br />
+            any information contained herein contain last updated timestamps
+          </div>
         </div>
       </div>
 

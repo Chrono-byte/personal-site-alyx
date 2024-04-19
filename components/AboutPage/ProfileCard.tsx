@@ -4,11 +4,11 @@ import { collegeSvg, locationSvg, clockSvg } from "./images.tsx";
 export default function ProfileCard() {
   return (
     <div
-      class="flex flex-col profile-card [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]"
+      class="flex flex-col profile-card w-fit [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]"
       style={{
         background: "rgba(10, 8, 0, 0.70)",
         color: "#f0f0f0",
-        minWidth: "20vw",
+        // minWidth: "",
         borderRadius: "0.8rem",
         border: "6.45px solid #2b2b2b",
         padding: "25px",

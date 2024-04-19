@@ -17,9 +17,12 @@ export default function Home() {
       <Header subdirectory={["projects"]} />
 
       <div class="flex justify-center items-center">
-        <div class="flex flex-col ml-14 mr-14 gap-1 md:gap-3 shrink text-sm md:max-w-screen-xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
-          {projectsData.map((project) => (
-            <ProjectBlock {...project as Project} />))}
+        <div class="gap-3 justify-center md:flex-nowrap md:max-w-6xl">
+          <div class="flex flex-col ml-14 mr-14 gap-3 shrink text-sm justify-center md:gap-x-3">
+            {projectsData.map((project) => (
+              <ProjectBlock {...project as Project} />
+            ))}
+          </div>
         </div>
       </div>
 
