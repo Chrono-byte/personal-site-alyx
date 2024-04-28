@@ -1,7 +1,7 @@
 export const collegeSvg = (
   <img
     src="/svg/college.svg"
-    alt="language icon"
+    alt="college icon"
     style={{
       width: "30px",
       height: "30px",
@@ -12,7 +12,7 @@ export const collegeSvg = (
 export const locationSvg = (
   <img
     src="/svg/location.svg"
-    alt="language icon"
+    alt="location icon"
     style={{
       width: "30px",
       height: "30px",
@@ -23,7 +23,7 @@ export const locationSvg = (
 export const clockSvg = (
   <img
     src="/svg/clock.svg"
-    alt="language icon"
+    alt="clock icon"
     style={{
       width: "30px",
       height: "30px",
