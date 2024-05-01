@@ -1,27 +1,31 @@
 import { useSignal } from "@preact/signals";
-import { useEffect } from "preact/hooks";
+import { useCallback, useEffect } from "preact/hooks";
+
+const timeOptions = {
+  timeZone: "America/Indiana/Indianapolis",
+  hour12: false,
+  timeStyle: "medium" as const,
+};
 
 export default function Countdown() {
   const now = useSignal(new Date());
 
-  // Set up an interval to update the `now` date every second with the current
-  // date as long as the component is mounted.
+  const updateTime = useCallback(() => {
+    now.value = new Date();
+  }, [now]);
+
   useEffect(() => {
-    const timer = setInterval(() => {
-      now.value = new Date();
-    }, 1000);
-  }, []);
+    const timer = setInterval(updateTime, 1000);
+    return () => clearInterval(timer);
+  }, [updateTime]);
 
-  const currentDate =
-    now.value.toLocaleString("en-US", { timeZone: "America/Indianapolis" })
-      .split(", ")[0];
-  const currentTime = now.value.toLocaleString("en-US", {
-    timeZone: "America/Indianapolis",
-    hour12: false,
-  }).split(", ")[1];
+  const currentLocalTime = now.value.toLocaleString("en-US", timeOptions);
+  const currentLocalHours = parseInt(currentLocalTime.split(":")[0]);
+  const offsetFromUTC = now.value.getUTCHours() - currentLocalHours;
 
-  // Otherwise, we render the current time in format HH:MM:SS.
   return (
-    <span>{currentTime}, {currentDate}</span>
+    <li>
+      {currentLocalTime} ({"UTC-" + offsetFromUTC})
+    </li>
   );
 }
