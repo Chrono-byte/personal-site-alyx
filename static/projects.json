@@ -1,23 +1,32 @@
 [
   {
     "title": "michaelgummere.com",
-    "date": "2023-2024",
+    "date": {
+      "start": "October 2022",
+      "end": "Present"
+    },
     "description": "Personal website created using Deno Fresh, TypeScript, and TailwindCSS. I created this website to showcase my projects and skills.",
     "links": {
       "GitHub": "https://github.com/Chrono-byte/personal-site-alyx"
     }
   },
   {
-    "title": "Hammer",
-    "date": "2022-2023",
-    "description": "Simple chat application created as a way to learn websockets, TypeScript, and React. Server is written in TypeScript and uses Express for routing. Client is written in JavaScript and uses React for the frontend, while the API library is written in TypeScript. Uses WebSockets for all communication. I personally wrote all the code for the entire stack, authentication, socket, etc.",
+    "title": "Boiler",
+    "date": {
+      "start": "January 2022",
+      "end": "Present"
+    },
+    "description": "Simple chat application created as a way to learn websockets, TypeScript, and React. Server is written in TypeScript and uses Express for routing. API library is written in TypeScript. Uses WebSockets for all communication. I personally wrote all the code for the entire stack, authentication, socket, etc.",
     "links": {
-      "GitHub": "https://github.com/Hammer-Institute/hammer"
+      "GitHub": "https://github.com/Chrono-byte/boiler/"
     }
   },
   {
     "title": "VEX Robotics Competition",
-    "date": "Aug 2019-May 2023",
+    "date": {
+      "start": "August 2019",
+      "end": "May 2023"
+    },
     "description": "I was a member of the Steel Eagles Robotics (7701) club when I was in high school. We competed in the VEX Robotics Competition. I filled the role o programmer and designer. My team worked hard in the incredibly difficult Indiana region and managed to qualify for the State Championship in 2023 and fell just short of qualifying for the World Championship.",
     "links": {
       "GitHub": "https://github.com/7701F",
@@ -26,7 +35,10 @@
   },
   {
     "title": "Katana",
-    "date": "Aug 2022-Jan 2023",
+    "date": {
+      "start": "August 2022",
+      "end": "January 2023"
+    },
     "description": "Prototype datastore that takes in strings as arrays, stored in a json file.",
     "links": {
       "GitHub": "https://github.com/Chrono-byte/Katana"
@@ -34,7 +46,10 @@
   },
   {
     "title": "firefox-discord",
-    "date": "2017-2018",
+    "date": {
+      "start": "December 2017",
+      "end": "June 2022"
+    },
     "description": "Firefox/Chrome extension that displays the currently viewed website in Discord.",
     "links": {
       "GitHub": "https://github.com/Chrono-byte/firefox-discord"
@@ -42,7 +57,10 @@
   },
   {
     "title": "SmoreSoftware",
-    "date": "Jan 2017-Dec 2019",
+    "date": {
+      "start": "January 2017",
+      "end": "December 2019"
+    },
     "description": "I was the founder/member of a small software development team that created Discord bots for a variety of purposes."
   }
 ]
