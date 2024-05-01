@@ -10,18 +10,15 @@ export default function About() {
         </p>
         <br />
         <p>
-          &emsp;I'm a self-taught software developer and have worked on a
-          variety of different projects since I was 12. I have used Linux-based
-          computers for {new Date().getFullYear() - 2019}{" "}
+          &emsp;I'm a self-taught software develop1er and have worked on a
+          variety of different projects that interested me. I have used
+          Linux-based computers for {new Date().getFullYear() - 2019}{" "}
           years. I have been doing computer programming for{" "}
           {new Date().getFullYear() - 2016} years and have experience with{" "}
           <span class="text-blue-400">TypeScript</span>,{" "}
-          <span class="text-blue-300">C++</span>, and{"  "}
-          <span class="text-blue-400 [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
-            Lua
-          </span>{" "}
-          knowledge. I've worked on a few websites, a few Discord bots, and even
-          a chat app.
+          <span class="text-blue-300">C++</span>{" "}
+          . I've worked on a few websites and Discord chat bots as well as a
+          chat app.
         </p>
         <br />
         <p>
@@ -36,9 +33,11 @@ export default function About() {
           <li>
             📚 I'm currently pursuing my bachelors.
           </li>
-          <li>
+          {
+            /* <li>
             💬 I'm cripplingly addicted to Overwatch 2 in a not-a-joke way.
-          </li>
+          </li> */
+          }
           <li>
             📫 If you want to reach me, you can{" "}
             <a
