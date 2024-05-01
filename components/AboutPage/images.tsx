@@ -6,7 +6,7 @@ export const collegeSvg = (
       width: "30px",
       height: "30px",
     }}
-    className="pr-3"
+    class="pr-3"
   />
 );
 export const locationSvg = (
@@ -17,7 +17,7 @@ export const locationSvg = (
       width: "30px",
       height: "30px",
     }}
-    className="pr-3"
+    class="pr-3"
   />
 );
 export const clockSvg = (
@@ -28,6 +28,6 @@ export const clockSvg = (
       width: "30px",
       height: "30px",
     }}
-    className="pr-3"
+    class="pr-3"
   />
 );

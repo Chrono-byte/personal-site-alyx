@@ -24,8 +24,8 @@ export default function ProfileCard() {
         />
       </div>
       <div class="pb-4">
-        <p className="text-base pb-0">Michael Gummere</p>
-        <p className="text-sm pb-0">@chrono__ / @chronobyte_</p>
+        <p class="text-base pb-0">Michael Gummere</p>
+        <p class="text-sm pb-0">@chrono__ / @chronobyte_</p>
       </div>
       <style>
         {`
@@ -36,13 +36,13 @@ export default function ProfileCard() {
       `}
       </style>
       <div class="grid auto-cols-auto grid-rows-3 max-w-lg text-sm list-none">
-        <div className="col-end-1">{collegeSvg}</div>
-        <li className="col-end-2">
+        <div class="col-end-1">{collegeSvg}</div>
+        <li class="col-end-2">
           Indiana University Indianapolis
         </li>
-        <div className="col-end-1">{locationSvg}</div>
-        <li className="col-end-2">Greater Indianapolis, IN, USA</li>
-        <div className="col-end-1">{clockSvg}</div>
+        <div class="col-end-1">{locationSvg}</div>
+        <li class="col-end-2">Greater Indianapolis, IN, USA</li>
+        <div class="col-end-1">{clockSvg}</div>
         <Countdown />
       </div>
     </div>

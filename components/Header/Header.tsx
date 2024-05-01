@@ -19,10 +19,10 @@ export default function Header(
   ];
 
   return (
-    <header className="pb-3 w-full font-black">
+    <header class="pb-3 w-full font-black">
       <Breadcrumb subdirectory={subdirectory} fileID={fileID} />
 
-      <div className="header text-center"
+      <div class="header text-center"
         style={{
             margin: 0,
             lineHeight: 1.5,
