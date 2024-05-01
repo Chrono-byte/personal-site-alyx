@@ -29,7 +29,7 @@ export default function ProfileCard() {
       </div>
       <style>
         {`
-.profile-card li, .profile-card span {
+.profile-card li {
   height: 30px;
   line-height: 30px;
 }
