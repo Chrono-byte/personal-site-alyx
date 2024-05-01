@@ -16,9 +16,8 @@ export default function About() {
           years. I have been doing computer programming for{" "}
           {new Date().getFullYear() - 2016} years and have experience with{" "}
           <span class="text-blue-400">TypeScript</span>,{" "}
-          <span class="text-blue-300">C++</span>{" "}
-          . I've worked on a few websites and Discord chat bots as well as a
-          chat app.
+          <span class="text-blue-300">C++</span>. I've worked on a few websites
+          and Discord chat bots as well as a chat app.
         </p>
         <br />
         <p>
