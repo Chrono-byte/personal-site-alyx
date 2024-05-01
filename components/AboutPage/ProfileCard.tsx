@@ -1,5 +1,5 @@
 import Countdown from "../../islands/updateTime.tsx";
-import { collegeSvg, locationSvg, clockSvg } from "./images.tsx";
+import { clockSvg, collegeSvg, locationSvg } from "./images.tsx";
 
 export default function ProfileCard() {
   return (
@@ -27,19 +27,23 @@ export default function ProfileCard() {
         <p className="text-base pb-0">Michael Gummere</p>
         <p className="text-sm pb-0">@chrono__ / @chronobyte_</p>
       </div>
-      <div class="flex flex-col max-w-lg text-sm">
-        <p class="flex flex-row pb-2">
-          {collegeSvg}
-          <span style="">Indiana University Indianapolis</span>
-        </p>
-        <p class="flex flex-row pb-2">
-          {locationSvg}
-          <span class="inline-block align-middle">Greater Indianapolis, IN, USA</span>
-        </p>
-        <p class="flex flex-row pb-2">
-          {clockSvg}
-          <Countdown />
-        </p>
+      <style>
+        {`
+.profile-card li, .profile-card span {
+  height: 30px;
+  line-height: 30px;
+}
+      `}
+      </style>
+      <div class="grid auto-cols-auto grid-rows-3 max-w-lg text-sm list-none">
+        <div className="col-end-1">{collegeSvg}</div>
+        <li className="col-end-2">
+          Indiana University Indianapolis
+        </li>
+        <div className="col-end-1">{locationSvg}</div>
+        <li className="col-end-2">Greater Indianapolis, IN, USA</li>
+        <div className="col-end-1">{clockSvg}</div>
+        <Countdown />
       </div>
     </div>
   );

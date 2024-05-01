@@ -15,12 +15,13 @@ export default function Countdown() {
   const currentDate =
     now.value.toLocaleString("en-US", { timeZone: "America/Indianapolis" })
       .split(", ")[0];
-  const currentTime =
-    now.value.toLocaleString("en-US", {
-      timeZone: "America/Indianapolis",
-      hour12: false,
-    }).split(", ")[1];
+  const currentTime = now.value.toLocaleString("en-US", {
+    timeZone: "America/Indianapolis",
+    hour12: false,
+  }).split(", ")[1];
 
   // Otherwise, we render the current time in format HH:MM:SS.
-  return <span class="inline-block align-middle">{currentTime}, {currentDate}</span>;
+  return (
+    <span>{currentTime}, {currentDate}</span>
+  );
 }
