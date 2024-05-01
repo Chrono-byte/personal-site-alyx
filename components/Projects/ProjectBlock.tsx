@@ -1,14 +1,4 @@
-type Project = {
-  title: string;
-  date: {
-    start: string;
-    end: string;
-  };
-  description: string;
-  links?: {
-    [key: string]: string;
-  };
-};
+import Project from "./Project.ts";
 
 export default function ProjectBlock(project: Project) {
   let linksBlock = <></>;
@@ -30,9 +20,9 @@ export default function ProjectBlock(project: Project) {
   }
 
   return (
-    <div className="text-white background-card">
-      <h1 className="font-bold">{project.title}</h1>
-      <p className="text-violet-300 font-bold pb-1.5 pl-3">
+    <div class="text-white background-card">
+      <h1 class="font-bold">{project.title}</h1>
+      <p class="text-violet-300 font-bold pb-1.5 pl-3">
         {project.date.start} - {project.date.end}
       </p>
       <p>{project.description}</p>
