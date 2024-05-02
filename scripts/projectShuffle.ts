@@ -1,4 +1,4 @@
-import * as fs from 'node:fs';
+import * as fs from "node:fs";
 
 interface Project {
   title: string;
@@ -10,10 +10,10 @@ interface Project {
   links?: {
     [key: string]: string;
   };
-};
+}
 
 // Load the data
-const data: Project[] = JSON.parse(fs.readFileSync('projects.json', 'utf-8'));
+const data: Project[] = JSON.parse(fs.readFileSync("projects.json", "utf-8"));
 
 // Function to randomize the order of the data
 const randomizeOrder = (array: Project[]): Project[] => {
@@ -28,4 +28,4 @@ const randomizeOrder = (array: Project[]): Project[] => {
 const randomizedData = randomizeOrder(data);
 
 // Write the randomized data back to the file
-fs.writeFileSync('projects.json', JSON.stringify(randomizedData, null, 2));
+fs.writeFileSync("projects.json", JSON.stringify(randomizedData, null, 2));

@@ -11,14 +11,15 @@ interface Project {
   links?: {
     [key: string]: string;
   };
-};
-
+}
 
 const data: Project[] = JSON.parse(fs.readFileSync("projects.json", "utf-8"));
 
 // Function to get the end date from the "date" field
 function getEndDate(project: Project): Date {
-  return project.date.end === "Present" ? new Date() : parse(project.date.end, "MMMM yyyy", new Date());
+  return project.date.end === "Present"
+    ? new Date()
+    : parse(project.date.end, "MMMM yyyy", new Date());
 }
 
 // Sort the data

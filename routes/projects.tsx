@@ -16,9 +16,7 @@ export default function Home() {
       <div class="flex justify-center items-center">
         <div class="gap-3 justify-center md:flex-nowrap md:max-w-6xl">
           <div class="flex flex-col ml-14 mr-14 gap-3 shrink text-sm justify-center md:gap-x-3">
-            {doot.map((project: Project) => (
-              <ProjectBlock {...project} />
-            ))}
+            {doot.map((project: Project) => <ProjectBlock {...project} />)}
           </div>
         </div>
       </div>

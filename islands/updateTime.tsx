@@ -21,11 +21,11 @@ export default function Countdown() {
 
   const currentLocalTime = now.value.toLocaleString("en-US", timeOptions);
   const currentLocalHours = parseInt(currentLocalTime.split(":")[0]);
-  const offsetFromUTC = now.value.getUTCHours() - currentLocalHours;
+  const deltaFromUTC = now.value.getUTCHours() - currentLocalHours;
 
   return (
-    <li>
-      {currentLocalTime} ({"UTC-" + offsetFromUTC})
+    <li className="row-end-3">
+      {currentLocalTime} ({"UTC-" + deltaFromUTC})
     </li>
   );
 }

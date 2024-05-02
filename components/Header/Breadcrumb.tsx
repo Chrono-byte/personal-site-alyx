@@ -34,7 +34,8 @@ export default function Breadcrumb(
               href={`/${subdirectory.slice(0, index + 1).join("/")}/`}
             >
               {" " + directory}
-            </a>{" / "}
+            </a>
+            {" / "}
           </span>
         ))} {fileID && <span>{fileID}</span>}
       </div>

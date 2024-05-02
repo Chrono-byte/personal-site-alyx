@@ -8,6 +8,6 @@ interface Project {
   links?: {
     [key: string]: string;
   };
-};
+}
 
 export default Project;

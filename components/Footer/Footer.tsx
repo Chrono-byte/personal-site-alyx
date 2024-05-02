@@ -1,6 +1,6 @@
 import BrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-github.tsx";
-import BrandTwitter from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-x.tsx";
-import BrandMastodon from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-mastodon.tsx";
+import BrandTwitter from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-twitter.tsx";
+import SplashTextDisplay from "../../islands/SplashTextDisplay.tsx";
 
 export default function Footer() {
   const menus = [
@@ -14,8 +14,6 @@ export default function Footer() {
     {
       title: "Socials",
       children: [
-        // { name: "Email", href: "mailto:me@michaelgummere.com" },
-        // { name: "Twitter (X)", href: "https://twitter.com/chronobyte_" },
         { name: "Twitch", href: "https://twitch.tv/chronobyte_" },
       ],
     },
@@ -23,7 +21,7 @@ export default function Footer() {
 
   return (
     <div class="flex justify-center items-center">
-      <div class="bg-#e9debb flex flex-col md:flex-row w-full max-w-screen-lg gap-8 md:gap-16 px-8 py-8 text-base md:text-xs [text-shadow:_0_.5px_0_rgb(255_255_255_/_90%)]">
+      <div class="bg-#e9debb flex flex-col md:flex-row w-full max-w-screen-lg gap-8 md:gap-16 px-8 py-8 text-base md:text-xs [text-shadow:_.3px_.75px_0_rgb(255_255_255_/_90%)]">
         <div class="flex-1">
           <div class="flex items-center gap-1">
             <div class="font-bold text-2xl">
@@ -33,7 +31,7 @@ export default function Footer() {
           <div class="text-gray-900">
             Chrono
             <br />
-            Stack-less Developer.
+            <SplashTextDisplay />
           </div>
         </div>
 

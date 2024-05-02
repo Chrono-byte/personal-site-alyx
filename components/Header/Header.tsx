@@ -15,27 +15,30 @@ export default function Header(
     {
       title: "political notes",
       href: "/positions/",
-    }
+    },
   ];
 
   return (
     <header class="pb-3 w-full font-black">
       <Breadcrumb subdirectory={subdirectory} fileID={fileID} />
 
-      <div class="header text-center"
+      <div
+        class="header text-center"
         style={{
-            margin: 0,
-            lineHeight: 1.5,
-            marginTop: 0,
+          margin: 0,
+          lineHeight: 1.5,
+          marginTop: 0,
         }}
       >
         <p>
           {menus.map((item, index) => (
             <span key={index}>
               {index !== 0 && (index % 3 != 0) && " / "}
-              <a href={item.href} class="text-violet-700 hover:text-violet-400">{item.title}</a>
+              <a href={item.href} class="text-violet-700 hover:text-violet-400">
+                {item.title}
+              </a>
               {/* if more than 3 entires, inject linebreak */}
-              { (index + 1) % 3 == 0 && <br /> }
+              {(index + 1) % 3 == 0 && <br />}
             </span>
           ))}
         </p>

@@ -35,14 +35,14 @@ export default function ProfileCard() {
 }
       `}
       </style>
-      <div class="grid auto-cols-auto grid-rows-3 max-w-lg text-sm list-none">
-        <div class="col-end-1">{collegeSvg}</div>
-        <li class="col-end-2">
+      <div class="grid grid-rows-3 max-w-lg text-sm list-none whitespace-nowrap">
+        <div class="row-end-1">{collegeSvg}</div>
+        <li class="row-end-1">
           Indiana University Indianapolis
         </li>
-        <div class="col-end-1">{locationSvg}</div>
-        <li class="col-end-2">Greater Indianapolis, IN, USA</li>
-        <div class="col-end-1">{clockSvg}</div>
+        <div class="row-end-2">{locationSvg}</div>
+        <li class="row-end-2">Greater Indianapolis, IN, USA</li>
+        <div class="row-end-3">{clockSvg}</div>
         <Countdown />
       </div>
     </div>
