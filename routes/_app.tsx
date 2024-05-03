@@ -19,7 +19,7 @@ export default function App({ Component }: PageProps) {
           fontSize: "calc(0.63rem + 0.2vw)",
           lineHeight: "2.23rem",
         }}
-        class="font-mono"
+        className="font-mono"
       >
         <Component />
       </body>

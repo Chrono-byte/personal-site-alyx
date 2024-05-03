@@ -2,8 +2,8 @@ import DiscordLink from "../../islands/DiscordLink.tsx";
 
 export default function About() {
   return (
-    <div class="flex flex-col gap-1 md:gap-3 shrink text-base max-w-4xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
-      <div class="text-white background-card">
+    <div className="flex flex-col gap-1 md:gap-3 shrink text-base max-w-4xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
+      <div className="text-white background-card">
         <p>
           &emsp;Hi I'm Michael. I am a student at Indiana University
           Indianapolis.
@@ -15,8 +15,8 @@ export default function About() {
           Linux-based computers for {new Date().getFullYear() - 2019}{" "}
           years. I have been doing computer programming for{" "}
           {new Date().getFullYear() - 2016} years and have experience with{" "}
-          <span class="text-blue-400">TypeScript</span>,{" "}
-          <span class="text-blue-300">C++</span>. I've worked on a few websites
+          <span className="text-blue-400">TypeScript</span>,{" "}
+          <span className="text-blue-300">C++</span>. I've worked on a few websites
           and Discord chat bots as well as a chat app.
         </p>
         <br />
@@ -27,7 +27,7 @@ export default function About() {
           the State Championship in 2023.
         </p>
       </div>
-      <div class="text-white background-card">
+      <div className="text-white background-card">
         <ul>
           <li>
             📚 I'm currently pursuing my bachelors.
@@ -40,7 +40,7 @@ export default function About() {
           <li>
             📫 If you want to reach me, you can{" "}
             <a
-              class="email text-blue-400"
+              className="email text-blue-400"
               title="click this to send me an email!"
               href={`mailto:${"me" + "@" + "michaelgummere.com"}`}
             >

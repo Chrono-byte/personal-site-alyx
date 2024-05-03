@@ -4,7 +4,7 @@ import { clockSvg, collegeSvg, locationSvg } from "./images.tsx";
 export default function ProfileCard() {
   return (
     <div
-      class="flex flex-col profile-card w-fit [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]"
+      className="flex flex-col profile-card w-fit [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]"
       style={{
         background: "rgba(10, 8, 0, 0.70)",
         color: "#f0f0f0",
@@ -14,7 +14,7 @@ export default function ProfileCard() {
         padding: "25px",
       }}
     >
-      <div class="pb-4">
+      <div className="pb-4">
         <img
           src="/svg/25267581.svg"
           alt="image of female knight holding a sword"
@@ -23,9 +23,9 @@ export default function ProfileCard() {
           style={{ border: "6px solid #333", borderRadius: "29.97%" }}
         />
       </div>
-      <div class="pb-4">
-        <p class="text-base pb-0">Michael Gummere</p>
-        <p class="text-sm pb-0">@chrono__ / @chronobyte_</p>
+      <div className="pb-4">
+        <p className="text-base pb-0">Michael Gummere</p>
+        <p className="text-sm pb-0">@chrono__ / @chronobyte_</p>
       </div>
       <style>
         {`
@@ -35,14 +35,14 @@ export default function ProfileCard() {
 }
       `}
       </style>
-      <div class="grid grid-rows-3 max-w-lg text-sm list-none whitespace-nowrap">
-        <div class="row-end-1">{collegeSvg}</div>
-        <li class="row-end-1">
+      <div className="grid grid-rows-3 max-w-lg text-sm list-none whitespace-nowrap">
+        <div className="row-end-1">{collegeSvg}</div>
+        <li className="row-end-1">
           Indiana University Indianapolis
         </li>
-        <div class="row-end-2">{locationSvg}</div>
-        <li class="row-end-2">Greater Indianapolis, IN, USA</li>
-        <div class="row-end-3">{clockSvg}</div>
+        <div className="row-end-2">{locationSvg}</div>
+        <li className="row-end-2">Greater Indianapolis, IN, USA</li>
+        <div className="row-end-3">{clockSvg}</div>
         <Countdown />
       </div>
     </div>

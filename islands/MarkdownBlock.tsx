@@ -1,7 +1,9 @@
 // This file parses markdown and renders it as JSX
 import { useEffect, useState } from "preact/hooks";
-import Markdown from "https://esm.sh/react-markdown@9.0.1";
-import remarkGfm from "https://esm.sh/remark-gfm@4.0.0";
+import { CSS, render } from "https://deno.land/x/gfm/mod.ts";
+// Add support for TypeScript and Bash.
+import "https://esm.sh/prismjs@1.29.0/components/prism-typescript?no-check";
+import "https://esm.sh/prismjs@1.29.0/components/prism-bash?no-check";
 
 export interface MarkdownBlockProps {
   "src": string;
@@ -47,8 +49,13 @@ export default function MarkdownBlock(props: MarkdownBlockProps) {
     }
   }
 
-  console.log(metadata);
-  console.log(test);
+  // prepare markdown
+  const markdownBody = markdown.replace(/^---\n(.*?)\n---\n/s, "");
+
+  const body = render(markdownBody, {
+    baseUrl: `#`,
+    allowIframes: false,
+  });
 
   return (
     <div>
@@ -57,23 +64,18 @@ export default function MarkdownBlock(props: MarkdownBlockProps) {
         {metadata.title ? <h1>{metadata.title}</h1> : null}
         <h2>Last edited at: {metadata.date ? metadata.date : null}</h2>
       </div>
-
-      {/* tags display */}
-      <div>
-        {metadata.tags
-          ? (
-            <ul>
-              {metadata.tags.map((tag: string) => <li key={tag}>{tag}</li>)}
-            </ul>
-          )
-          : null}
-      </div>
-
       {/* Markdown Body */}
-      <br />
-      <div>
-        Markdown should appear here:
-      </div>
+      <style>
+        {CSS}
+      </style>
+      <main
+        data-color-mode="auto"
+        data-light-theme="light"
+        data-dark-theme="dark"
+        className="markdown-body markdown-box [text-shadow:none]"
+      >
+        <div dangerouslySetInnerHTML={{ __html: body }} />
+      </main>
     </div>
   );
 }

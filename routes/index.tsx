@@ -5,11 +5,11 @@ import About from "../components/AboutPage/About.tsx";
 
 export default function Home() {
   return (
-    <div class="flex-col px-4 pt-4 md:px-36 md:pt-4">
+    <div className="flex-col px-4 pt-4 md:px-36 md:pt-4">
       <Header />
 
-      <div class="flex justify-center items-center">
-        <div class="flex flex-wrap gap-3 px-3 justify-center md:flex-nowrap md:gap-x-3 md:w-fit">
+      <div className="flex justify-center items-center">
+        <div className="flex flex-wrap gap-3 px-3 justify-center md:flex-nowrap md:gap-x-3 md:w-fit">
           <ProfileCard />
 
           <About />

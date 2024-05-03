@@ -6,7 +6,7 @@ export default function DiscordLink() {
   return (
     <a
       id="discord-link"
-      class="text-violet-300"
+      className="text-violet-300"
       onClick={handleClick}
       title="click this button for my Discord handle!"
     >

@@ -20,9 +20,9 @@ export default function Breadcrumb(
             `}
       </style>
 
-      <div class="bread">
-        <span class="text-black fw-">/ home /</span>
-        <a href="/" class="text-black hover:text-violet-400">
+      <div className="bread">
+        <span className="text-black fw-">/ home /</span>
+        <a href="/" className="text-black hover:text-violet-400">
           {" "}chrono
         </a>
         {" /"}
@@ -30,7 +30,7 @@ export default function Breadcrumb(
           <span>
             <a
               key={index}
-              class="text-black hover:text-violet-400"
+              className="text-black hover:text-violet-400"
               href={`/${subdirectory.slice(0, index + 1).join("/")}/`}
             >
               {" " + directory}
