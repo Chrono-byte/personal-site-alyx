@@ -1,6 +1,6 @@
 // This file parses markdown and renders it as JSX
 import { useEffect, useState } from "preact/hooks";
-import { CSS, render } from "https://deno.land/x/gfm/mod.ts";
+import { CSS, render } from "https://deno.land/x/gfm@0.6.0/mod.ts";
 // Add support for TypeScript and Bash.
 import "https://esm.sh/prismjs@1.29.0/components/prism-typescript?no-check";
 import "https://esm.sh/prismjs@1.29.0/components/prism-bash?no-check";

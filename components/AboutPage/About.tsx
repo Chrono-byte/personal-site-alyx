@@ -1,9 +1,10 @@
 import DiscordLink from "../../islands/DiscordLink.tsx";
+import BackgroundCard from "../BackgroundCard.tsx";
 
 export default function About() {
   return (
-    <div className="flex flex-col gap-1 md:gap-3 shrink text-base max-w-4xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
-      <div className="text-white background-card">
+    <div className="flex flex-col gap-1 md:gap-3 text-base max-w-4xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
+      <BackgroundCard>
         <p>
           &emsp;Hi I'm Michael. I am a student at Indiana University
           Indianapolis.
@@ -16,8 +17,8 @@ export default function About() {
           years. I have been doing computer programming for{" "}
           {new Date().getFullYear() - 2016} years and have experience with{" "}
           <span className="text-blue-400">TypeScript</span>,{" "}
-          <span className="text-blue-300">C++</span>. I've worked on a few websites
-          and Discord chat bots as well as a chat app named boiler.
+          <span className="text-blue-300">C++</span>. I've worked on a few
+          websites and Discord chat bots as well as several hobby chat apps.
         </p>
         <br />
         <p>
@@ -26,8 +27,8 @@ export default function About() {
           in the incredibly difficult Indiana region and managed to qualify for
           the State Championship in 2023.
         </p>
-      </div>
-      <div className="text-white background-card">
+      </BackgroundCard>
+      <BackgroundCard>
         <ul>
           <li>
             📚 I don't learn.
@@ -46,7 +47,7 @@ export default function About() {
             </a>, or DM me on <DiscordLink />
           </li>
         </ul>
-      </div>
+      </BackgroundCard>
     </div>
   );
 }

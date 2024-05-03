@@ -1,3 +1,4 @@
+import BackgroundCard from "../BackgroundCard.tsx";
 import Project from "./Project.ts";
 
 export default function ProjectBlock(project: Project) {
@@ -20,13 +21,13 @@ export default function ProjectBlock(project: Project) {
   }
 
   return (
-    <div className="text-white background-card">
+    <BackgroundCard>
       <h1 className="font-bold">{project.title}</h1>
       <p className="text-violet-300 font-bold pb-1.5 pl-3">
         {project.date.start} - {project.date.end}
       </p>
       <p>{project.description}</p>
       {linksBlock}
-    </div>
+    </BackgroundCard>
   );
 }

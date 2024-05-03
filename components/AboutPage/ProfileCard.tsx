@@ -4,7 +4,7 @@ import { clockSvg, collegeSvg, locationSvg } from "./images.tsx";
 export default function ProfileCard() {
   return (
     <div
-      className="flex flex-col profile-card w-fit [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]"
+      className="flex flex-col [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]"
       style={{
         background: "rgba(10, 8, 0, 0.70)",
         color: "#f0f0f0",
@@ -24,8 +24,8 @@ export default function ProfileCard() {
         />
       </div>
       <div className="pb-4">
-        <p className="text-base pb-0">Michael Gummere</p>
-        <p className="text-sm pb-0">@chrono__ / @chronobyte_</p>
+        <p className="text-base font-semibold pb-0">Michael Gummere</p>
+        <p className="text-sm pb-0">@chrono__ <span className="font-extrabold text-violet-300">/</span> @chronobyte_</p>
       </div>
       <style>
         {`

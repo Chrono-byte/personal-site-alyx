@@ -17,7 +17,7 @@ export default function App({ Component }: PageProps) {
           backgroundColor: "#e9debb",
           fontWeight: 100,
           fontSize: "calc(0.63rem + 0.2vw)",
-          lineHeight: "2.23rem",
+          lineHeight: "calc(calc(0.63rem + 2.2vw) * 1.05)",
         }}
         className="font-mono"
       >

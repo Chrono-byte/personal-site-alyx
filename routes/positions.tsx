@@ -1,5 +1,8 @@
 import Header from "../components/Header/Header.tsx";
 import Footer from "../components/Footer/Footer.tsx";
+import BackgroundCard from "../components/BackgroundCard.tsx";
+
+const linkStyle = "text-md font-bold text-violet-300 hover:text-white";
 
 export default function Home() {
   return (
@@ -7,26 +10,19 @@ export default function Home() {
       <Header subdirectory={["positions"]} />
 
       <div className="flex justify-center items-center">
-        <div className="background-card text-white shrink text-sm md:[max-w-screen-3xl min-w-2xl] [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
-          <div className="intro">
-            <p>
-              Here you can find my thoughts and positions on various topics:
-            </p>
-          </div>
+        <BackgroundCard>
+          <h1 className={"font-bold"}>
+            Here you can find my thoughts and positions on various topics:
+          </h1>
 
-          <div className={"items-center pt-3"}>
-            <div className="flex flex-col md:flex-row gap-4">
-              <div className="flex flex-col gap-4">
-                <a href="/positions/philosophy" className="text-md">
-                  Philosophy
-                </a>
-                <a href="/positions/politics" className="text-md">
-                  Politics
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+          <a href="/positions/philosophy" className={linkStyle}>
+            Philosophy
+          </a>
+          <br />
+          <a href="/positions/politics" className={linkStyle}>
+            Politics
+          </a>
+        </BackgroundCard>
       </div>
 
       <Footer />

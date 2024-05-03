@@ -8,8 +8,8 @@ export default function Home() {
       <Header subdirectory={["positions"]} fileID="philosophy.md" />
 
       <div className="flex justify-center items-center">
-        <div className="gap-3 justify-center md:flex-nowrap md:max-w-7xl">
-          <div className="background-card text-white shrink text-base md:max-w-screen-2xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
+        <div className="flex flex-wrap gap-3 px-3 justify-center md:flex-nowrap md:gap-x-3 md:w-fit">
+          <div className="gap-3 justify-center md:flex-nowrap md:max-w-7xl background-card text-white text-base md:[max-w-screen-2xl min-w-full] [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
             <MarkdownBlock src="philosophy.md" />
           </div>
         </div>
