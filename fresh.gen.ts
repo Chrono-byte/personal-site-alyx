@@ -9,11 +9,14 @@ import * as $blog from "./routes/blog.tsx";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $positions from "./routes/positions.tsx";
+import * as $positions_philosophy from "./routes/positions/philosophy.tsx";
+import * as $positions_politics from "./routes/positions/politics.tsx";
 import * as $projects from "./routes/projects.tsx";
+import * as $Countdown from "./islands/Countdown.tsx";
+import * as $DiscordLink from "./islands/DiscordLink.tsx";
+import * as $MarkdownBlock from "./islands/MarkdownBlock.tsx";
 import * as $SplashTextDisplay from "./islands/SplashTextDisplay.tsx";
-import * as $discordSummon from "./islands/discordSummon.tsx";
 import * as $splashTextsStore from "./islands/splashTextsStore.tsx";
-import * as $updateTime from "./islands/updateTime.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -25,13 +28,16 @@ const manifest = {
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
     "./routes/positions.tsx": $positions,
+    "./routes/positions/philosophy.tsx": $positions_philosophy,
+    "./routes/positions/politics.tsx": $positions_politics,
     "./routes/projects.tsx": $projects,
   },
   islands: {
+    "./islands/Countdown.tsx": $Countdown,
+    "./islands/DiscordLink.tsx": $DiscordLink,
+    "./islands/MarkdownBlock.tsx": $MarkdownBlock,
     "./islands/SplashTextDisplay.tsx": $SplashTextDisplay,
-    "./islands/discordSummon.tsx": $discordSummon,
     "./islands/splashTextsStore.tsx": $splashTextsStore,
-    "./islands/updateTime.tsx": $updateTime,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

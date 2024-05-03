@@ -1,4 +1,4 @@
-import DiscordLink from "../../islands/discordSummon.tsx";
+import DiscordLink from "../../islands/DiscordLink.tsx";
 
 export default function About() {
   return (

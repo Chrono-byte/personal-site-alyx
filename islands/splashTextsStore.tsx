@@ -3,9 +3,6 @@ import { JSX } from "preact/jsx-runtime";
 export interface SplashText {
   "text": string;
   "render"?: (text: string) => JSX.Element;
-  "preConEffects"?: {
-    "rainbow": boolean
-  };
 }
 
 const splashTexts: SplashText[] = [
@@ -21,9 +18,6 @@ const splashTexts: SplashText[] = [
     ),
   },
   {
-    "text": "i hate programming",
-  },
-  {
     "text":
       "i changed my major to engineering technology because i hate programming",
     render: (text: string) => (
@@ -32,9 +26,6 @@ const splashTexts: SplashText[] = [
   },
   {
     "text": "soon™",
-    "preConEffects": {
-      "rainbow": true,
-    },
   },
   {
     "text": "if i'm not running down mid it's not me playing",
@@ -43,7 +34,7 @@ const splashTexts: SplashText[] = [
     "text": "programming 😎",
   },
   {
-    "text": "I'm going full silly",
+    "text": "i hate programming",
   },
 ];
 

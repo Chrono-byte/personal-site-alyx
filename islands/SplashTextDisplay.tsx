@@ -1,29 +1,8 @@
 import { useSignal } from "@preact/signals";
 import splashTexts, { SplashText } from "./splashTextsStore.tsx";
+import { render } from "$fresh/src/server/render.ts";
 
 const seenSplashes: SplashText[] = [];
-
-function preConHandler(splash: SplashText) {
-  if (splash.preConEffects) {
-    if (splash.preConEffects.rainbow) {
-      return {
-        "text": splash.text,
-        render: (text: string) => (
-          <p
-            style={{
-              background: "linear-gradient(90deg, #ff0000, #ff7700, #ff0, #0f0, #00f, #f0f, #ff0)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            {text}
-          </p>
-        ),
-      };
-    }
-  }
-  return splash;
-}
 
 export default function SplashTextDisplay() {
   const splash = useSignal(splashTexts[0]);
@@ -61,14 +40,11 @@ export default function SplashTextDisplay() {
         className="hover:text-violet-600 list-none"
         onClick={handleClick}
       >
-        {splash.value.render
-          ? splash.value.render(splash.value.text)
-          : splash.value.text}
-
-          {/* flag if splash has special effects */}
-          {splash.value.preConEffects && (
-            <span style={{ color: "red" }}>🚩</span>
-          )}
+        {splash.value.render ? splash.value.render(splash.value.text) : (
+          <span>
+            {splash.value.text}
+          </span>
+        )}
       </div>
     </>
   );

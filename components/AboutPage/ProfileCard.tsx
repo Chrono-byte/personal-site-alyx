@@ -1,4 +1,4 @@
-import Countdown from "../../islands/updateTime.tsx";
+import Countdown from "../../islands/Countdown.tsx";
 import { clockSvg, collegeSvg, locationSvg } from "./images.tsx";
 
 export default function ProfileCard() {

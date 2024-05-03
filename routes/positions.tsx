@@ -6,33 +6,18 @@ export default function Home() {
     <div class="flex-col px-4 pt-4 md:px-36 md:pt-4">
       <Header subdirectory={["positions"]} />
 
-      {/* index all files in static/md/ */}
-      {/* then parse markdown */}
-
       <div class="flex justify-center items-center">
-        <div class="flex flex-col gap-3 px-3 justify-center md:flex-nowrap md:gap-x-3 md:w-fit">
-          <div class="background-card text-white shrink text-sm md:max-w-screen-xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
-            i worky on website just go to github and look at the files for{" "}
-            <a
-              class="text-blue-400"
-              href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/philosophy.md"
-            >
-              philosophy
-            </a>{" "}
-            and{"  "}
-            <a
-              class="text-blue-400"
-              href="https://github.com/Chrono-byte/personal-site-alyx/blob/main/static/md/politics.md"
-            >
-              politics
-            </a>
-            .
-            <br />
-            <br />
-            any information contained herein contain last updated timestamps
-          </div>
+        <div class="background-card text-white shrink text-sm md:max-w-screen-xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
+          <a href="/positions/politics" class="hover:underline">
+            politics.md
+          </a>
+          <br />
+          <br />
+          <a href="/positions/philosophy" class="hover:underline">
+            philosophy.md
+          </a>
         </div>
-      </div>
+2      </div>
 
       <Footer />
     </div>

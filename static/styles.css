@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @font-face {
+@font-face {
     font-family: Comic Mono;
     font-weight: normal;
     src: url(./ComicMono.ttf);
@@ -14,16 +14,16 @@
     font-weight: bold;
     src: url(./ComicMono-Bold.ttf);
     font-display: swap;
-} */
+}
 
 code {
-    border-radius: 1em;
-    white-space: pre;
+  border-radius: 1em;
+  white-space: pre;
 }
 
 .background-card {
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 0.8rem;
-    border: 6.45px solid #2b2b2b;
-    padding: 25px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 0.8rem;
+  border: 6.45px solid #2b2b2b;
+  padding: 25px;
 }
