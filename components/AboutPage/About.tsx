@@ -10,14 +10,14 @@ export default function About() {
         </p>
         <br />
         <p>
-          &emsp;I'm a self-taught software develop1er and have worked on a
+          &emsp;I'm a self-taught software developer and have worked on a
           variety of different projects that interested me. I have used
           Linux-based computers for {new Date().getFullYear() - 2019}{" "}
           years. I have been doing computer programming for{" "}
           {new Date().getFullYear() - 2016} years and have experience with{" "}
           <span className="text-blue-400">TypeScript</span>,{" "}
           <span className="text-blue-300">C++</span>. I've worked on a few websites
-          and Discord chat bots as well as a chat app.
+          and Discord chat bots as well as a chat app named boiler.
         </p>
         <br />
         <p>
