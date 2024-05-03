@@ -33,6 +33,7 @@ export default function MarkdownBlock(props: MarkdownBlockProps) {
 
   const metadata: Metadata = {};
   const metadataBlock = markdown.match(/^---\n(.*?)\n---\n/s);
+  let markdownBody = markdown;
 
   if (metadataBlock) {
     const metadataLines = metadataBlock[1].split("\n");
@@ -47,10 +48,10 @@ export default function MarkdownBlock(props: MarkdownBlockProps) {
         metadata[key as keyof Metadata] = JSON.parse(value);
       }
     }
-  }
 
-  // prepare markdown
-  const markdownBody = markdown.replace(/^---\n(.*?)\n---\n/s, "");
+    // trim metadata from markdown
+    markdownBody = markdown.replace(metadataBlock[0], "");
+  }
 
   const body = render(markdownBody, {
     baseUrl: `#`,
