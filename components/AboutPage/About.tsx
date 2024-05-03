@@ -30,13 +30,11 @@ export default function About() {
       <div className="text-white background-card">
         <ul>
           <li>
-            📚 I'm currently pursuing my bachelors.
+            📚 I don't learn.
           </li>
-          {
-            /* <li>
-            💬 I'm cripplingly addicted to Overwatch 2 in a not-a-joke way.
-          </li> */
-          }
+          <li>
+            💬 Yap yap yap
+          </li>
           <li>
             📫 If you want to reach me, you can{" "}
             <a
