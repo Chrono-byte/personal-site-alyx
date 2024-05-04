@@ -1,6 +1,12 @@
-// import Clock from "../../islands/Clock.tsx";
-import Clock from "./Clock.tsx";
-import { clockSvg, collegeSvg, locationSvg } from "./images.tsx";
+// import Clock from "./Clock.tsx";
+import Clock from "../../islands/Clock.tsx";
+import { ClockIcon, College, MapPin } from "./images.tsx";
+
+const iconProps = {
+  size: 24,
+  color: "#f0f0f0",
+  stroke: 1.75,
+};
 
 export default function ProfileCard() {
   return (
@@ -9,7 +15,6 @@ export default function ProfileCard() {
       style={{
         background: "rgba(10, 8, 0, 0.70)",
         color: "#f0f0f0",
-        // minWidth: "",
         borderRadius: "0.8rem",
         border: "6.45px solid #2b2b2b",
         padding: "25px",
@@ -34,20 +39,32 @@ export default function ProfileCard() {
       </div>
       <style>
         {`
-.profile-card li {
+#profile-card-text {
   height: 30px;
   line-height: 30px;
 }
       `}
       </style>
-      <div className="grid grid-rows-3 max-w-lg text-sm list-none whitespace-nowrap">
-        <div className="row-end-1">{collegeSvg}</div>
-        <li className="row-end-1">
+      <div className="grid grid-rows-3 max-w-lg whitespace-nowrap">
+        <div className="row-end-1 w-8">
+          <div className="m-1">
+            {College(iconProps)}
+          </div>
+        </div>
+        <span className="row-end-1">
           Indiana University Indianapolis
-        </li>
-        <div className="row-end-2">{locationSvg}</div>
-        <li className="row-end-2">Greater Indianapolis, IN, USA</li>
-        <div className="row-end-3">{clockSvg}</div>
+        </span>
+        <div className="row-end-2 w-8">
+          <div className="m-1">
+            {MapPin(iconProps)}
+          </div>
+        </div>
+        <span className="row-end-2">Indianapolis, IN, USA</span>
+        <div className="row-end-3 w-8">
+          <div className="m-1">
+            {ClockIcon(iconProps)}
+          </div>
+        </div>
         <Clock />
       </div>
     </div>

@@ -8,7 +8,7 @@ const timeOptions = {
 
 export default class Clock extends Component {
   timer: number | undefined;
-  state: { time: number } | { time: Date };
+  state: { time: number };
   constructor() {
     super();
     this.state = { time: Date.now() };
@@ -36,9 +36,9 @@ export default class Clock extends Component {
     const deltaFromUTC = time.getUTCHours() - currentLocalHours;
 
     return (
-      <li className="row-end-3">
+      <span>
         {currentLocalTime} ({"UTC-" + deltaFromUTC})
-      </li>
+      </span>
     );
   }
 }

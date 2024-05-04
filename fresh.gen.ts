@@ -13,6 +13,7 @@ import * as $positions_slug_ from "./routes/positions/[slug].tsx";
 import * as $posts from "./routes/posts.tsx";
 import * as $posts_slug_ from "./routes/posts/[slug].tsx";
 import * as $projects from "./routes/projects.tsx";
+import * as $Clock from "./islands/Clock.tsx";
 import * as $DiscordLink from "./islands/DiscordLink.tsx";
 import * as $MarkdownBlock from "./islands/MarkdownBlock.tsx";
 import * as $SplashTextDisplay from "./islands/SplashTextDisplay.tsx";
@@ -34,6 +35,7 @@ const manifest = {
     "./routes/projects.tsx": $projects,
   },
   islands: {
+    "./islands/Clock.tsx": $Clock,
     "./islands/DiscordLink.tsx": $DiscordLink,
     "./islands/MarkdownBlock.tsx": $MarkdownBlock,
     "./islands/SplashTextDisplay.tsx": $SplashTextDisplay,
