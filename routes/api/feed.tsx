@@ -40,14 +40,15 @@ export const handler = (_req: Request, _ctx: FreshContext): Response => {
   <rss version="2.0">
     <channel>
       <title>My RSS Feed</title>
-      <link>http://${_req.headers.get("host")}/</link>
-      <description></description>${
+      <link>http://${_req.headers.get("host")}/</link>${
     limitedPosts.map((post) => {
       const postPath = postsDir + post.name;
       const postContent = Deno.readTextFileSync(postPath);
 
       const metadata: Partial<Metadata> = {};
       const metadataBlock = postContent.match(/^---\n(.*?)\n---\n/s);
+
+      let markdownBody: string = postContent;
 
       if (metadataBlock) {
         const metadataLines = metadataBlock[1].split("\n");
@@ -62,6 +63,8 @@ export const handler = (_req: Request, _ctx: FreshContext): Response => {
             metadata[key as keyof Metadata] = JSON.parse(value);
           }
         }
+
+        markdownBody = postContent.replace(metadataBlock[0], "");
       }
 
       return `
@@ -69,6 +72,7 @@ export const handler = (_req: Request, _ctx: FreshContext): Response => {
   <title>${metadata.title}</title>
   <link>http://${_req.headers.get("host")}/posts/${metadata.id}</link>
   <pubDate>${metadata.date}</pubDate>
+  <content:encoded><![CDATA[${markdownBody}]]></content:encoded>
 </item>`;
     }).join("")
   }
