@@ -1,4 +1,5 @@
-import Countdown from "../../islands/Countdown.tsx";
+// import Clock from "../../islands/Clock.tsx";
+import Clock from "./Clock.tsx";
 import { clockSvg, collegeSvg, locationSvg } from "./images.tsx";
 
 export default function ProfileCard() {
@@ -47,7 +48,7 @@ export default function ProfileCard() {
         <div className="row-end-2">{locationSvg}</div>
         <li className="row-end-2">Greater Indianapolis, IN, USA</li>
         <div className="row-end-3">{clockSvg}</div>
-        <Countdown />
+        <Clock />
       </div>
     </div>
   );

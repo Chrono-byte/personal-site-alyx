@@ -21,12 +21,12 @@ export default function Home(props: PageProps & { params: { slug: string } }) {
 
   return (
     <div className="flex-col px-4 pt-4 md:px-36 md:pt-4">
-      <Header subdirectory={["positions"]} fileID={`${slug}.md`} />
+      <Header subdirectory={["posts"]} fileID={`${slug}.md`} />
 
       <div className="flex justify-center items-center">
         <div className="flex flex-wrap gap-3 px-3 justify-center md:flex-nowrap md:gap-x-3 md:w-fit">
-          <BackgroundCard className="md:max-w-screen-2xl">
-            <MarkdownBlock src={`${slug}.md`} />
+          <BackgroundCard>
+            <MarkdownBlock src={`md/${slug}.md`} />
           </BackgroundCard>
         </div>
       </div>

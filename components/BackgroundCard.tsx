@@ -1,24 +1,31 @@
-import { Component, JSX } from "preact";
+import { Component, ErrorInfo } from "preact";
+import type { ComponentProps } from "preact/compat";
 
-type BackgroundCardProps = {
-  className?: string;
-};
-
-class BackgroundCard extends Component<BackgroundCardProps> {
-  constructor(props: BackgroundCardProps) {
-    super(props);
+export default class BackgroundCard extends Component {
+  constructor() {
+    super();
+    this.state = { errored: false };
   }
 
-  render() {
-    const { children, className } = this.props;
+  static getDerivedStateFromError(error: Error) {
+    return { errored: true };
+  }
+
+  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+    console.error(error, errorInfo);
+  }
+
+  render(props: ComponentProps<"div">, state: { errored: boolean }) {
+    if (state.errored) {
+      return <p>Something went badly wrong</p>;
+    }
+
     return (
       <div
-        className={`background-card text-white text-shadow:_1px_1px_0_rgb(0_0_0_/_100%) ${className}`}
+        className={`background-card text-white text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)`}
       >
-        {children}
+        {props.children}
       </div>
     );
   }
 }
-
-export default BackgroundCard;

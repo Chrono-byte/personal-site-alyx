@@ -28,7 +28,7 @@ export default function About() {
           the State Championship in 2023.
         </p>
       </BackgroundCard>
-      <BackgroundCard className="flex-grow">
+      <BackgroundCard>
         <ul>
           <li>
             📚 I don't learn.

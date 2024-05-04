@@ -51,7 +51,7 @@ export default function Home() {
 
   return (
     <div className="flex-col px-4 pt-4 md:px-36 md:pt-4">
-      <Header subdirectory={["positions"]} />
+      <Header subdirectory={["posts"]} />
 
       <div className="flex justify-center items-center">
         <div className="md:flex-nowrap md:max-w-6xl">

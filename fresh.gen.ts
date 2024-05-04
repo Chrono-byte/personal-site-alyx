@@ -7,13 +7,12 @@ import * as $_app from "./routes/_app.tsx";
 import * as $api_name_ from "./routes/api/[name].tsx";
 import * as $api_feed from "./routes/api/feed.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
-import * as $blog from "./routes/blog.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $positions from "./routes/positions.tsx";
 import * as $positions_slug_ from "./routes/positions/[slug].tsx";
+import * as $posts from "./routes/posts.tsx";
 import * as $posts_slug_ from "./routes/posts/[slug].tsx";
 import * as $projects from "./routes/projects.tsx";
-import * as $Countdown from "./islands/Countdown.tsx";
 import * as $DiscordLink from "./islands/DiscordLink.tsx";
 import * as $MarkdownBlock from "./islands/MarkdownBlock.tsx";
 import * as $SplashTextDisplay from "./islands/SplashTextDisplay.tsx";
@@ -27,15 +26,14 @@ const manifest = {
     "./routes/api/[name].tsx": $api_name_,
     "./routes/api/feed.tsx": $api_feed,
     "./routes/api/joke.ts": $api_joke,
-    "./routes/blog.tsx": $blog,
     "./routes/index.tsx": $index,
     "./routes/positions.tsx": $positions,
     "./routes/positions/[slug].tsx": $positions_slug_,
+    "./routes/posts.tsx": $posts,
     "./routes/posts/[slug].tsx": $posts_slug_,
     "./routes/projects.tsx": $projects,
   },
   islands: {
-    "./islands/Countdown.tsx": $Countdown,
     "./islands/DiscordLink.tsx": $DiscordLink,
     "./islands/MarkdownBlock.tsx": $MarkdownBlock,
     "./islands/SplashTextDisplay.tsx": $SplashTextDisplay,

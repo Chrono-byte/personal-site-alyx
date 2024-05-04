@@ -6,7 +6,7 @@ export default function Header(
   const menus = [
     {
       title: "blog",
-      href: "/blog/",
+      href: "/posts/",
     },
     {
       title: "current & past projects",
