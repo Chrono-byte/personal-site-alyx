@@ -72,7 +72,7 @@ export const handler = (_req: Request, _ctx: FreshContext): Response => {
   <title>${metadata.title}</title>
   <link>http://${_req.headers.get("host")}/posts/${metadata.id}</link>
   <pubDate>${metadata.date}</pubDate>
-  <content:encoded><![CDATA[${markdownBody}]]></content:encoded>
+  <description>${markdownBody}</description>
 </item>`;
     }).join("")
   }
