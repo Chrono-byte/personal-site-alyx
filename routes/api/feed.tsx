@@ -9,6 +9,7 @@ export interface Metadata {
   "id": string; // This is used as the file name in the breadcrumb header
   "tags": string[] | string; // This is used to categorize the post
   "date": string | Date; // This is used to display the last edited date
+  "summary"?: string; // This is used to display a summary of the post
 }
 
 export const handler = (_req: Request, _ctx: FreshContext): Response => {
@@ -68,16 +69,21 @@ export const handler = (_req: Request, _ctx: FreshContext): Response => {
       }
 
       return `
-<item>
-  <title>${metadata.title}</title>
-  <link>http://${_req.headers.get("host")}/posts/${metadata.id}</link>
-  <pubDate>${metadata.date}</pubDate>
-  <description>${markdownBody}</description>
-</item>`;
+      <item>
+        <title>${metadata.title}</title>
+        <link>http://${_req.headers.get("host")}/posts/${
+        `${metadata.date}` + "-" + metadata.title?.replace(".md", "")
+      }</link>
+        <pubDate>${metadata.date}</pubDate>
+        <description>
+          ${metadata.summary}
+        </description>
+      </item>`;
     }).join("")
   }
     </channel>
-  </rss>`;
+  </rss>
+</xml>`;
 
   return new Response(body);
 };
