@@ -17,7 +17,13 @@ export default class BackgroundCard extends Component {
 
   render(props: ComponentProps<"div">, state: { errored: boolean }) {
     if (state.errored) {
-      return <p>Something went badly wrong</p>;
+      return (
+        <div
+          className={`background-card text-white text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)`}
+        >
+          Something went catastrophically wrong.
+        </div>
+      );
     }
 
     return (
