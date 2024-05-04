@@ -4,10 +4,10 @@ export default function Header(
   { subdirectory, fileID }: { subdirectory?: string[]; fileID?: string },
 ) {
   const menus = [
-    // {
-    //   title: "blog",
-    //   href: "/blog/",
-    // },
+    {
+      title: "blog",
+      href: "/blog/",
+    },
     {
       title: "current & past projects",
       href: "/projects/",
@@ -34,7 +34,10 @@ export default function Header(
           {menus.map((item, index) => (
             <span key={index}>
               {index !== 0 && (index % 3 != 0) && " / "}
-              <a href={item.href} className="text-violet-700 hover:text-violet-400">
+              <a
+                href={item.href}
+                className="text-violet-700 hover:text-violet-400"
+              >
                 {item.title}
               </a>
               {/* if more than 3 entires, inject linebreak */}

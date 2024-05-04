@@ -4,13 +4,14 @@
 
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $api_name_ from "./routes/api/[name].tsx";
+import * as $api_feed from "./routes/api/feed.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $blog from "./routes/blog.tsx";
-import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $positions from "./routes/positions.tsx";
-import * as $positions_philosophy from "./routes/positions/philosophy.tsx";
-import * as $positions_politics from "./routes/positions/politics.tsx";
+import * as $positions_slug_ from "./routes/positions/[slug].tsx";
+import * as $posts_slug_ from "./routes/posts/[slug].tsx";
 import * as $projects from "./routes/projects.tsx";
 import * as $Countdown from "./islands/Countdown.tsx";
 import * as $DiscordLink from "./islands/DiscordLink.tsx";
@@ -23,13 +24,14 @@ const manifest = {
   routes: {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/api/[name].tsx": $api_name_,
+    "./routes/api/feed.tsx": $api_feed,
     "./routes/api/joke.ts": $api_joke,
     "./routes/blog.tsx": $blog,
-    "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
     "./routes/positions.tsx": $positions,
-    "./routes/positions/philosophy.tsx": $positions_philosophy,
-    "./routes/positions/politics.tsx": $positions_politics,
+    "./routes/positions/[slug].tsx": $positions_slug_,
+    "./routes/posts/[slug].tsx": $posts_slug_,
     "./routes/projects.tsx": $projects,
   },
   islands: {

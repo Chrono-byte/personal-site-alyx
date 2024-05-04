@@ -1,5 +1,4 @@
 ---
-layout: layouts/post.njk
 id: philosophy.md
 title: Philosophy
 tags: ["positions"]

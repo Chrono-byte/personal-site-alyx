@@ -1,13 +1,24 @@
-import { Component } from "preact";
+import { Component, JSX } from "preact";
 
-export default class BackgroundCard extends Component {
+type BackgroundCardProps = {
+  className?: string;
+};
+
+class BackgroundCard extends Component<BackgroundCardProps> {
+  constructor(props: BackgroundCardProps) {
+    super(props);
+  }
+
   render() {
+    const { children, className } = this.props;
     return (
       <div
-        className={`background-card text-white text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)`}
+        className={`background-card text-white text-shadow:_1px_1px_0_rgb(0_0_0_/_100%) ${className}`}
       >
-        {this.props.children}
+        {children}
       </div>
     );
   }
 }
+
+export default BackgroundCard;

@@ -25,7 +25,11 @@ export default function ProfileCard() {
       </div>
       <div className="pb-4">
         <p className="text-base font-semibold pb-0">Michael Gummere</p>
-        <p className="text-sm pb-0">@chrono__ <span className="font-extrabold text-violet-300">/</span> @chronobyte_</p>
+        <p className="text-sm pb-0">
+          @chrono__ <span className="font-extrabold text-violet-300">/</span>
+          {" "}
+          @chronobyte_
+        </p>
       </div>
       <style>
         {`

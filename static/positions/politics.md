@@ -1,5 +1,4 @@
 ---
-layout: layouts/post.njk
 id: politics.md
 title: Politics
 tags: ["positions"]
@@ -164,7 +163,7 @@ laissez-faire capitalism. Many people who espouse socialist ideas believe that
 those in power would be perfect individuals, who would only act in the interest
 of the system as a whole, and not self-interested as people often act.
 
-# Voting
+### Voting
 
 Voting is important.
 

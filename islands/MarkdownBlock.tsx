@@ -1,19 +1,16 @@
 // This file parses markdown and renders it as JSX
 import { useEffect, useState } from "preact/hooks";
+import { Head } from "$fresh/runtime.ts";
 import { CSS, render } from "https://deno.land/x/gfm@0.6.0/mod.ts";
+
 // Add support for TypeScript and Bash.
 import "https://esm.sh/prismjs@1.29.0/components/prism-typescript?no-check";
 import "https://esm.sh/prismjs@1.29.0/components/prism-bash?no-check";
 
+import type { Metadata } from "../routes/api/feed.tsx";
+
 export interface MarkdownBlockProps {
   "src": string;
-}
-
-interface Metadata {
-  "title"?: string;
-  "id"?: string;
-  "tags"?: string | string[];
-  "date"?: string;
 }
 
 export default function MarkdownBlock(props: MarkdownBlockProps) {
@@ -21,7 +18,7 @@ export default function MarkdownBlock(props: MarkdownBlockProps) {
 
   // fetch markdown file
   useEffect(() => {
-    fetch(`/md/${props.src}`)
+    fetch(`/${props.src}`)
       .then((response) => response.text())
       .then((text) => setMarkdown(text));
   }, [props.src]);
@@ -31,7 +28,7 @@ export default function MarkdownBlock(props: MarkdownBlockProps) {
     return <div>Error: Markdown not found</div>;
   }
 
-  const metadata: Metadata = {};
+  const metadata: Partial<Metadata> = {};
   const metadataBlock = markdown.match(/^---\n(.*?)\n---\n/s);
   let markdownBody = markdown;
 
@@ -60,15 +57,22 @@ export default function MarkdownBlock(props: MarkdownBlockProps) {
 
   return (
     <div>
-      {/* Title Block */}
-      <div>
-        {metadata.title ? <h1>{metadata.title}</h1> : null}
-        <h2>Last edited at: {metadata.date ? metadata.date : null}</h2>
-      </div>
-      {/* Markdown Body */}
       <style>
         {CSS}
       </style>
+      {/* Title Block */}
+      <div style="
+      ">
+        {metadata.title
+          ? <h1 className={"font-bold m-0 text-3xl"}>{metadata.title}</h1>
+          : null}
+
+        <span className={"text-xs font-light m-0"}>
+          Last edited at: {metadata.date
+            ? <span className={"text-blue-200"}>{metadata.date}</span>
+            : ""}
+        </span>
+      </div>
       <main
         data-color-mode="auto"
         data-light-theme="light"
