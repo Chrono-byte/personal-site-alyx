@@ -41,12 +41,10 @@ export const handler = (_req: Request, _ctx: FreshContext): Response => {
     <channel>
       <title>My RSS Feed</title>
       <link>http://${_req.headers.get("host")}/</link>
-      <description></description>
-      ${
-    limitedPosts.map((post, i) => {
-      const postContent = Deno.readFileSync(postsDir + post).toString();
-
-      console.log(postContent);
+      <description></description>${
+    limitedPosts.map((post) => {
+      const postPath = postsDir + post.name;
+      const postContent = Deno.readTextFileSync(postPath);
 
       const metadata: Partial<Metadata> = {};
       const metadataBlock = postContent.match(/^---\n(.*?)\n---\n/s);
@@ -59,37 +57,19 @@ export const handler = (_req: Request, _ctx: FreshContext): Response => {
           if (key && value) {
             metadata[key as keyof Metadata] = value;
           }
-        }
 
-        if (metadata.tags && typeof metadata.tags === "string") {
-          metadata.tags = JSON.parse(metadata.tags);
-        }
-
-        if (metadata.date) {
-          const stats = Deno.statSync(postsDir + post).mtime;
-
-          metadata.date = stats ? stats : new Date(metadata.date);
-        }
-
-        // check that metadata fully matches the Metadata interface
-        if (
-          !metadata.id || !metadata.date || !metadata.title || !metadata.tags
-        ) {
-          throw new Error(
-            `Metadata for post ${i + 1} is missing required fields.`,
-          );
+          if (key === "tags") {
+            metadata[key as keyof Metadata] = JSON.parse(value);
+          }
         }
       }
 
-      const link = `http://${_req.headers.get("host")}/${metadata.tags[0]}/${
-        metadata.id ? metadata.id.replace(".md", "") : ""
-      }`;
       return `
-          <item>
-            <title>${metadata.title || `Post ${i + 1}`}</title>
-            <link>${link}</link>
-          </item>
-          `;
+<item>
+  <title>${metadata.title}</title>
+  <link>http://${_req.headers.get("host")}/posts/${metadata.id}</link>
+  <pubDate>${metadata.date}</pubDate>
+</item>`;
     }).join("")
   }
     </channel>

@@ -60,9 +60,7 @@ export default function MarkdownBlock(props: MarkdownBlockProps) {
       <style>
         {CSS}
       </style>
-      {/* Title Block */}
-      <div style="
-      ">
+      <div>
         {metadata.title
           ? <h1 className={"font-bold m-0 text-3xl"}>{metadata.title}</h1>
           : null}
