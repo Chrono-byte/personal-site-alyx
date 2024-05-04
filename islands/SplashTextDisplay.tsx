@@ -1,11 +1,12 @@
 import { useSignal } from "@preact/signals";
 import splashTexts, { SplashText } from "./splashTextsStore.tsx";
-import { render } from "$fresh/src/server/render.ts";
 
 const seenSplashes: SplashText[] = [];
 
 export default function SplashTextDisplay() {
-  const splash = useSignal(splashTexts[0]);
+  const splash = useSignal({
+    "text": "Chrono",
+  } as SplashText);
 
   function handleClick() {
     let nextSplash: number;
@@ -37,7 +38,7 @@ export default function SplashTextDisplay() {
     <>
       <div
         title="click this text for a new splash!"
-        className="hover:text-violet-600 list-none"
+        className="hover:text-violet-600 list-none select-none"
         onClick={handleClick}
       >
         {splash.value.render ? splash.value.render(splash.value.text) : (

@@ -28,7 +28,6 @@ code {
   padding: 25px;
 }
 
-/* create rounded box for markdown box */
 .markdown-box {
   border-radius: 0.8rem;
   border: 6.45px solid #2b2b2b;

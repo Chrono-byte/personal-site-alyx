@@ -26,6 +26,10 @@ const splashTexts: SplashText[] = [
   },
   {
     "text": "soon™",
+    render: (text: string) => {
+      // make it so soontm strobes colors css
+      return <span className="animate-pulse">{text}</span>;
+    },
   },
   {
     "text": "if i'm not running down mid it's not me playing",

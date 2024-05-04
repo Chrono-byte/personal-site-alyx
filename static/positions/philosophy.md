@@ -5,7 +5,8 @@ tags: ["positions"]
 date: 2023-04-05
 ---
 
-> "It's The Code You Live By That Defines Who You Are." — Johnny Silverhand (Cyberpunk 2077)
+> "It's The Code You Live By That Defines Who You Are." — Johnny Silverhand
+> (Cyberpunk 2077)
 
 ## My Foundational Beliefs
 

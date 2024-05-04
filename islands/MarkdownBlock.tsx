@@ -1,11 +1,10 @@
 // This file parses markdown and renders it as JSX
 import { useEffect, useState } from "preact/hooks";
-import { Head } from "$fresh/runtime.ts";
 import { CSS, render } from "https://deno.land/x/gfm@0.6.0/mod.ts";
 
 // Add support for TypeScript and Bash.
-import "https://esm.sh/prismjs@1.29.0/components/prism-typescript?no-check";
-import "https://esm.sh/prismjs@1.29.0/components/prism-bash?no-check";
+// import "https://esm.sh/prismjs@1.29.0/components/prism-typescript?no-check";
+// import "https://esm.sh/prismjs@1.29.0/components/prism-bash?no-check";
 
 import type { Metadata } from "../routes/api/feed.tsx";
 
@@ -25,7 +24,27 @@ export default function MarkdownBlock(props: MarkdownBlockProps) {
 
   // markdown is null, display error message
   if (markdown === null) {
-    return <div>Error: Markdown not found</div>;
+    return (
+      <div>
+        <style>
+          {CSS}
+        </style>
+        <div>
+          <h1 className={"font-bold m-0 text-3xl"}>Error</h1>
+          <span className={"text-xs font-light m-0"}>
+            Failed to load markdown file: {props.src}
+          </span>
+        </div>
+        <main
+          data-color-mode="auto"
+          data-light-theme="light"
+          data-dark-theme="dark"
+          className="markdown-body markdown-box [text-shadow:none]"
+        >
+          <div dangerouslySetInnerHTML={{ __html: `` }} />
+        </main>
+      </div>
+    );
   }
 
   const metadata: Partial<Metadata> = {};
