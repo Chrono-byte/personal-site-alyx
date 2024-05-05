@@ -15,7 +15,6 @@ export default function SplashTextDisplay() {
       do {
         nextSplash = Math.floor(Math.random() * splashTexts.length);
       } while (
-        splashTexts[nextSplash] === splashTexts[0] ||
         seenSplashes.includes(splashTexts[nextSplash])
       );
     } else if (seenSplashes.length >= splashTexts.length) {
