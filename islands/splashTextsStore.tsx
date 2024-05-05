@@ -7,7 +7,7 @@ export interface SplashText {
 
 const splashTexts: SplashText[] = [
   {
-    "text": "Stack-less Developer",
+    "text": "Fully Stack-less Developer",
   },
   {
     "text": "hi chat\nbye chat\nhi again chat",
