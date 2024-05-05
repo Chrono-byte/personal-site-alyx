@@ -68,6 +68,7 @@ export default function Footer() {
             <a
               className={`text-gray-700 hover:text-violet-400`}
               aria-label={`Visit my ${child.name} profile`}
+              title={`Visit my ${child.name} profile`}
               href={child.href}
             >
               <Icon size={24} />
