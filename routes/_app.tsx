@@ -15,10 +15,10 @@ export default function App({ Component }: PageProps) {
         style={{
           color: "#363f47",
           backgroundColor: "#e9debb",
-          fontSize: "calc(0.63rem + 0.2vw)",
+          // fontSize: "calc(0.63rem + 0.2vw)",
           lineHeight: "calc(calc(0.63rem + 2.2vw) * .6)",
         }}
-        className="font-mono"
+        className="font-mono md:test-sm"
       >
         <Component />
       </body>
