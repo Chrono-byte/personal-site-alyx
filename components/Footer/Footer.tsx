@@ -1,20 +1,21 @@
+import { JSX } from "preact/jsx-runtime";
+
 import BrandGitHub from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-github.tsx";
 import BrandGitLab from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-gitlab.tsx";
 import BrandTwitter from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-twitter.tsx";
 import BrandTwitch from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-twitch.tsx";
+import BrandDiscord from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-discord.tsx";
+import BrandSourcehut from "./BrandSourcehut.tsx";
 
 import SplashTextDisplay from "../../islands/SplashTextDisplay.tsx";
-import { JSX } from "preact/jsx-runtime";
 
-const iconMap: {
-  [key: string]: (props: {
-    size: number;
-  }) => JSX.Element;
-} = {
+const iconMap = {
   github: BrandGitHub,
   gitlab: BrandGitLab,
-  twitter: BrandTwitter,
-  twitch: BrandTwitch,
+  // twitter: BrandTwitter,
+  // twitch: BrandTwitch,
+  discord: BrandDiscord,
+  sourcehut: BrandSourcehut,
 };
 
 export default function Footer() {
@@ -31,55 +32,71 @@ export default function Footer() {
       title: "Socials",
       children: [
         { name: "Twitch", href: "https://twitch.tv/chronobyte_" },
+        { name: "YouTube", href: "https://youtube.com/@chronobyte_" },
         { name: "Twitter", href: "https://twitter.com/chronobyte_" },
+        {
+          name: "Discord",
+          href: "https://discord.com/users/251383432331001856",
+        },
+        {
+          name: "Instagram",
+          href: "https://www.instagram.com/chrono.1.1.1/",
+        },
       ],
     },
   ];
+
   const iconsDisplay: JSX.Element[] = [];
 
   // only display the socials that are enabled
   const enabledSocials: string[] = [
     "gitlab",
-    // "sourcehut",
+    "sourcehut",
     "github",
     "twitch",
     "twitter",
+    "discord",
+    "instagram",
+    "youtube",
   ];
 
   menus.forEach((menu) => {
     // filter out the socials that are not enabled
     menu.children = menu.children.filter((child) => {
-      return enabledSocials.includes(child.name.toLocaleLowerCase());
+      return child.name &&
+        enabledSocials.includes(child.name.toLocaleLowerCase());
     });
 
     // sort the socials
     menu.children.sort((a, b) => {
-      return b.name.localeCompare(a.name);
+      return (a.name && b.name) ? a.name.localeCompare(b.name) : 0;
     });
 
     // if social exists, add the icon name to the array
-    menu.children.forEach((child) => {
-      if (iconMap[child.name.toLowerCase()]) {
-        const Icon = iconMap[child.name.toLowerCase()];
+    menu.children.forEach(({ name, href }) => {
+      if (name) {
+        if (iconMap[name.toLowerCase() as keyof typeof iconMap]) {
+          const Icon = iconMap[name.toLowerCase() as keyof typeof iconMap];
 
-        // push the icon add alt text for link
-        iconsDisplay.push(
-          (
-            <a
-              className={`text-gray-700 hover:text-violet-400`}
-              aria-label={`Visit my ${child.name} profile`}
-              title={`Visit my ${child.name} profile`}
-              href={child.href}
-            >
-              <Icon size={24} />
-            </a>
-          ),
-        );
+          // push the icon, add alt text for link
+          iconsDisplay.push(
+            (
+              <a
+                className={`text-gray-700 hover:text-violet-400`}
+                aria-label={`Visit my ${name} profile`}
+                title={`Visit my ${name} profile`}
+                href={href}
+              >
+                <Icon size={24} />
+              </a>
+            ),
+          );
 
-        // trim the child out of the menu
-        menu.children = menu.children.filter((item) => {
-          return item !== child;
-        });
+          // remove the social from the list menu
+          menu.children = menu.children.filter((child) => {
+            return child.name !== name;
+          });
+        }
       }
     });
   });
