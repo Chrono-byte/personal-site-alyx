@@ -1,23 +1,29 @@
 import { JSX } from "preact/jsx-runtime";
 
+// Icons
 import BrandGitHub from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-github.tsx";
 import BrandGitLab from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-gitlab.tsx";
 import BrandTwitter from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-twitter.tsx";
 import BrandTwitch from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-twitch.tsx";
 import BrandDiscord from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-discord.tsx";
+import BrandLinkedIn from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-linkedin.tsx";
+import BrandLastFM from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-lastfm.tsx";
+import BrandInstagram from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-instagram.tsx";
 import BrandSourcehut from "./BrandSourcehut.tsx";
-import BrandLinkedIn from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-linkedin";
 
+// SplashText
 import SplashTextDisplay from "../../islands/SplashTextDisplay.tsx";
 
 const iconMap = {
   github: BrandGitHub,
   gitlab: BrandGitLab,
-  // twitter: BrandTwitter,
-  // twitch: BrandTwitch,
   discord: BrandDiscord,
   sourcehut: BrandSourcehut,
-  linkedin: BrandLinkedIn
+  linkedin: BrandLinkedIn,
+  lastfm: BrandLastFM,
+  twitter: BrandTwitter,
+  twitch: BrandTwitch,
+  instagram: BrandInstagram,
 };
 
 export default function Footer() {
@@ -42,29 +48,35 @@ export default function Footer() {
         },
         {
           name: "Instagram",
-          href: "https://www.instagram.com/chrono.1.1.1/",
+          href: "https://instagram.com/chrono.1.1.1/",
         },
         {
           name: "LinkedIn",
-          href: "https://linkedin.com/in/michael-gummere/"
-        }
+          href: "https://linkedin.com/in/michael-gummere/",
+        },
+        {
+          name: "lastfm",
+          href: "https://last.fm/user/chronomly",
+        },
       ],
     },
   ];
 
   const iconsDisplay: JSX.Element[] = [];
+  const icons2Display: JSX.Element[] = [];
 
   // only display the socials that are enabled
   const enabledSocials: string[] = [
     "gitlab",
     "sourcehut",
     "github",
-    // "twitch",
+    "twitch",
     "twitter",
     "discord",
-    // "instagram",
-    // "youtube",
-    "linkedin"
+    "instagram",
+    "youtube",
+    "linkedin",
+    "lastfm",
   ];
 
   menus.forEach((menu) => {
@@ -85,19 +97,36 @@ export default function Footer() {
         if (iconMap[name.toLowerCase() as keyof typeof iconMap]) {
           const Icon = iconMap[name.toLowerCase() as keyof typeof iconMap];
 
-          // push the icon, add alt text for link
-          iconsDisplay.push(
-            (
-              <a
-                className={`text-gray-700 hover:text-violet-400`}
-                aria-label={`Visit my ${name} profile`}
-                title={`Visit my ${name} profile`}
-                href={href}
-              >
-                <Icon size={24} />
-              </a>
-            ),
-          );
+          if (
+            menu.title === "Socials"
+          ) {
+            icons2Display.push(
+              (
+                <a
+                  className={`text-gray-700 hover:text-violet-400`}
+                  aria-label={`Visit my ${name} profile`}
+                  title={`Visit my ${name} profile`}
+                  href={href}
+                >
+                  <Icon size={24} />
+                </a>
+              ),
+            );
+          } else {
+            // push the icon, add alt text for link
+            iconsDisplay.push(
+              (
+                <a
+                  className={`text-gray-700 hover:text-violet-400`}
+                  aria-label={`Visit my ${name} profile`}
+                  title={`Visit my ${name} profile`}
+                  href={href}
+                >
+                  <Icon size={24} />
+                </a>
+              ),
+            );
+          }
 
           // remove the social from the list menu
           menu.children = menu.children.filter((child) => {
@@ -132,35 +161,38 @@ export default function Footer() {
           </div>
         </div>
 
-        {menus.map((item) => (
-          <div className="mb-4" key={item.title}>
-            <div className="font-bold">{item.title}</div>
-            <ul className="mt-2">
-              {item.children.map((child) => (
-                <li className="mt-2" key={child.name}>
-                  <a
-                    className="text-gray-700 hover:text-violet-400"
-                    href={child.href}
-                  >
-                    {child.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
+        <div className="mb-4" key="git-hosting">
+          <div className="font-extrabold mb-1.5">Find my projects here!</div>
+          <div className="grid gap-3 row-auto grid-cols-3 w-fit">
+            {/* display array */}
+            {iconsDisplay.map((icon) => {
+              return (
+                <div class="">
+                  {icon}
+                </div>
+              );
+            })}
           </div>
-        ))}
+        </div>
+
+        <div className="mb-4" key="socials">
+          <div className="font-extrabold mb-1.5">Socials</div>
+          <div className="grid gap-3 row-auto grid-cols-3 w-fit">
+            {/* display array */}
+            {icons2Display.map((icon) => {
+              return (
+                <div class="">
+                  {icon}
+                </div>
+              );
+            })}
+          </div>
+        </div>
 
         <div className="text-black space-y-2">
           <div className="text-xs">
             Copyright © {new Date().getFullYear()} Michael Gummere<br />
             All right reserved.
-          </div>
-
-          <div className="flex gap-2">
-            {/* display array */}
-            {iconsDisplay.map((icon) => {
-              return icon;
-            })}
           </div>
         </div>
       </div>
