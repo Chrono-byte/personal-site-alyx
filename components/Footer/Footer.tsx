@@ -82,6 +82,11 @@ export default function Footer() {
     "lastfm",
   ];
 
+  // sort in place by alphabetical order before building the iconsDisplay object
+  menus.sort((a, b) => {
+    return a.title.localeCompare(b.title);
+  });
+
   menus.forEach((menu) => {
     // filter out the socials that are not enabled
     menu.children = menu.children.filter((child) => {
@@ -130,11 +135,6 @@ export default function Footer() {
   // shake out empty menus
   menus = menus.filter((menu) => {
     return menu.children.length > 0;
-  });
-
-  // sort the menus
-  menus.sort((a, b) => {
-    return a.title.localeCompare(b.title);
   });
 
   return (
