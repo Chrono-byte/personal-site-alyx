@@ -30,12 +30,12 @@ export default function About() {
       </BackgroundCard>
       <BackgroundCard>
         <ul>
-          <li>
-            📚 I don't learn.
-          </li>
-          <li>
-            💬 Yap yap yap
-          </li>
+          {/* <li> */}
+            {/* 📚 I don't learn. */}
+          {/* </li> */}
+          {/* <li> */}
+            {/* 💬 Yap yap yap */}
+          {/* </li> */}
           <li>
             📫 If you want to reach me, you can{" "}
             <a
