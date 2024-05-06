@@ -31,7 +31,7 @@ const iconMap = {
 export default function Footer() {
   let menus = [
     {
-      title: "Find my projects here!",
+      title: "Projects",
       children: [
         { name: "GitLab", href: "https://gitlab.com/Chrono-byte" },
         { name: "GitHub", href: "https://github.com/Chrono-byte" },
@@ -64,8 +64,9 @@ export default function Footer() {
     },
   ];
 
-  const iconsDisplay: JSX.Element[] = [];
-  const icons2Display: JSX.Element[] = [];
+  const iconsDisplay: {
+    [key: string]: JSX.Element[];
+  } = {};
 
   // only display the socials that are enabled
   const enabledSocials: string[] = [
@@ -93,42 +94,29 @@ export default function Footer() {
       return (a.name && b.name) ? a.name.localeCompare(b.name) : 0;
     });
 
+    // add the menu to the iconsDisplay object
+    iconsDisplay[menu.title] = [];
+
     // if social exists, add the icon name to the array
     menu.children.forEach(({ name, href }) => {
       if (name) {
         if (iconMap[name.toLowerCase() as keyof typeof iconMap]) {
           const Icon = iconMap[name.toLowerCase() as keyof typeof iconMap];
 
-          if (
-            menu.title === "Socials"
-          ) {
-            icons2Display.push(
-              (
-                <a
-                  className={`text-gray-700 hover:text-violet-400`}
-                  aria-label={`Visit my ${name} profile`}
-                  title={`Visit my ${name} profile`}
-                  href={href}
-                >
-                  <Icon size={24} />
-                </a>
-              ),
-            );
-          } else {
-            // push the icon, add alt text for link
-            iconsDisplay.push(
-              (
-                <a
-                  className={`text-gray-700 hover:text-violet-400`}
-                  aria-label={`Visit my ${name} profile`}
-                  title={`Visit my ${name} profile`}
-                  href={href}
-                >
-                  <Icon size={24} />
-                </a>
-              ),
-            );
-          }
+          iconsDisplay[menu.title].push(
+            (
+              <a
+                className={`text-gray-700 hover:text-violet-400`}
+                aria-label={`Visit my ${name} profile`}
+                title={`Visit my ${name} profile`}
+                href={href}
+              >
+                <Icon size={24} />
+              </a>
+            ),
+          );
+
+          console.log(iconsDisplay[menu.title]);
 
           // remove the social from the list menu
           menu.children = menu.children.filter((child) => {
@@ -163,6 +151,7 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* handle rest of entries */}
         {menus.map((item) => (
           <div className="mb-4" key={item.title}>
             <div className="font-bold">{item.title}</div>
@@ -181,33 +170,24 @@ export default function Footer() {
           </div>
         ))}
 
-        <div className="mb-4" key="git-hosting">
-          <div className="font-extrabold mb-1.5">Find my projects here!</div>
-          <div className="grid gap-3 row-auto grid-cols-3 w-fit">
-            {/* display array */}
-            {iconsDisplay.map((icon) => {
-              return (
+        {/* Handle apps with icons  */}
+        {Object.entries(iconsDisplay).map(([title, item]) => (
+          <div className="mb-4" key={title}>
+            {/* <div className="font-extrabold mb-1.5">{title}</div> */}
+            <div className="flex items-center">
+              <hr className="border-stone-400 border-b-2 w-1/6" />
+              <h2 className="mx-2 text-xs font-bold w-4/6">{title}</h2>
+              <hr className="border-stone-400 border-b-2 w-1/6" />
+            </div>
+            <div className="grid gap-3 row-auto grid-cols-3 w-fit">
+              {Object.entries(item).map(([child, Icon]) => (
                 <div class="">
-                  {icon}
+                  {Icon}
                 </div>
-              );
-            })}
+              ))}
+            </div>
           </div>
-        </div>
-
-        <div className="mb-4" key="socials">
-          <div className="font-extrabold mb-1.5">Socials</div>
-          <div className="grid gap-3 row-auto grid-cols-3 w-fit">
-            {/* display array */}
-            {icons2Display.map((icon) => {
-              return (
-                <div class="">
-                  {icon}
-                </div>
-              );
-            })}
-          </div>
-        </div>
+        ))}
 
         <div className="text-black space-y-2">
           <div className="text-xs">
