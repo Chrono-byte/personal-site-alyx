@@ -34,8 +34,8 @@ export default function Footer() {
       title: "Projects",
       children: [
         { name: "GitLab", href: "https://gitlab.com/Chrono-byte" },
-        { name: "GitHub", href: "https://github.com/Chrono-byte" },
         { name: "sourcehut", href: "https://sr.ht/~chrono/" },
+        { name: "GitHub", href: "https://github.com/Chrono-byte" },
       ],
     },
     {
@@ -82,7 +82,7 @@ export default function Footer() {
     "lastfm",
   ];
 
-  // sort in place by alphabetical order before building the iconsDisplay object
+  // sort the categories by title
   menus.sort((a, b) => {
     return a.title.localeCompare(b.title);
   });
@@ -94,9 +94,10 @@ export default function Footer() {
         enabledSocials.includes(child.name.toLocaleLowerCase());
     });
 
-    // sort the socials
+    // sort the socials by name
     menu.children.sort((a, b) => {
-      return (a.name && b.name) ? a.name.localeCompare(b.name) : 0;
+      if (menu.title === "Projects") return 0;
+      return (b.name && a.name) ? a.name.localeCompare(b.name) : 0;
     });
 
     // add the menu to the iconsDisplay object
@@ -120,8 +121,6 @@ export default function Footer() {
               </a>
             ),
           );
-
-          console.log(iconsDisplay[menu.title]);
 
           // remove the social from the list menu
           menu.children = menu.children.filter((child) => {
