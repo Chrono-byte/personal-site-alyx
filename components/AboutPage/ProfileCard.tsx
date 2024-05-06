@@ -1,7 +1,5 @@
 // import Clock from "./Clock.tsx";
 import Clock from "../../islands/Clock.tsx";
-
-// icons
 import ClockIcon from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/clock.tsx";
 import College from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/building.tsx";
 import MapPin from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/map-pin.tsx";

@@ -6,6 +6,7 @@ import BrandTwitter from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-t
 import BrandTwitch from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-twitch.tsx";
 import BrandDiscord from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-discord.tsx";
 import BrandSourcehut from "./BrandSourcehut.tsx";
+import BrandLinkedIn from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-linkedin";
 
 import SplashTextDisplay from "../../islands/SplashTextDisplay.tsx";
 
@@ -16,6 +17,7 @@ const iconMap = {
   // twitch: BrandTwitch,
   discord: BrandDiscord,
   sourcehut: BrandSourcehut,
+  linkedin: BrandLinkedIn
 };
 
 export default function Footer() {
@@ -42,6 +44,10 @@ export default function Footer() {
           name: "Instagram",
           href: "https://www.instagram.com/chrono.1.1.1/",
         },
+        {
+          name: "LinkedIn",
+          href: "https://linkedin.com/in/michael-gummere/"
+        }
       ],
     },
   ];
@@ -53,11 +59,12 @@ export default function Footer() {
     "gitlab",
     "sourcehut",
     "github",
-    "twitch",
+    // "twitch",
     "twitter",
     "discord",
-    "instagram",
-    "youtube",
+    // "instagram",
+    // "youtube",
+    "linkedin"
   ];
 
   menus.forEach((menu) => {
