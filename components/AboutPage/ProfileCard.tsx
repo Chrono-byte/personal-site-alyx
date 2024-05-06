@@ -47,7 +47,7 @@ export default function ProfileCard() {
 }
       `}
       </style>
-      <div className="grid grid-rows-3 max-w-lg whitespace-nowrap">
+      <div className="grid grid-rows-3 max-w-lg whitespace-break-spaces">
         <div className="row-end-1 w-8">
           <div className="m-1">
             {College(iconProps)}
