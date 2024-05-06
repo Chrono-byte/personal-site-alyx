@@ -9,6 +9,7 @@ import BrandDiscord from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-d
 import BrandLinkedIn from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-linkedin.tsx";
 import BrandLastFM from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-lastfm.tsx";
 import BrandInstagram from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-instagram.tsx";
+import BrandYouTube from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-youtube.tsx";
 import BrandSourcehut from "./BrandSourcehut.tsx";
 
 // SplashText
@@ -24,6 +25,7 @@ const iconMap = {
   twitter: BrandTwitter,
   twitch: BrandTwitch,
   instagram: BrandInstagram,
+  youtube: BrandYouTube,
 };
 
 export default function Footer() {
@@ -71,10 +73,10 @@ export default function Footer() {
     "sourcehut",
     "github",
     "twitch",
-    "twitter",
+    // "twitter",
     "discord",
-    "instagram",
-    "youtube",
+    // "instagram",
+    // "youtube",
     "linkedin",
     "lastfm",
   ];
@@ -160,6 +162,24 @@ export default function Footer() {
             <SplashTextDisplay />
           </div>
         </div>
+
+        {menus.map((item) => (
+          <div className="mb-4" key={item.title}>
+            <div className="font-bold">{item.title}</div>
+            <ul className="mt-2">
+              {item.children.map((child) => (
+                <li className="mt-2" key={child.name}>
+                  <a
+                    className="text-gray-700 hover:text-violet-400"
+                    href={child.href}
+                  >
+                    {child.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
 
         <div className="mb-4" key="git-hosting">
           <div className="font-extrabold mb-1.5">Find my projects here!</div>
