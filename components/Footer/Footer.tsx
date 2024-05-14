@@ -191,7 +191,7 @@ export default function Footer() {
         <div className="text-black space-y-2">
           <div className="text-xs">
             Copyright © {new Date().getFullYear()} Michael Gummere<br />
-            All right reserved.
+            All rights reserved.
           </div>
         </div>
       </div>
