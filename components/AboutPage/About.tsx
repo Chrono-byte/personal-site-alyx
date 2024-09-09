@@ -6,7 +6,7 @@ export default function About() {
     <div className="flex flex-col gap-y-1 md:gap-3 text-base max-w-4xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
       <BackgroundCard>
         <p>
-          &emsp;Hi I'm Michael. I am a student at Indiana University
+          &emsp;Hi I'm Ellie. I am a student at Indiana University
           Indianapolis.
         </p>
         {/* <br /> */}

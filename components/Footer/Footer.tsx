@@ -142,7 +142,7 @@ export default function Footer() {
         <div className="flex-1">
           <div className="flex items-center gap-1">
             <div className="font-bold text-2xl">
-              Michael Gummere
+              Ellie Gummere
             </div>
           </div>
           <div className="text-gray-900">
@@ -190,7 +190,7 @@ export default function Footer() {
 
         <div className="text-black space-y-2">
           <div className="text-xs">
-            Copyright © {new Date().getFullYear()} Michael Gummere<br />
+            Copyright © {new Date().getFullYear()} Ellie Gummere<br />
             All rights reserved.
           </div>
         </div>

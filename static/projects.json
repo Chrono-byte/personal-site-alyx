@@ -1,13 +1,13 @@
 [
   {
-    "title": "michaelgummere.com",
+    "title": "unknownhost.name",
     "date": {
       "start": "October 2022",
       "end": "Present"
     },
     "description": "Personal website created using Deno Fresh, TypeScript, and TailwindCSS. I created this website to showcase my projects and skills.",
     "links": {
-      "GitHub": "https://github.com/Chrono-byte/personal-site-alyx"
+      "GitLab": "https://gitlab.com/Chrono-byte/personal-site-alyx"
     }
   },
   {
@@ -18,7 +18,7 @@
     },
     "description": "Simple chat application created as a way to learn websockets, TypeScript, and React. Server is written in TypeScript and uses Express for routing. API library is written in TypeScript. Uses WebSockets for all communication. I personally wrote all the code for the entire stack, authentication, socket, etc.",
     "links": {
-      "GitHub": "https://github.com/Chrono-byte/boiler/"
+      "GitLab": "https://gitlab.com/Chrono-byte/boiler/"
     }
   },
   {
@@ -41,7 +41,7 @@
     },
     "description": "Prototype datastore that takes in strings as arrays, stored in a json file.",
     "links": {
-      "GitHub": "https://github.com/Chrono-byte/Katana"
+      "GitLab": "https://gitlab.com/Chrono-byte/Katana"
     }
   },
   {
@@ -52,7 +52,7 @@
     },
     "description": "Firefox/Chrome extension that displays the currently viewed website in Discord.",
     "links": {
-      "GitHub": "https://github.com/Chrono-byte/firefox-discord"
+      "GitLab": "https://gitlab.com/Chrono-byte/firefox-discord"
     }
   },
   {
