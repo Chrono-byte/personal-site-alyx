@@ -73,12 +73,12 @@ export default function Footer() {
     "gitlab",
     "sourcehut",
     "github",
-    "twitch",
+    // "twitch",
     // "twitter",
-    "discord",
+    // "discord",
     // "instagram",
     // "youtube",
-    "linkedin",
+    // "linkedin",
     "lastfm",
   ];
 

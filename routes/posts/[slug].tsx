@@ -13,11 +13,21 @@ export default function Home(props: PageProps & { params: { slug: string } }) {
   const { slug } = props.params;
 
   // verify that the slug exists in our md store
-  if (
-    !Deno.readTextFileSync(
-      path.join(Deno.cwd(), "static/md") + "/" + `${slug}.md`,
-    )
-  ) return fourohfor();
+  const postsDir = path.join(Deno.cwd(), "static/md") + "/";
+  const posts = Deno.readDirSync(postsDir);
+
+  // is the slug in the posts directory?
+  let postExists = false;
+  for (const post of posts) {
+    if (post.name == `${slug}.md`) {
+      postExists = true;
+      break;
+    }
+  }
+
+  if (!postExists) {
+    return fourohfor();
+  }
 
   return (
     <div className="flex-col px-4 pt-4 md:px-36 md:pt-4">

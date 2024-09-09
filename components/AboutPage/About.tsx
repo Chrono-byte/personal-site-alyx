@@ -6,8 +6,7 @@ export default function About() {
     <div className="flex flex-col gap-y-1 md:gap-3 text-base max-w-4xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
       <BackgroundCard>
         <p>
-          &emsp;Hi I'm Ellie. I am a student at Indiana University
-          Indianapolis.
+          &emsp;Hi I'm Ellie. I am a student at Indiana University Indianapolis.
         </p>
         {/* <br /> */}
         <p>
@@ -31,10 +30,10 @@ export default function About() {
       <BackgroundCard>
         <ul>
           {/* <li> */}
-            {/* 📚 I don't learn. */}
+          {/* 📚 I don't learn. */}
           {/* </li> */}
           {/* <li> */}
-            {/* 💬 Yap yap yap */}
+          {/* 💬 Yap yap yap */}
           {/* </li> */}
           <li>
             📫 If you want to reach me, you can{" "}
