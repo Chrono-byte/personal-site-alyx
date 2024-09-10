@@ -190,7 +190,7 @@ export default function Footer() {
 
         <div className="text-black space-y-2">
           <div className="text-xs">
-            Copyright © {new Date().getFullYear()} Ellie Gummere<br />
+            Copyright © {new Date().getFullYear()} Ellie<br />
             All rights reserved.
           </div>
         </div>

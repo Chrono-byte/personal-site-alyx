@@ -32,7 +32,7 @@ export default function MarkdownBlock(props: MarkdownBlockProps) {
         <div>
           <h1 className={"font-bold m-0 text-3xl"}>Error</h1>
           <span className={"text-xs font-light m-0"}>
-            Failed to load markdown file: {props.src}
+            Loading post: {props.src}
           </span>
         </div>
         <main

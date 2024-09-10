@@ -5,7 +5,8 @@
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $api_feed from "./routes/api/feed.tsx";
-import * as $api_fuck_name_ from "./routes/api/fuck/[name].tsx";
+import * as $api_fuckyou_name_ from "./routes/api/fuckyou/[name].tsx";
+import * as $api_yeah from "./routes/api/yeah.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $positions from "./routes/positions.tsx";
 import * as $positions_slug_ from "./routes/positions/[slug].tsx";
@@ -24,7 +25,8 @@ const manifest = {
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
     "./routes/api/feed.tsx": $api_feed,
-    "./routes/api/fuck/[name].tsx": $api_fuck_name_,
+    "./routes/api/fuckyou/[name].tsx": $api_fuckyou_name_,
+    "./routes/api/yeah.tsx": $api_yeah,
     "./routes/index.tsx": $index,
     "./routes/positions.tsx": $positions,
     "./routes/positions/[slug].tsx": $positions_slug_,
