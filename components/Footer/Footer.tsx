@@ -43,7 +43,6 @@ export default function Footer() {
       children: [
         { name: "Twitch", href: "https://twitch.tv/chronobyte_" },
         { name: "YouTube", href: "https://youtube.com/@chronobyte_" },
-        { name: "Twitter", href: "https://twitter.com/chronobyte_" },
         {
           name: "Discord",
           href: "https://discord.com/users/251383432331001856",
@@ -54,7 +53,7 @@ export default function Footer() {
         },
         {
           name: "LinkedIn",
-          href: "https://linkedin.com/in/michael-gummere/",
+          href: "https://linkedin.com/in/",
         },
         {
           name: "lastfm",
@@ -77,7 +76,6 @@ export default function Footer() {
     // "twitter",
     // "discord",
     // "instagram",
-    // "youtube",
     // "linkedin",
     "lastfm",
   ];
