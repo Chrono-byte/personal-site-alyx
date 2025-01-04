@@ -15,7 +15,7 @@ export default function About() {
           Linux-based computers for {new Date().getFullYear() - 2019}{" "}
           years. I have been doing computer programming for{" "}
           {new Date().getFullYear() - 2016} years and have experience with{" "}
-          <span className="text-blue-400">TypeScript</span> and
+          <span className="text-blue-400">TypeScript</span> and{" "}
           <span className="text-blue-300">C++</span>. I've worked on a few
           websites and Discord chat bots as well as several hobby chat apps.
         </p>
