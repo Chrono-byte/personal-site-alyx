@@ -40,7 +40,7 @@ export default function About() {
             <a
               className="email text-blue-400"
               title="click this to send me an email!"
-              href={`mailto:${"me" + "@" + "michaelgummere.com"}`}
+              href={`mailto:${"hello" + "@" + "unknownhost.name"}`}
             >
               email
             </a>, or DM me on <DiscordLink />
