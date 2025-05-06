@@ -140,7 +140,7 @@ export default function Footer() {
         <div className="flex-1">
           <div className="flex items-center gap-1">
             <div className="font-bold text-2xl">
-              Ellie Gummere
+              Ellie
             </div>
           </div>
           <div className="text-gray-900">
