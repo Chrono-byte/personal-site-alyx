@@ -43,7 +43,7 @@ export default function About() {
               href={`mailto:${"hello" + "@" + "unknownhost.name"}`}
             >
               email
-            </a>, or DM me on <DiscordLink />
+            </a>
           </li>
         </ul>
       </BackgroundCard>
