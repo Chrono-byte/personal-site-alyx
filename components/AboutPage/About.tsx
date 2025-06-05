@@ -42,7 +42,7 @@ export default function About() {
               title="click this to send me an email!"
               href={`mailto:${"hello" + "@" + "unknownhost.name"}`}
             >
-              email
+              email.
             </a>
           </li>
         </ul>
