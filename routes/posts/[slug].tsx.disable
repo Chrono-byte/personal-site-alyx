@@ -1,0 +1,148 @@
+import { PageProps } from "fresh";
+import { join } from "$std/path/mod.ts";
+import { CSS, render as gfmRender } from "https://deno.land/x/gfm@0.6.0/mod.ts";
+import { transform } from "https://esm.sh/ultrahtml@1.6.0";
+import sanitize from "https://esm.sh/ultrahtml@1.6.0/transformers/sanitize";
+import MarkdownBlock from "../../components/MarkdownBlock.tsx";
+import BackgroundCard from "../../components/BackgroundCard.tsx";
+import Header from "../../components/Header/Header.tsx";
+import Footer from "../../components/Footer/Footer.tsx";
+import { Handlers } from "fresh/compat";
+import { HttpError } from "fresh";
+
+type Metadata = Record<string, unknown>;
+
+export const handler: Handlers = {
+  async GET(ctx) {
+    const slug = ctx.params.slug;
+    const filePath = join(Deno.cwd(), "static", "md", `${slug}.md`);
+
+    let markdown = "";
+    try {
+      markdown = await Deno.readTextFile(filePath);
+    } catch (err) {
+      console.error("Failed to read markdown file", filePath, err);
+      throw new HttpError(404);
+    }
+
+    const metadata: Metadata = {};
+    const metadataBlock = markdown.match(/^---\n(.*?)\n---\n/s);
+    let markdownBody = markdown;
+
+    if (metadataBlock) {
+      const lines = metadataBlock[1].split("\n");
+      for (const line of lines) {
+        const [key, ...rest] = line.split(": ");
+        const value = rest.join(": ");
+        if (!key) continue;
+        if (key === "tags") {
+          try {
+            (metadata as Record<string, unknown>)[key] = JSON.parse(value);
+          } catch {
+            (metadata as Record<string, unknown>)[key] = value;
+          }
+        } else {
+          (metadata as Record<string, unknown>)[key] = value;
+        }
+      }
+      markdownBody = markdown.slice(metadataBlock[0].length);
+    }
+
+    const rawHtml = gfmRender(markdownBody, {
+      baseUrl: "#",
+      allowIframes: true,
+    });
+
+    const sanitizedIntermediate = await transform(String(rawHtml), [
+      sanitize({
+        allowElements: [
+          "a",
+          "p",
+          "div",
+          "span",
+          "h1",
+          "h2",
+          "h3",
+          "h4",
+          "h5",
+          "h6",
+          "ul",
+          "ol",
+          "li",
+          "strong",
+          "em",
+          "code",
+          "pre",
+          "blockquote",
+          "img",
+          "iframe",
+          "table",
+          "thead",
+          "tbody",
+          "tr",
+          "td",
+          "th",
+          "br",
+          "hr",
+        ],
+        allowAttributes: {
+          a: ["href", "title", "target", "rel"],
+          img: ["src", "alt", "title", "width", "height"],
+          iframe: [
+            "src",
+            "width",
+            "height",
+            "frameborder",
+            "allow",
+            "allowfullscreen",
+            "referrerpolicy",
+            "loading",
+          ],
+        },
+        dropElements: ["script", "style", "object", "embed", "form", "input"],
+      }),
+    ]);
+
+    const sanitized = sanitizedIntermediate.replace(
+      /<iframe\b[^>]*src=(["'])(.*?)\1[^>]*>[\s\S]*?<\/iframe>/gi,
+      (_match: string, _q: string, src: string) => {
+        try {
+          const u = new URL(src, "https://example.com");
+          const host = u.hostname.toLowerCase();
+          const allowed = host.endsWith("youtube.com") ||
+            host.endsWith("youtube-nocookie.com");
+          if (allowed && u.protocol === "https:") return _match;
+        } catch {
+          // strip on error
+        }
+        return "";
+      },
+    );
+
+    // Handler should return data for the page component
+    return { html: sanitized, metadata };
+  },
+};
+
+export default function PostPage(
+  props: PageProps<{ html: string; metadata: Metadata }>,
+) {
+  const { html, metadata } = props.data ?? { html: "", metadata: {} };
+
+  return (
+    <div className="flex-col px-4 pt-4 md:px-36 md:pt-4">
+      <Header subdirectory={["posts"]} fileID={`${props.params.slug}.md`} />
+
+      <div className="flex justify-center items-center">
+        <div className="flex flex-wrap gap-3 px-3 justify-center md:flex-nowrap md:gap-x-3 md:w-fit">
+          <BackgroundCard className="md:max-w-screen-2xl">
+            <style>{CSS}</style>
+            <MarkdownBlock html={html} metadata={metadata} />
+          </BackgroundCard>
+        </div>
+      </div>
+
+      <Footer />
+    </div>
+  );
+}

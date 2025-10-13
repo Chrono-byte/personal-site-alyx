@@ -1,18 +1,26 @@
+import * as preact from "preact";
+
+interface IconBrandSourcehutProps extends preact.SVGAttributes<SVGSVGElement> {
+  size?: number;
+  color?: string;
+  stroke?: string;
+}
+
 function IconBrandSourcehut({
   size = 24,
   color = "currentColor",
-  stroke = 2,
+  stroke = "2",
   ...props
-}) {
+}: IconBrandSourcehutProps) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      class="icon icon-tabler icon-tabler-brand-discord"
+      className="icon icon-tabler icon-tabler-brand-discord"
       width={size}
       height={size}
       viewBox="0 0 512 512"
-      // stroke-width={stroke}
-      // stroke={color}
+      strokeWidth={stroke}
+      stroke={color}
       fill={color}
       {
         // stroke-linecap="round"

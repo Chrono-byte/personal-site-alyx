@@ -1,13 +1,16 @@
-// import Clock from "./Clock.tsx";
 import Clock from "../../islands/Clock.tsx";
-import ClockIcon from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/clock.tsx";
-import College from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/building.tsx";
-import MapPin from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/map-pin.tsx";
+import { TbBuilding, TbClock, TbMapPin } from "@preact-icons/tb";
+
+// const iconProps = {
+//   size: 24,
+//   color: "#f0f0f0",
+//   stroke: 1.75,
+// };
 
 const iconProps = {
-  size: 24,
+  size: 20,
   color: "#f0f0f0",
-  stroke: 1.75,
+  name: "icon",
 };
 
 export default function ProfileCard() {
@@ -26,8 +29,8 @@ export default function ProfileCard() {
         <img
           src="/svg/25267581.svg"
           alt="image of female knight holding a sword"
-          width={"175px"}
-          height={"175px"}
+          width="175px"
+          height="175px"
           style={{ border: "6px solid #333", borderRadius: "29.97%" }}
         />
       </div>
@@ -50,7 +53,7 @@ export default function ProfileCard() {
       <div className="grid grid-rows-3 max-w-lg whitespace-break-spaces">
         <div className="row-end-1 w-8">
           <div className="m-1">
-            {College(iconProps)}
+            <TbBuilding {...iconProps} />
           </div>
         </div>
         <span className="row-end-1">
@@ -58,13 +61,13 @@ export default function ProfileCard() {
         </span>
         <div className="row-end-2 w-8">
           <div className="m-1">
-            {MapPin(iconProps)}
+            <TbMapPin {...iconProps} />
           </div>
         </div>
         <span className="row-end-2">Indianapolis, IN, USA</span>
         <div className="row-end-3 w-8">
           <div className="m-1">
-            {ClockIcon(iconProps)}
+            <TbClock {...iconProps} />
           </div>
         </div>
         <Clock />

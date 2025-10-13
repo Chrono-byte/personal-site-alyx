@@ -1,89 +1,103 @@
-import { FreshContext } from "$fresh/server.ts";
-import path from "node:path";
+import { Context } from "fresh";
+import { join } from "$std/path/mod.ts";
 
 /**
  * Represents the metadata for a post.
  */
 export interface Metadata {
-  "title": string; // This is used as the title of the post
-  "id": string; // This is used as the file name in the breadcrumb header
-  "tags": string[] | string; // This is used to categorize the post
-  "date": string | Date; // This is used to display the last edited date
-  "summary"?: string; // This is used to display a summary of the post
+  title: string;
+  id: string;
+  tags: string[] | string;
+  date: string | Date;
+  summary?: string;
 }
 
-export const handler = (_req: Request, _ctx: FreshContext): Response => {
-  // prepare posts directory path
-  const postsDir = path.join(Deno.cwd(), "static/md") + "/";
+function escapeXml(s?: string) {
+  if (!s) return "";
+  return s.replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&apos;");
+}
 
-  // get all posts
-  const posts = Deno.readDirSync(postsDir);
+export default function handler(_ctx: Context<Record<PropertyKey, never>>) {
+  const postsDir = join(Deno.cwd(), "static", "md") + "/";
 
-  // create array of posts
-  const postsArray = [];
-  for (const post of posts) {
-    postsArray.push(post);
+  let entries: Deno.DirEntry[] = [];
+  try {
+    entries = [...Deno.readDirSync(postsDir)].filter((e) =>
+      e.isFile && e.name.endsWith(".md")
+    );
+  } catch (err) {
+    console.error("failed to read posts directory", err);
+    return new Response("", { status: 500 });
   }
 
-  // sort by date
-  postsArray.sort((a, b) => {
-    const dateA = Deno.statSync(postsDir + a.name).mtime?.getMilliseconds();
-    const dateB = Deno.statSync(postsDir + b.name).mtime?.getMilliseconds();
-    if (dateA === undefined || dateB === undefined) return 0;
-    return dateB - dateA;
+  entries.sort((a, b) => {
+    const aTime = Deno.statSync(join(postsDir, a.name)).mtime?.getTime() ?? 0;
+    const bTime = Deno.statSync(join(postsDir, b.name)).mtime?.getTime() ?? 0;
+    return bTime - aTime;
   });
 
-  // limit to 10
-  const limitedPosts = postsArray.slice(0, 10);
+  const limited = entries.slice(0, 10);
 
-  // convert obj to RSS feed
-  const body = `<?xml version="1.0" encoding="UTF-8" ?>
-  <rss version="2.0">
-    <channel>
-      <title>My RSS Feed</title>
-      <link>http://${_req.headers.get("host")}/</link>${
-    limitedPosts.map((post) => {
-      const postPath = postsDir + post.name;
-      const postContent = Deno.readTextFileSync(postPath);
+  // Derive origin from the request URL
+  const origin = _ctx.req.url ? new URL(_ctx.req.url).origin : "";
 
+  const items = limited.map((entry) => {
+    try {
+      const content = Deno.readTextFileSync(join(postsDir, entry.name));
       const metadata: Partial<Metadata> = {};
-      const metadataBlock = postContent.match(/^---\n(.*?)\n---\n/s);
-
-      let markdownBody: string = postContent;
-
+      const metadataBlock = content.match(/^---\n(.*?)\n---\n/s);
+      // body (markdown) is available as `content` if needed; not used here
       if (metadataBlock) {
-        const metadataLines = metadataBlock[1].split("\n");
-
-        for (const line of metadataLines) {
-          const [key, value] = line.split(": ");
-          if (key && value) {
-            metadata[key as keyof Metadata] = value;
-          }
-
+        const lines = metadataBlock[1].split("\n");
+        for (const line of lines) {
+          const [key, ...rest] = line.split(": ");
+          const value = rest.join(": ");
+          if (!key) continue;
           if (key === "tags") {
-            metadata[key as keyof Metadata] = JSON.parse(value);
+            try {
+              // store tags as unknown; higher-level code can interpret this
+              (metadata as Record<string, unknown>)[key] = JSON.parse(value);
+            } catch {
+              (metadata as Record<string, unknown>)[key] = value;
+            }
+          } else {
+            (metadata as Record<string, unknown>)[key] = value;
           }
         }
-
-        markdownBody = postContent.replace(metadataBlock[0], "");
       }
+
+      const title = escapeXml(String(metadata.title ?? entry.name));
+      const date = escapeXml(String(metadata.date ?? ""));
+      const summary = escapeXml(String(metadata.summary ?? ""));
+      const slug = escapeXml(entry.name.replace(/\.md$/, ""));
 
       return `
       <item>
-        <title>${metadata.title}</title>
-        <link>http://${_req.headers.get("host")}/posts/${
-        `${metadata.date}` + "-" + metadata.title?.replace(".md", "")
-      }</link>
-        <pubDate>${metadata.date}</pubDate>
-        <description>
-          ${metadata.summary}
-        </description>
+        <title>${title}</title>
+        <link>${escapeXml(`${origin}/posts/${slug}`)}</link>
+        <pubDate>${date}</pubDate>
+        <description>${summary}</description>
       </item>`;
-    }).join("")
-  }
-    </channel>
-  </rss>
-</xml>`;
+    } catch (err) {
+      console.error("failed to read post", entry.name, err);
+      return "";
+    }
+  }).join("");
 
-  return new Response(body);
-};
+  const feed = `<?xml version="1.0" encoding="UTF-8"?>
+  <rss version="2.0">
+    <channel>
+      <title>My RSS Feed</title>
+      <link>${escapeXml(origin)}/</link>
+      ${items}
+    </channel>
+  </rss>`;
+
+  return new Response(feed, {
+    headers: { "Content-Type": "application/rss+xml; charset=utf-8" },
+  });
+}

@@ -1,4 +1,3 @@
-import DiscordLink from "../../islands/DiscordLink.tsx";
 import BackgroundCard from "../BackgroundCard.tsx";
 
 export default function About() {

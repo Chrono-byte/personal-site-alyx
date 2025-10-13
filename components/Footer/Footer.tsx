@@ -1,31 +1,63 @@
 import { JSX } from "preact/jsx-runtime";
 
 // Icons
-import BrandGitHub from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-github.tsx";
-import BrandGitLab from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-gitlab.tsx";
-import BrandTwitter from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-twitter.tsx";
-import BrandTwitch from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-twitch.tsx";
-import BrandDiscord from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-discord.tsx";
-import BrandLinkedIn from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-linkedin.tsx";
-import BrandLastFM from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-lastfm.tsx";
-import BrandInstagram from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-instagram.tsx";
-import BrandYouTube from "https://deno.land/x/tabler_icons_tsx@0.0.6/tsx/brand-youtube.tsx";
+import {
+  TbBrandDiscord,
+  TbBrandGithub,
+  TbBrandGitlab,
+  TbBrandInstagram,
+  TbBrandLastfm,
+  TbBrandLinkedin,
+  TbBrandTwitch,
+  TbBrandTwitter,
+  TbBrandYoutube,
+} from "@preact-icons/tb";
 import BrandSourcehut from "./BrandSourcehut.tsx";
+
+function IconPlaceholder({ title }: { title: string }) {
+  return (
+    <svg
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden
+      role="img"
+      className="inline-block"
+    >
+      <rect width="24" height="24" rx="4" fill="#E5E7EB" />
+      <text
+        x="50%"
+        y="55%"
+        dominantBaseline="middle"
+        textAnchor="middle"
+        fontSize="9"
+        fill="#111827"
+      >
+        {title[0]}
+      </text>
+    </svg>
+  );
+}
 
 // SplashText
 import SplashTextDisplay from "../../islands/SplashTextDisplay.tsx";
 
 const iconMap = {
-  github: BrandGitHub,
-  gitlab: BrandGitLab,
-  discord: BrandDiscord,
+  github: TbBrandGithub,
   sourcehut: BrandSourcehut,
-  linkedin: BrandLinkedIn,
-  lastfm: BrandLastFM,
-  twitter: BrandTwitter,
-  twitch: BrandTwitch,
-  instagram: BrandInstagram,
-  youtube: BrandYouTube,
+  gitlab: TbBrandGitlab,
+  twitch: TbBrandTwitch,
+  twitter: TbBrandTwitter,
+  discord: TbBrandDiscord,
+  instagram: TbBrandInstagram,
+  linkedin: TbBrandLinkedin,
+  lastfm: TbBrandLastfm,
+  youtube: TbBrandYoutube,
+  // add more icons here as needed
+  // if no icon exists, use the placeholder icon
+  default: IconPlaceholder,
 };
 
 export default function Footer() {
@@ -110,12 +142,13 @@ export default function Footer() {
           iconsDisplay[menu.title].push(
             (
               <a
-                className={`text-gray-700 hover:text-violet-400`}
+                className={`text-gray-700 hover:text-violet-400 flex flex-col items-center gap-1 text-xs`}
                 aria-label={`Visit my ${name} profile`}
                 title={`Visit my ${name} profile`}
                 href={href}
               >
-                <Icon size={24} />
+                <Icon size={24} className="inline-block" title={name} />
+                <span className="hidden md:inline">{name}</span>
               </a>
             ),
           );
@@ -177,9 +210,9 @@ export default function Footer() {
               <hr className="border-stone-400 border-b-2 w-1/6" />
             </div>
             <div className="grid gap-3 row-auto grid-cols-3 w-fit">
-              {Object.entries(item).map(([child, Icon]) => (
-                <div class="">
-                  {Icon}
+              {item.map((IconEl, idx) => (
+                <div key={idx} className="">
+                  {IconEl}
                 </div>
               ))}
             </div>

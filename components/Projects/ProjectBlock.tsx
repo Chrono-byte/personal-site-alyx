@@ -2,21 +2,25 @@ import BackgroundCard from "../BackgroundCard.tsx";
 import Project from "./Project.ts";
 
 export default function ProjectBlock(project: Project) {
-  let linksBlock = <></>;
+  let linksBlock = null;
   if (typeof project.links == "object") {
     linksBlock = (
-      <>
+      <div>
         <br />
         <label className="font-bold">
-          Link{Object.entries(project.links).length > 1 ? "s" : ""}:{" "}
-        </label>{" "}
+          Link{Object.entries(project.links).length > 1 ? "s" : ""}:
+        </label>
         {Object.entries(project.links).map(([name, link]) => (
-          <a className="text-blue-300 hover:text-blue-400" href={link}>
+          <a
+            key={name}
+            className="text-blue-300 hover:text-blue-400"
+            href={link}
+            rel="noopener noreferrer"
+          >
             {name}
-            {" "}
           </a>
         ))}
-      </>
+      </div>
     );
   }
 

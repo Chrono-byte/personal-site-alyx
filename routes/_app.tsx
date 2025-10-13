@@ -1,16 +1,12 @@
-import { type PageProps } from "$fresh/server.ts";
-export default function App({ Component }: PageProps) {
+import { define } from "../utils.ts";
+
+export default define.page(function App({ Component }) {
   return (
-    <html lang="en-US">
+    <html>
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <link rel="stylesheet" href="/styles.css" />
-
-        {/* check page url, if in api, remove */}
-        <title>unknownhost.name</title>
-        {/* <meta name="description" content="Hi I'm Ellie." /> */}
+        <title>Ellie Alyx</title>
       </head>
       <body
         style={{
@@ -25,4 +21,4 @@ export default function App({ Component }: PageProps) {
       </body>
     </html>
   );
-}
+});

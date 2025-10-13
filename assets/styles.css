@@ -1,7 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@import "tailwindcss";
 /* @font-face {
     font-family: Comic Mono;
     font-weight: normal;

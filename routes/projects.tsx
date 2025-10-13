@@ -1,3 +1,4 @@
+import { define } from "../utils.ts";
 import Header from "../components/Header/Header.tsx";
 import Footer from "../components/Footer/Footer.tsx";
 
@@ -8,7 +9,7 @@ import Project from "../components/Projects/Project.ts";
 
 const doot: Project[] = projectsData.map((project) => project as Project);
 
-export default function Home() {
+export default define.page(function Projects() {
   return (
     <div className="flex-col px-4 pt-4 md:px-36 md:pt-4">
       <Header subdirectory={["projects"]} />
@@ -16,7 +17,9 @@ export default function Home() {
       <div className="flex justify-center items-center">
         <div className="gap-3 justify-center md:flex-nowrap md:max-w-6xl">
           <div className="flex flex-col ml-14 mr-14 gap-3 shrink text-sm justify-center md:gap-x-3">
-            {doot.map((project: Project) => <ProjectBlock {...project} />)}
+            {doot.map((project: Project, idx: number) => (
+              <ProjectBlock key={project.id ?? idx} {...project} />
+            ))}
           </div>
         </div>
       </div>
@@ -24,4 +27,4 @@ export default function Home() {
       <Footer />
     </div>
   );
-}
+});

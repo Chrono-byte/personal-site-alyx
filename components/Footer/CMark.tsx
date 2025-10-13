@@ -1,8 +1,5 @@
 function CMark({
   size = 24,
-  color = "#000000",
-  stroke = 2,
-  ...props
 }) {
   return (
     <svg

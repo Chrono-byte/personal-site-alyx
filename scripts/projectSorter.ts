@@ -1,5 +1,5 @@
 import fs from "node:fs";
-import { parse } from "npm:date-fns";
+import { parse } from "npm:date-fns@4.1.0";
 
 interface Project {
   title: string;

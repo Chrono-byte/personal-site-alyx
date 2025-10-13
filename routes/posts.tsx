@@ -1,8 +1,9 @@
+import { define } from "../utils.ts";
 import Header from "../components/Header/Header.tsx";
 import Footer from "../components/Footer/Footer.tsx";
 import BackgroundCard from "../components/BackgroundCard.tsx";
 
-import path from "node:path";
+import { join } from "$std/path/mod.ts";
 
 // Metadata used when interpreting metadata from the de-metafied file
 interface Metadata {
@@ -16,22 +17,18 @@ interface Metadata {
   "summary": string; // This is used to display a summary of the post
 }
 
-export default function Home() {
+export default define.page(function Posts() {
   // prepare posts directory path
-  const postsDir = path.join(Deno.cwd(), "static/md") + "/";
+  const postsDir = join(Deno.cwd(), "static", "md") + "/";
   // get all posts
-  const posts = Deno.readDirSync(postsDir);
-
-  // create array of posts
-  const postsArray = [];
-  for (const post of posts) {
-    postsArray.push(post);
-  }
+  const posts = [...Deno.readDirSync(postsDir)].filter((p) =>
+    p.isFile && p.name.endsWith(".md")
+  );
 
   const postElements = [];
 
-  postsArray.map((post, i) => {
-    const postContent = Deno.readTextFileSync(postsDir + post.name);
+  for (const post of posts) {
+    const postContent = Deno.readTextFileSync(join(postsDir, post.name));
     const metadata: Partial<Metadata> = {};
 
     const metadataBlock = postContent.match(/^---\n(.*?)\n---\n/s);
@@ -47,31 +44,37 @@ export default function Home() {
 
       // check type of value
       if (key && key == "tags") {
-        metadata.tags = JSON.parse(value);
+        (metadata as Partial<Metadata>).tags = JSON.parse(value);
       } else if (key && key == "date") {
-        metadata.date = new Date(value);
+        (metadata as Partial<Metadata>).date = new Date(value);
       } else if (key && typeof value == "string") {
-        metadata[key as keyof Metadata] = value;
+        // assign unknown keys into metadata safely
+        (metadata as Record<string, unknown>)[key] = value;
       }
 
       // add the post name without the extension to metadata
-      metadata["name"] = post.name.replace(".md", "");
+      (metadata as Record<string, unknown>)["name"] = post.name.replace(
+        ".md",
+        "",
+      );
     }
 
-    postElements.push(
-      (
-        <BackgroundCard>
-          <p class="font-bold">
-            <a href={`/posts/${metadata.name}`}>{metadata.title}</a>
-          </p>
+    if (metadata.name && metadata.title) {
+      postElements.push(
+        (
+          <BackgroundCard key={metadata.name}>
+            <p className="font-bold">
+              <a href={`/posts/${metadata.name}`}>{metadata.title}</a>
+            </p>
 
-          <p>{metadata.date?.toLocaleDateString()}</p>
+            <p>{metadata.date?.toLocaleDateString()}</p>
 
-          <p>{metadata.summary}</p>
-        </BackgroundCard>
-      ),
-    );
-  });
+            <p>{metadata.summary}</p>
+          </BackgroundCard>
+        ),
+      );
+    }
+  }
 
   return (
     <div className="flex-col px-4 pt-4 md:px-36 md:pt-4">
@@ -88,4 +91,4 @@ export default function Home() {
       <Footer />
     </div>
   );
-}
+});

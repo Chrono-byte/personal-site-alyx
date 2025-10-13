@@ -1,4 +1,5 @@
 interface Project {
+  id?: string;
   title: string;
   date: {
     start: string;

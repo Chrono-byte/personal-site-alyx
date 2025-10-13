@@ -1,17 +1,18 @@
 import { Component, ErrorInfo } from "preact";
 import type { ComponentProps } from "preact/compat";
 
-export default class BackgroundCard extends Component {
-  constructor() {
-    super();
+export default class BackgroundCard
+  extends Component<ComponentProps<"div">, { errored: boolean }> {
+  constructor(props: ComponentProps<"div">) {
+    super(props);
     this.state = { errored: false };
   }
 
-  static getDerivedStateFromError(error: Error) {
+  static override getDerivedStateFromError(_error: Error) {
     return { errored: true };
   }
 
-  componentDidCatch(error: Error, errorInfo: ErrorInfo) {
+  override componentDidCatch(error: Error, errorInfo: ErrorInfo) {
     console.error(error, errorInfo);
   }
 
