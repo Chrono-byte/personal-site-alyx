@@ -6,7 +6,6 @@ import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
 import * as $api_feed from "./routes/api/feed.tsx";
 import * as $api_fuckyou_name_ from "./routes/api/fuckyou/[name].tsx";
-import * as $api_yeah from "./routes/api/yeah.tsx";
 import * as $index from "./routes/index.tsx";
 import * as $positions from "./routes/positions.tsx";
 import * as $positions_slug_ from "./routes/positions/[slug].tsx";
@@ -18,7 +17,7 @@ import * as $DiscordLink from "./islands/DiscordLink.tsx";
 import * as $MarkdownBlock from "./islands/MarkdownBlock.tsx";
 import * as $SplashTextDisplay from "./islands/SplashTextDisplay.tsx";
 import * as $splashTextsStore from "./islands/splashTextsStore.tsx";
-import { type Manifest } from "$fresh/server.ts";
+import type { Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
@@ -26,7 +25,6 @@ const manifest = {
     "./routes/_app.tsx": $_app,
     "./routes/api/feed.tsx": $api_feed,
     "./routes/api/fuckyou/[name].tsx": $api_fuckyou_name_,
-    "./routes/api/yeah.tsx": $api_yeah,
     "./routes/index.tsx": $index,
     "./routes/positions.tsx": $positions,
     "./routes/positions/[slug].tsx": $positions_slug_,
