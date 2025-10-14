@@ -7,10 +7,18 @@
     "start": "deno serve -A _fresh/server.js",
     "update": "deno run -A -r jsr:@fresh/update ."
   },
-  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
-  "exclude": ["**/_fresh/*"],
+  "lint": {
+    "rules": {
+      "tags": [
+        "fresh",
+        "recommended"
+      ]
+    }
+  },
+  "exclude": [
+    "**/_fresh/*"
+  ],
   "imports": {
-    "@deno/gfm": "jsr:@deno/gfm@^0.11.0",
     "@preact-icons/tb": "jsr:@preact-icons/tb@^1.0.14",
     "fresh": "jsr:@fresh/core@^2.1.2",
     "preact": "npm:preact@^10.27.2",
@@ -19,10 +27,17 @@
     "vite": "npm:vite@^7.1.10",
     "tailwindcss": "npm:tailwindcss@^4.1.14",
     "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.14",
+    "remark": "npm:remark",
+    "remark-html": "npm:remark-html",
     "$std/": "https://deno.land/std@0.224.0/"
   },
   "compilerOptions": {
-    "lib": ["dom", "dom.asynciterable", "dom.iterable", "deno.ns"],
+    "lib": [
+      "dom",
+      "dom.asynciterable",
+      "dom.iterable",
+      "deno.ns"
+    ],
     "jsx": "precompile",
     "jsxImportSource": "preact",
     "jsxPrecompileSkipElements": [
@@ -41,6 +56,8 @@
       "noscript",
       "template"
     ],
-    "types": ["vite/client"]
+    "types": [
+      "vite/client"
+    ]
   }
 }
