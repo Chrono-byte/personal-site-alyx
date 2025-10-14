@@ -1,16 +1,11 @@
 import { JSX } from "preact/jsx-runtime";
 
 // Icons
-import {
-  TbBrandGithub,
-  TbBrandGitlab,
-  TbBrandLastfm,
-  TbBrandLinkedin,
-} from "@preact-icons/tb";
-import BrandSourcehut from "./BrandSourcehut.tsx";
+import SocialIcons from "../icons/SocialIcons.tsx";
 
 // SplashText
 import SplashTextDisplay from "../../islands/SplashTextDisplay.tsx";
+import FooterSection from "./FooterSection.tsx";
 
 interface SocialLink {
   name: string;
@@ -24,27 +19,27 @@ const socialLinks: SocialLink[] = [
   {
     name: "GitLab",
     href: "https://gitlab.com/Chrono-byte",
-    icon: TbBrandGitlab,
+    icon: SocialIcons.Gitlab,
   },
   {
     name: "sourcehut",
     href: "https://sr.ht/~chrono/",
-    icon: BrandSourcehut,
+    icon: SocialIcons.Sourcehut,
   },
   {
     name: "GitHub",
     href: "https://github.com/Chrono-byte",
-    icon: TbBrandGithub,
+    icon: SocialIcons.Github,
   },
   {
     name: "lastfm",
     href: "https://last.fm/user/chronomly",
-    icon: TbBrandLastfm,
+    icon: SocialIcons.Lastfm,
   },
   {
     name: "LinkedIn",
     href: "https://linkedin.com/in/ellie-gummere",
-    icon: TbBrandLinkedin,
+    icon: SocialIcons.LinkedIn,
   },
 ];
 
@@ -57,32 +52,21 @@ export default function Footer() {
     !["GitLab", "sourcehut", "GitHub"].includes(link.name)
   );
 
-  const renderSection = (title: string, links: SocialLink[]) => (
-    <div>
-      <div className="flex items-center mb-3">
-        <hr className="border-stone-400 border-b-2 flex-1" />
-        <h2 className="mx-3 text-xs font-bold whitespace-nowrap">{title}</h2>
-        <hr className="border-stone-400 border-b-2 flex-1" />
-      </div>
-      <div className="flex gap-4 justify-center">
-        {links.map((link) => {
-          const Icon = link.icon;
-          return (
-            <a
-              key={link.name}
-              href={link.href}
-              className="text-gray-700 hover:text-violet-400 flex flex-col items-center gap-1 text-xs transition-colors"
-              aria-label={`Visit my ${link.name} profile`}
-              title={link.name}
-            >
-              <Icon size={24} className="inline-block" />
-              <span className="text-xs">{link.name}</span>
-            </a>
-          );
-        })}
-      </div>
-    </div>
-  );
+  const builtWith = [
+    {
+      name: "Fresh",
+      href: "https://fresh.deno.dev",
+      icon: () => (
+        <img
+          src="https://fresh.deno.dev/logo.svg"
+          alt="Fresh logo"
+          className="w-4 h-4"
+        />
+      ),
+    },
+  ];
+
+  // FooterSection handles rendering of section title + links
 
   return (
     <footer className="flex justify-center items-center mt-8">
@@ -102,8 +86,9 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-6 md:gap-12 justify-center">
-          {renderSection("Projects", projects)}
-          {renderSection("Socials", socials)}
+          <FooterSection title="Projects" links={projects} />
+          <FooterSection title="Socials" links={socials} />
+          <FooterSection title="Built with" links={builtWith} />
         </div>
       </div>
     </footer>

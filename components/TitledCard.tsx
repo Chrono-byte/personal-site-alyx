@@ -1,6 +1,6 @@
 // file: src/components/TitledCard.tsx
 import type { ComponentChildren } from "preact";
-import StyledPanel from "./BackgroundCard.tsx";
+import Card from "./ui/Card.tsx";
 
 type TitledCardProps = {
   title?: string;
@@ -12,8 +12,8 @@ export default function TitledCard(
   { title, children, className = "" }: TitledCardProps,
 ) {
   return (
-    <StyledPanel title={title} className={className}>
+    <Card title={title} className={className}>
       {children}
-    </StyledPanel>
+    </Card>
   );
 }
