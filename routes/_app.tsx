@@ -37,7 +37,10 @@ export default define.layout(function App({ Component, state, url: _url }) {
             fileID={breadcrumb.fileID}
           />
           <div className="flex-1 min-h-0 flex justify-center py-0">
-            <main id="main-content" className="w-full max-w-6xl">
+            <main
+              id="main-content"
+              className="container mx-auto px-4 md:px-16"
+            >
               <Component />
             </main>
           </div>
