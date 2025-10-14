@@ -81,7 +81,16 @@ deno task build     # Production build (outputs to _fresh/)
 deno task update    # Update Fresh framework
 ```
 
-### Build Output Structure
+### Current Development Environment Notes
+
+- **Server Status**: The development server (`deno task dev`) is typically
+  running in the background during development sessions
+- **Task Check Issues**: `deno task check` may currently have issues with type
+  resolution and may not complete successfully
+- **Build Process**: Use `deno task build` for production builds, which outputs
+  to the `_fresh/` directory
+
+## Build Output Structure
 
 - `_fresh/` directory contains compiled production assets (gitignored except for
   deployed builds)
