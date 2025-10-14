@@ -8,6 +8,7 @@ type ContentListProps = {
   items: ContentItemPreview[];
   renderItem: (item: ContentItemPreview) => preact.ComponentChild;
   emptyMessage?: string;
+  headingLevel?: 1 | 2 | 3 | 4 | 5 | 6;
 };
 
 const ContentList: FunctionalComponent<ContentListProps> = ({
@@ -16,12 +17,13 @@ const ContentList: FunctionalComponent<ContentListProps> = ({
   items,
   renderItem,
   emptyMessage = "No content yet.",
+  headingLevel = 1,
 }) => {
   return (
     <div className="w-full">
       <div className="max-w-3xl mx-auto py-6 space-y-4">
         <header>
-          <TitledCard title={title} titleColor="text-white">
+          <TitledCard title={title} titleColor="text-white" headingLevel={headingLevel}>
             <p className="text-gray-400">{description}</p>
           </TitledCard>
         </header>

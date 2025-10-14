@@ -30,9 +30,9 @@ export default define.page(function Projects() {
     <>
       <div className="flex flex-col gap-4">
         <StyledPanel className="mb-4">
-          <h2 className="text-lg font-semibold text-violet-400">
+          <h1 className="text-lg font-semibold text-gray-100">
             Selected Projects
-          </h2>
+          </h1>
           <p className="mt-2 text-gray-300 text-sm">
             Curated projects and experiments in systems programming, language
             design, and developer tooling. Ordered by recent activity.

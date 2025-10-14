@@ -28,9 +28,12 @@ export default function Clock() {
   const deltaFromUTC = isDST ? -4 : -5;
 
   return (
-    <span>
+    <time
+      dateTime={now.value.toISOString()}
+      aria-label={`Current time in Indiana: ${currentLocalTime} UTC${deltaFromUTC >= 0 ? "+" : ""}${deltaFromUTC}`}
+    >
       {currentLocalTime}{" "}
       ({"UTC" + (deltaFromUTC >= 0 ? "+" : "") + deltaFromUTC})
-    </span>
+    </time>
   );
 }
