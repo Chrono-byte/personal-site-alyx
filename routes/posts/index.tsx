@@ -1,7 +1,6 @@
-import { define } from "../utils.ts";
-import Header from "../components/Header/Header.tsx";
-import Footer from "../components/Footer/Footer.tsx";
-import BackgroundCard from "../components/BackgroundCard.tsx";
+import Header from "../../components/Header/Header.tsx";
+import Footer from "../../components/Footer/Footer.tsx";
+import BackgroundCard from "../../components/BackgroundCard.tsx";
 
 import { join } from "$std/path/mod.ts";
 
@@ -17,7 +16,7 @@ interface Metadata {
   "summary": string; // This is used to display a summary of the post
 }
 
-export default define.page(function Posts() {
+export default function Home() {
   // prepare posts directory path
   const postsDir = join(Deno.cwd(), "static", "md") + "/";
   // get all posts
@@ -91,4 +90,4 @@ export default define.page(function Posts() {
       <Footer />
     </div>
   );
-});
+}

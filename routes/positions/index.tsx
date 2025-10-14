@@ -1,11 +1,10 @@
-import { define } from "../utils.ts";
-import Header from "../components/Header/Header.tsx";
-import Footer from "../components/Footer/Footer.tsx";
-import BackgroundCard from "../components/BackgroundCard.tsx";
+import Header from "../../components/Header/Header.tsx";
+import Footer from "../../components/Footer/Footer.tsx";
+import BackgroundCard from "../../components/BackgroundCard.tsx";
 
 const linkStyle = "text-md font-bold text-violet-300 hover:text-white";
 
-export default define.page(function Positions() {
+export default function Home() {
   return (
     <div className="flex-col px-4 pt-4 md:px-36 md:pt-4">
       <Header subdirectory={["positions"]} />
@@ -29,4 +28,4 @@ export default define.page(function Positions() {
       <Footer />
     </div>
   );
-});
+}
