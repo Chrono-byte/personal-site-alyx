@@ -1,5 +1,6 @@
-import type { FunctionalComponent } from "preact";
-import { TbLocationPlus, TbSchool } from "@preact-icons/tb";
+import type { ComponentChildren, FunctionalComponent } from "preact";
+import { TbLocationPlus, TbSchool, TbClock } from "@preact-icons/tb";
+import Clock from "../../islands/Clock.tsx";
 
 // --- Constants for Styling & Defaults ---
 
@@ -20,7 +21,7 @@ const CARD_STYLES = [
   "rounded-xl",
   "border-4",
   "border-gray-700",
-  "p-4",
+  "p-6",
   "[box-shadow:_0_8px_16px_-4px_rgba(0,_0,_0,_0.5),_0_4px_8px_-2px_rgba(0,_0,_0,_0.4)]",
   "[text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]",
   "text-gray-200",
@@ -52,8 +53,9 @@ const InfoBlock: FunctionalComponent<{
   title: string;
   content: string;
   link?: string;
-  icon?: typeof TbLocationPlus | typeof TbSchool;
-}> = ({ title, content, link, icon: Icon }) => (
+  icon?: typeof TbLocationPlus | typeof TbSchool | typeof TbClock;
+  children?: ComponentChildren;
+}> = ({ title, content, link, icon: Icon, children }) => (
   <div className="bg-[#2a2721] rounded-lg p-3 mb-3 border border-gray-600">
     <h3 className="text-sm font-semibold text-gray-300 tracking-wide mb-1 flex items-center gap-2">
       {Icon && <Icon size={14} className="text-gray-400" />}
@@ -71,6 +73,7 @@ const InfoBlock: FunctionalComponent<{
         )
         : <span className="text-gray-200">{content}</span>}
     </div>
+    {children}
   </div>
 );
 
@@ -148,6 +151,14 @@ const ProfileCard: FunctionalComponent<ProfileCardProps> = ({
           content={location}
           icon={TbLocationPlus}
         />
+
+        <InfoBlock
+          title="Local Time"
+          content=""
+          icon={TbClock}
+        >
+          <Clock />
+        </InfoBlock>
       </div>
     </div>
   );
