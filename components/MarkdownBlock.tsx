@@ -36,7 +36,7 @@ export default function MarkdownBlock({ markdown, metadata }: Props) {
         data-color-mode="auto"
         data-light-theme="light"
         data-dark-theme="dark"
-        className="background-card markdown-box [text-shadow:none]"
+        className="background-card markdown-box [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]"
       >
         <div dangerouslySetInnerHTML={{ __html: html }} />
       </main>

@@ -19,7 +19,7 @@ export default function Header(
   ];
 
   return (
-    <header className="mt-1 pb-8 mb-0 w-full font-black">
+    <header className="mt-1 pb-8 mb-0 w-full font-black [text-shadow:_1px_1px_0_rgba(255_255_255_/_90%)]">
       <Breadcrumb subdirectory={subdirectory} fileID={fileID} />
 
       <div
