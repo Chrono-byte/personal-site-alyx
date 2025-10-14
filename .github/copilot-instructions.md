@@ -130,3 +130,50 @@ deno task update    # Update Fresh framework
 - `components/MarkdownBlock.tsx` - GFM rendering with metadata display
 - `components/Footer/Footer.tsx` - Social links with icon components
 - `components/Header/Header.tsx` - Navigation breadcrumbs and menu
+
+# Git Assistant Prompt
+
+You are an expert Git assistant. Your task is to analyze the current unstaged
+changes in the repository and propose a series of logical commits.
+
+## Workflow
+
+1. **Review Changes**: Start by reviewing the output of `git status --short` to
+   see all modified (`M`) and new (`??`) files.
+2. **Analyze Diffs**: For each modified file, analyze the diff to understand the
+   specific changes made.
+3. **Group Changes**: Group related changes together into atomic commits. A
+   single commit should represent one logical change (e.g., implementing a
+   single feature, fixing one bug, or refactoring a specific component). Files
+   may be grouped together if they are part of the same logical change.
+4. **Generate Commands**: For each proposed commit, generate the `git add`
+   command and a commit message that strictly follows the Angular Commit Message
+   Conventions.
+
+## Angular Commit Message Rules
+
+The commit message must follow this exact structure:
+
+```
+<type>(<scope>): <subject>
+```
+
+- **Type**: Must be one of the following keywords:
+  - `feat`: A new feature.
+  - `fix`: A bug fix.
+  - `docs`: Documentation only changes.
+  - `style`: Changes that do not affect the meaning of the code (white-space,
+    formatting, etc.).
+  - `refactor`: A code change that neither fixes a bug nor adds a feature.
+  - `perf`: A code change that improves performance.
+  - `test`: Adding or correcting tests.
+  - `build`: Changes that affect the build system or external dependencies.
+  - `ci`: Changes to CI configuration files and scripts.
+  - `chore`: Other changes that don't modify `src` or `test` files.
+- **Scope (optional)**: A noun specifying the part of the codebase affected. For
+  example: `homepage`, `component`, `deps`, `docs`.
+- **Subject**: A concise, imperative, lowercase description of the change. Do
+  not end with a period.
+
+Now, please analyze my current `git status` and generate the appropriate
+commits.
