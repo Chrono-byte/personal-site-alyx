@@ -3,7 +3,7 @@ import type { ComponentChildren } from "preact";
 type BadgeProps = {
   children?: ComponentChildren;
   variant?: "level" | "tag";
-  level?: "Expert" | "Advanced" | "Intermediate" | "Familiar";
+  level?: "Expert" | "Advanced" | "Intermediate" | "Familiar" | "Beginner";
   className?: string;
 };
 

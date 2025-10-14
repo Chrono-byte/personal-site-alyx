@@ -35,5 +35,3 @@ jobs:
           project: "personal-site-alyx-abcx"
           entrypoint: "_fresh/server.js"
           root: ""
-
-

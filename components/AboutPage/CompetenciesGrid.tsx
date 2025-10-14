@@ -3,7 +3,7 @@
 // A more detailed data structure to represent the new design
 type SkillEntry = {
   name: string;
-  level: "Expert" | "Advanced";
+  level: "Expert" | "Advanced" | "Intermediate" | "Familiar" | "Beginner";
   tags: string[];
 };
 
@@ -14,27 +14,57 @@ type CompetencyCategory = {
 
 const competenciesData: CompetencyCategory[] = [
   {
-    title: "Infrastructure & Automation",
+    title: "Software Development",
     skills: [
       {
-        name: "Linux, Shell, & Networking",
+        name: "Systems Programming",
         level: "Advanced",
-        tags: ["ci/cd", "devops", "fedora", "kvm", "linux", "zsh"],
+        tags: [
+          "Rust",
+          "C++",
+          "Concurrency",
+          "Safety",
+          "Compiler Design",
+          "CLI",
+          "FFI",
+        ],
       },
-    ],
-  },
-  {
-    title: "Programming Languages & Paradigms",
-    skills: [
       {
-        name: "C++/Rust & Systems Programming",
+        name: "Full-Stack Development",
         level: "Advanced",
-        tags: ["cli", "ffi", "rust", "safety", "systems"],
+        tags: ["Frontend", "Backend", "API Design", "Database Integration"],
+      },
+      {
+        name: "Deno & Deno Fresh",
+        level: "Advanced",
+        tags: ["Island Architecture", "SSR", "TypeScript", "Vite"],
       },
       {
         name: "TypeScript (Language & Tooling)",
         level: "Advanced",
-        tags: ["compiler-api", "deno", "safety", "typing"],
+        tags: ["Type Safety", "Static Typing"],
+      },
+    ],
+  },
+  {
+    title: "Infrastructure & Deployment",
+    skills: [
+      {
+        name: "Linux Administration & Networking",
+        level: "Advanced",
+        tags: [
+          "CI/CD Pipelines",
+          "DevOps",
+          "Fedora",
+          "KVM",
+          "Linux Systems",
+          "Zsh",
+        ],
+      },
+      {
+        name: "Containerization & Orchestration",
+        level: "Advanced",
+        tags: ["DevOps Practices", "Podman", "Proxmox", "Docker"],
       },
     ],
   },
