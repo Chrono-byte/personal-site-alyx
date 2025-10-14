@@ -10,7 +10,7 @@ type BadgeProps = {
 function levelClasses(level: BadgeProps["level"]) {
   switch (level) {
     case "Expert":
-      return "bg-violet-600 text-white border border-violet-400";
+      return "bg-blue-600 text-white border border-blue-400";
     case "Advanced":
       return "bg-orange-600 text-white border border-orange-400";
     case "Intermediate":

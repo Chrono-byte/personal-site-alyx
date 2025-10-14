@@ -28,13 +28,13 @@ const IntroSection: FunctionalComponent = () => (
   <StyledPanel>
     <p className="indent-8">
       Hello! I'm{" "}
-      <span className="text-green-400">Ellie</span>, a software developer and
+      <span className="text-green-400 font-semibold">Ellie</span>, a software developer and
       computer science student at{" "}
-      <span className="text-rose-400">Indiana University Indianapolis</span>. I
+      <span className="text-rose-400 font-semibold">Indiana University Indianapolis</span>. I
       enjoy building creative and meaningful projects with code. My favorite
-      tools include <span className="text-blue-500">TypeScript</span>,{" "}
-      <span className="text-blue-400">C++</span>, and{" "}
-      <span className="text-red-400">Rust</span>, which I use to turn ideas into
+      tools include <span className="text-blue-500 font-semibold">TypeScript</span>,{" "}
+      <span className="text-blue-400 font-semibold">C++</span>, and{" "}
+      <span className="text-red-400 font-semibold">Rust</span>, which I use to turn ideas into
       reality.
     </p>
   </StyledPanel>
@@ -68,11 +68,11 @@ const ExtracurricularsSection: FunctionalComponent = () => (
   <TitledCard title="Other Adventures">
     <p className="indent-8">
       I spent four years doing{" "}
-      <span className="text-rose-600">VEX Robotics</span>{" "}
+      <span className="text-rose-600 font-semibold">VEX Robotics</span>{" "}
       as a programmer and designer. My team and I made it to the{" "}
-      <span className="text-yellow-400">Indiana State Championship</span>{" "}
+      <span className="text-yellow-400 font-semibold">Indiana State Championship</span>{" "}
       in 2023! I got to program our robot in{" "}
-      <span className="text-blue-300">C++</span>{" "}
+      <span className="text-blue-300 font-semibold">C++</span>{" "}
       (PROS) and help out with the mechanical side of things.
     </p>
   </TitledCard>
@@ -86,7 +86,7 @@ const ContactSection: FunctionalComponent = () => (
         I'm always open to making new friends and collaborating. You can reach
         me at:{" "}
         <a className="link" href="mailto:hello@unknownhost.name">
-          <span className="font-extrabold">hello@unknownhost.name</span>
+          <span className="font-semibold">hello@unknownhost.name</span>
         </a>.
       </p>
     </div>
