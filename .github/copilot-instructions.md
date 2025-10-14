@@ -76,8 +76,8 @@ content.
 ```bash
 deno task dev       # Start Vite dev server with HMR
 deno task build     # Production build (outputs to _fresh/)
-deno task start     # Serve production build from _fresh/server.js
-deno task check     # Format check, lint, and type-check
+# deno task start     # Serve production build from _fresh/server.js
+# deno task check     # Format check, lint, and type-check
 deno task update    # Update Fresh framework
 ```
 
