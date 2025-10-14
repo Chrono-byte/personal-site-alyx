@@ -1,59 +1,64 @@
 ---
 id: philosophy.md
-title: Philosophy
+title: My Philosophical Framework
 tags: ["positions"]
 date: 2023-04-05
 ---
+
+# Philosophy
 
 > "It's The Code You Live By That Defines Who You Are." — Johnny Silverhand
 > (Cyberpunk 2077)
 
 ## My Foundational Beliefs
 
-When engaging with politics, it's foundational to have a set of philosophical
-beliefs that you can use to guide your decision-making.
+To engage with politics in a meaningful way, I believe it's essential to operate
+from a clear set of philosophical axioms. They are the foundation that guides my
+decision-making. My own framework is built from the ground up:
 
-- Part I
+- **Part I: The Self**
+  1. I begin with the axiom of my own existence.
 
-  1. I exist.
+- **Part II: The Other**
+  1. From there, I recognize the existence of other people as equally valid.
 
-- Part II
+- **Part III: Mutual Rights**
+  1. I have a fundamental right to exist.
+  2. Consequently, other people have an equal right to exist, free from my
+     interference.
 
-  1. Other people exist.
+## On Violence
 
-- Part III
-  1. I have a right to exist.
-  2. Other people have a right to exist, free of my interference.
-
-## Violence
-
-I am generally opposed to violence as I don't believe it is an effective way to
-accomplish change. You shouldn't use violence to solve problems, because then
-that gives way to more violence. Violence is a cycle that never ends. Violence
-is a tool of the oppressor, not the oppressed.
+I am fundamentally opposed to violence as a mechanism for achieving political or
+social change. It's a counterproductive tool that rarely accomplishes its stated
+goals and instead perpetuates cycles of retaliation. Violence is the language of
+the oppressor, not a sustainable path toward liberation for the oppressed.
 
 ### Defense of Property
 
-I believe that people have a right to defend their property insofar as three
-important criteria are met:
+This opposition to proactive violence does not, however, negate the right to
+self-defense, which I believe extends to one's property under specific,
+stringent conditions. I see the use of force in defense of property as
+justifiable only when three critical criteria are met:
 
-1. You possess the property in a way that your state and community recognizes
-   your possession.
-2. You have reasonably exhausted non-violent options to protect your property.
-3. The other person is effectively "on notice" and understands they exist in an
-   environment where another person will protect their property.
+1. The ownership of the property must be legally and communally recognized.
+2. All reasonable, non-violent avenues to de-escalate the situation and protect
+   the property have been exhausted.
+3. The aggressor is reasonably aware that their actions will be met with
+   defensive force.
 
-For example, if someone wants to destroy your local business or your house, then
-you have an absolute right to defend your property by all means necessary.
+For instance, if someone is actively attempting to destroy your small business
+or your home—assets that represent your livelihood and security—you have a right
+to defend that property by necessary means.
 
-Many disagreements over whether or not defense of personal property is justified
-sometimes appear to boil down to a difference of underlying values. The value in
-question is whether "property can be valued over human life", or some statement
-to that effect. In my experience, middle-class and well-off people may
-underestimate the personal sacrifice and the years of time invested into
-obtaining a business, a car, or even something as simple as a stereo system or a
-school instrument. As such, they will argue that no matter the value and
-sacrifice associated with some property, even in the case of people living in
-poverty, the life of the thief always outweighs said value. This is a conclusion
-I take issue with. It's a conclusion that I believe is based on a lack of
-empathy for the poor and the working class.
+Disagreements on this topic often boil down to a difference in underlying
+values, framed as the question of whether "property can be valued over human
+life." In my experience, this argument is often advanced from a position of
+privilege that underestimates the profound personal sacrifice and years of labor
+invested in acquiring a business, a vehicle, or even deeply meaningful personal
+items. It suggests that no matter the value and sacrifice associated with one's
+property, even for those living in poverty, the life of the aggressor always
+outweighs it. I take issue with this conclusion. I believe it's often rooted in
+a lack of empathy and a fundamental disconnect from the lived realities of the
+working class, for whom property represents not just an object, but security,
+stability, and years of their life's work.

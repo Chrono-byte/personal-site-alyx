@@ -1,28 +1,32 @@
 ---
 id: politics.md
-title: Politics
+title: My Political Compass
 tags: ["positions"]
 date: 2022-12-29
 ---
+
+# Politics
 
 > "Science isn't about **WHY**. It's about **WHY NOT**. Why is so much of our
 > science dangerous? Why not marry safe science if you love it so much. In fact,
 > why not invent a special safety door that won't hit you on the butt on the way
 > out, because you are fired." — Cave Johnson (Portal 2)
 
-## Elections
+## On Elections
 
-I believe that local elections (and eventually national) would greatly benefit
-from switching off the antiquated first-past-the-post system. Both the
-Democratic and Republican parties, national and state-level, are greatly
-disconnected from the average American.
+It's genuinely concerning how disconnected our political systems can feel from
+people's actual lives. I’m convinced our local elections—and ideally, the
+national ones too—would be so much more representative if we could evolve past
+the antiquated first-past-the-post system. It seems like both major parties, at
+every level, are operating on a different wavelength from the average American.
 
-## Ideologies
+## On Ideologies
 
 ### Conservatism
 
-I think there are some good ideas that some good ideas can come from right-wing
-individuals, however, in the US many conservatives refuse to cede any ground
+I can appreciate that valuable ideas can come from right-wing perspectives. The
+issue, particularly in the U.S., is what feels like a pervasive refusal to cede
+any ground, which stifles any real potential for progress.
 
 #### Neo-conservatives
 
@@ -31,143 +35,122 @@ individuals, however, in the US many conservatives refuse to cede any ground
 > hold on to power. That’s what we’re seeing before our very eyes." - Rep. Greg
 > Stanton [(January 6th, 2021)](https://www.youtube.com/watch?v=PAQY8U6goEw)
 
-I generally try not to wholly disregard groups, however from my engagement with
-many Neo-cons online, I've come to fundamentally regard them as one of the
-single greatest threats to American democracy.
+I make a point not to dismiss entire groups, but my engagement with neo-cons
+online has led me to a pretty firm conclusion: their ideology as it's practiced
+now poses a significant threat to the integrity of American democracy.
 
 #### Traditional Conservatives
 
-Conservatism is a political ideology that tries to uphold traditional values and
-institutions at the cost of any progress, with a focus on preserving social
-hierarchy and the status quo. It oft claims to emphasize individual freedom,
-free markets, and limited government intervention in economic affairs. However
-in their pursuit of maintaining the status quo, they often seek to limit
-individual freedom.
+At its core, traditional conservatism aims to uphold existing institutions, but
+often at the cost of progress, with a focus on preserving a static social
+hierarchy. It champions individual freedom and free markets, yet in its pursuit
+of the status quo, it frequently supports policies that limit personal autonomy
+for many.
 
-Firstly, conservatism often prioritizes the interests and values of the wealthy
-and the elite over those of the working class and marginalized groups. It often
-promotes policies that help the rich at the expense of the rest of society, such
-as tax cuts for the wealthy and deregulation of industries. These policies can
-lead to concentration of wealth and power in the hands of a few. Conservatism
-resists social and cultural change, such as moves to reduce inequality, as they
-view it as "unfair". It often seeks to maintain traditional gender roles and
-oppose efforts to promote LGBTQ+ rights, racial and social justice, and other
-progressive causes. This resistance to change can perpetuate harmful systems of
-oppression and discrimination.
+The ideology tends to prioritize the interests of the wealthy elite over the
+working class and marginalized groups. Policies like tax cuts for the wealthy
+and industrial deregulation often concentrate wealth and power. There’s also a
+consistent resistance to social and cultural evolution—like the push for greater
+equality. This can perpetuate harmful systems of oppression by opposing LGBTQ+
+rights, racial justice, and other progressive movements.
 
-Finally, traditional conservatism often values the past over the future and
-seeks to maintain the status quo rather than embracing progress and innovation.
-This can lead to a reluctance to address pressing social and environmental
-challenges, such as climate change, poverty, and inequality.
-
-Overall, while traditional conservatism may emphasize individual freedom and
-free markets, it can also have negative consequences for marginalized groups and
-the broader society, and may not adequately address important challenges facing
-the world today.
+Finally, this focus on the past over the future can lead to an unwillingness to
+address urgent challenges like climate change and systemic inequality. So, while
+I understand the stated principles, the practical application often falls short
+of creating a just and forward-thinking society.
 
 ### Liberalism
 
-Liberalism is an ideology that forms the building blocks of our very nation. It
-is a political ideology that emphasizes individual freedom and equality under
-the law. It is often associated with the political left, however, it is not a
-left-wing ideology in and of itself. For example, it was originally a liberal
-idea we should have a separation of church and state, and that we should elect
-our leaders.
+Liberalism is such a fascinating cornerstone of our nation's political
+architecture. It’s an ideology that centers individual freedom and equality
+under the law. While it's often associated with the left, its core tenets—like
+the separation of church and state or representative democracy—are foundational
+to our entire system.
 
 #### Leftists
 
-Leftism is a broad term that encompasses a variety of political ideologies that
-are typically characterized by a focus on social justice, equality, and the
-promotion of collective well-being. These ideologies include socialism,
-communism, and social democracy. Leftist ideologies often advocate for the
-government to play a larger role in redistributing wealth and providing social
-services, as well as promoting workers' rights and protections.
+Leftism is a broad and dynamic spectrum of ideologies focused on social justice,
+equality, and collective well-being, encompassing everything from social
+democracy to socialism. These frameworks typically advocate for a more active
+government role in redistributing wealth and ensuring social services, alongside
+robust protections for workers.
 
-From my social liberal perspective, leftism is a means of addressing social and
-economic inequalities and promoting a more just and equal society.I tend to lean
-towards supporting a mixed economy, in which the government regulates and
-provides certain services, while also allowing for private enterprise and
-individual freedom. They may see leftism as a way to balance the needs of the
-individual with the needs of the community, and to ensure that everyone has
-access to the opportunities and resources they need to thrive.
+From my social liberal viewpoint, I'm drawn to the way leftism seeks to address
+systemic inequalities. I tend to favor a mixed economy, where the government
+provides a strong regulatory framework and essential services while still
+allowing for private enterprise. It feels like a pragmatic way to balance the
+needs of the individual with the health of the community.
 
-However, I also have concerns about the potential negative consequences of some
-leftist policies, such as their impact on economic growth and individual
-freedom. Many ideas espoused by leftists often minimize individual freedom for
-"the benefit of society at large", many in ways I don't feel are positive. They
-may also argue that there are other, more effective ways to achieve social and
-economic justice, such as through market-based solutions or targeted
-interventions.
-
-Overall, the relationship between social liberalism and leftism is complex and
-multifaceted, and I love to explore this more.
+At the same time, I think it's important to critically consider the potential
+consequences of some leftist policies on economic growth and individual liberty.
+The argument that personal freedom should be curtailed for "the benefit of
+society" is one I approach with caution. Exploring that tension between social
+liberalism and more radical leftist ideas is something I find endlessly
+interesting.
 
 ### Capitalism
 
-I consider myself to be a
-[capitalist](https://en.wikipedia.org/wiki/Capitalism).
+I identify as a [capitalist](https://en.wikipedia.org/wiki/Capitalism), but with
+some serious qualifications.
 
-At a high-level, capitalism seems to be the best-known economic system to
-generate wealth. I believe the responsibility of any economic system should,
-first and foremost, be to allocate resources in an economy as efficiently as
-possible to create the largest possible base from which to draw taxes to
-redistribute to those who need it most. I recognize in many Western countries,
-especially the United States, we seem to have a big problem with the
-"redistribution" part.
+On a macro level, capitalism appears to be the most effective economic system we
+have for wealth generation. I believe an economic system's primary
+responsibility is to allocate resources efficiently to create the largest
+possible tax base, which can then be redistributed to support those who need it
+most. The problem in many Western countries, and especially the U.S., is a
+fundamental failure in that "redistribution" part.
 
-One such issue I'm interested in is the locking down of publicly funded research
-that society as a whole should benefit from getting locked down by private
-companies using patents and other unethical means.
+One issue I'm particularly passionate about is the privatization of publicly
+funded research. Knowledge that should benefit all of society gets locked away
+by corporations through patents and other ethically questionable means.
 
-There are different kinds of capitalism, ranging all the way from
-_[laissez-faire](https://en.wikipedia.org/wiki/Laissez-faire)_ (e.g.
-[free market](https://en.wikipedia.org/wiki/Free_market)) to
-[state capitalism](https://en.wikipedia.org/wiki/State_capitalism) (e.g.
-[China](https://en.wikipedia.org/wiki/State_capitalism#Mainland_China)).
-Completely free-market systems have serious downsides (e.g. monopolies, unequal
-bargaining power) and don't properly account for negative externalities. Thus, I
-believe that capitalism should be reigned by a strong government that tries to
-correct these problems, similar to how
-[Nordic countries function](https://en.wikipedia.org/wiki/Nordic_model). Not
-surprisingly, this is the economic model of nearly all economies in the West.
+There are different models of capitalism, from
+_[laissez-faire](https://en.wikipedia.org/wiki/Laissez-faire)_ to
+[state capitalism](https://en.wikipedia.org/wiki/State_capitalism). Purely
+free-market systems have significant flaws—monopolies, power imbalances, a
+failure to account for negative externalities. That's why I believe capitalism
+must be regulated by a strong government that actively works to correct these
+issues, similar to the
+[Nordic model](https://en.wikipedia.org/wiki/Nordic_model). It's the most
+balanced and proven approach we've seen in the West.
 
 ### Populism
 
 > “It is fatal to look hungry. It makes people want to kick you.” ― George
 > Orwell, Down and Out in Paris and London
 
-I do not support [populism](https://en.wikipedia.org/wiki/Populism).
+I can't get behind [populism](https://en.wikipedia.org/wiki/Populism).
 
-Populism is usually defined as "the people" versus "the elites." This happens on
-both the right (e.g. the alt-right & Donald Trump) and the left (e.g.
-Bernie-or-busters, or online socialists). Populism is powerful because it feeds
-off negative emotions, but is often not based on facts.
+It's an ideology that thrives on an "us vs. them" narrative, pitting "the
+people" against "the elites." You see it on the right with figures like Trump
+and on the left with certain online socialist factions. Populism is seductive
+because it taps into potent negative emotions, but it's often dangerously
+divorced from facts.
 
 ### Socialism / Communism
 
 > "Truth And Good Are Values Proven To Cause Division." — Delamain
 > (Cyberpunk 2077)
 
-I do not support [socialism](https://en.wikipedia.org/wiki/Socialism) or
-[communism](https://en.wikipedia.org/wiki/Communism). I believe that these
-systems are fundamentally flawed and have been proven to be ineffective at
-producing wealth and improving the lives of the people. Many people online
-fundamentally refuse to accept this, and I believe that this is a big part of
-the reason why the left is so divided. Many online socialists refuse to engage
-with even those who would be solid liberals. I've personally experienced this
-with numerous individuals I've previously and currently consider to be close
-friends of mine.
+I find myself fundamentally disagreeing with
+[socialism](https://en.wikipedia.org/wiki/Socialism) and
+[communism](https://en.wikipedia.org/wiki/Communism). I believe these systems
+are inherently flawed and have historically proven ineffective at generating
+prosperity and improving quality of life. The refusal by many online to
+acknowledge this history is, in my view, a major source of the left's
+infighting. I've seen it firsthand create divides between myself and people I
+consider close friends.
 
-One such fundamental flaw in my opinion is similar to that of the core flaw of
-laissez-faire capitalism. Many people who espouse socialist ideas believe that
-those in power would be perfect individuals, who would only act in the interest
-of the system as a whole, and not self-interested as people often act.
+For me, one of the core flaws is ironically similar to that of pure
+laissez-faire capitalism: a naive assumption about human nature. It presumes
+that those in power will act as perfect, selfless stewards of the system, rather
+than as self-interested individuals, which is a far more common reality.
 
 ### Voting
 
-Voting is important.
+At the end of the day, voting is crucial.
 
-People in America (and around the world) have problems right now that need to be
-solved. And that's best done by working within the current system, building
-coalitions with like-minded people, and voting for the best candidates (at both
-a local and a national level).
+People are facing real, immediate problems that need to be solved. The most
+effective way to do that is to work within the current system, build coalitions
+with people who share your vision, and vote for the best possible candidates at
+every single level of government. It's how we make change happen.
