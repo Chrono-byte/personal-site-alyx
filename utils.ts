@@ -4,6 +4,10 @@ import { createDefine } from "fresh";
 // data among middlewares, layouts and routes.
 export interface State {
   shared: string;
+  breadcrumb?: {
+    subdirectory?: string[];
+    fileID?: string;
+  };
 }
 
 export const define = createDefine<State>();
