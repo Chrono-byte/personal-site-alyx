@@ -39,9 +39,8 @@ export default define.page(function Projects() {
               Selected Projects
             </h2>
             <p className="mt-2 text-gray-300 text-sm">
-              A curated list of principal projects and experiments focused on
-              systems programming, language design, and developer tooling.
-              Projects are ordered by most recent activity.
+              Curated projects and experiments in systems programming, language
+              design, and developer tooling. Ordered by recent activity.
             </p>
           </StyledPanel>
 

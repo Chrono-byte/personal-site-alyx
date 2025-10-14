@@ -12,7 +12,7 @@ export default function Home() {
       <div className="flex justify-center items-center">
         <BackgroundCard>
           <h1 className="font-bold">
-            Here you can find my thoughts and positions on various topics:
+            Essays and positions on technology, policy, and design.
           </h1>
 
           <a href="/positions/philosophy" className={linkStyle}>

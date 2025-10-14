@@ -3,52 +3,48 @@ import { TbBuilding, TbClock, TbMapPin } from "@preact-icons/tb";
 import StyledPanel from "../BackgroundCard.tsx";
 
 const iconProps = {
-  size: 20,
+  size: 16,
   color: "#f0f0f0",
   name: "icon",
 };
 
 export default function ProfileCard() {
   return (
-    <StyledPanel className="flex flex-col text-shadow-[1px_1px_0_rgb(0_0_0_/_100%)]">
-      <div className="pb-4">
-        <img
-          src="/svg/25267581.svg"
-          alt="image of female knight holding a sword"
-          width="175"
-          height="175"
-          className="border-4 border-neutral-800 rounded-[30%]"
-        />
-      </div>
+    <StyledPanel className="max-h-1/3 w-36 md:w-11/12 flex flex-col items-start text-shadow-[1px_1px_0_rgb(0_0_0_/_100%)] mb-6">
+      <img
+        src="/svg/25267581.svg"
+        alt="avatar: stylized knight illustration holding a sword"
+        width="96"
+        height="96"
+        className="border-4 border-neutral-800 rounded-lg w-24 h-24 object-cover mb-3"
+      />
 
-      <div className="pb-4">
-        <p className="text-base font-semibold pb-0">Ellie</p>
-        <p className="text-sm pb-0">
+      <div className="text-left w-full">
+        <p className="text-lg font-semibold leading-none">Ellie</p>
+        <p className="text-base text-slate-200 leading-none mt-1">
           @chrono__ <span className="font-extrabold text-violet-300">/</span>
           {" "}
           @chronobyte_
         </p>
       </div>
 
-      <div className="grid grid-rows-3 max-w-lg whitespace-break-spaces">
-        <div className="row-end-1 w-8 flex items-center">
+      <div className="mt-3 w-full space-y-2 text-lg">
+        <div className="flex items-center gap-2">
           <TbBuilding {...iconProps} />
+          <span className="text-base">Indiana University Indianapolis</span>
         </div>
-        <span className="row-end-1 flex items-center">
-          Indiana University Indianapolis
-        </span>
-        <div className="row-end-2 w-8 flex items-center">
+
+        <div className="flex items-center gap-2">
           <TbMapPin {...iconProps} />
+          <span className="text-base">Indianapolis, IN, USA</span>
         </div>
-        <span className="row-end-2 flex items-center">
-          Indianapolis, IN, USA
-        </span>
-        <div className="row-end-3 w-8 flex items-center">
+
+        <div className="flex items-center gap-2">
           <TbClock {...iconProps} />
+          <span className="text-base">
+            <Clock />
+          </span>
         </div>
-        <span className="row-end-3 flex items-center">
-          <Clock />
-        </span>
       </div>
     </StyledPanel>
   );

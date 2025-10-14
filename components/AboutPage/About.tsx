@@ -11,13 +11,17 @@ export default function About() {
       {/* BackgroundCard is perfect for simple, untitiled content blocks. */}
       <StyledPanel>
         <p className="indent-8">
-          Hi, I'm Ellie. I'm studying computer science at Indiana University
-          Indianapolis, and I love creating full-stack projects that are both
-          practical and reliable. I spend most of my time working with{" "}
+          Hi there! I'm Ellie, a software developer and computer science student
+          at Indiana University Indianapolis. I focus on building tools and
+          applications that empower developers and end-users alike. My current
+          projects include an ahead-of-time compiler inspired by{" "}
+          <span className="text-blue-400">TypeScript</span> and a{" "}
+          <span className="text-blue-300">Deno</span>-based chat server. I enjoy
+          leveraging languages like{" "}
           <span className="text-blue-400">TypeScript</span>,{" "}
-          <span className="text-blue-300">C++</span>, and{"  "}
-          <span className="text-orange-400">Rust</span>. I enjoy pursuing my own
-          projects that make development smoother and more efficient.
+          <span className="text-blue-300">C++</span>, and{" "}
+          <span className="text-orange-400">Rust</span>{" "}
+          to create innovative solutions that are just for fun.
         </p>
       </StyledPanel>
 
@@ -52,7 +56,7 @@ export default function About() {
           </p>
         </div>
         <p className="indent-8 mt-3 italic text-gray-400">
-          More projects available on the projects page.
+          Additional projects are listed on the projects page.
         </p>
       </TitledCard>
 
@@ -74,13 +78,12 @@ export default function About() {
         <div className="flex items-center gap-2">
           <TbMail className="text-fuchsia-50 text-lg" />
           <p>
-            I'm always open to discussing new projects or opportunities. Feel
-            free to{" "}
+            Open to collaboration and opportunities. Contact:{"  "}
             <a
               className="email text-blue-400 underline hover:text-blue-300"
               href="mailto:hello@unknownhost.name"
             >
-              send me an email
+              hello@unknownhost.name
             </a>
             .
           </p>
