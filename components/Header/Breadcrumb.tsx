@@ -12,7 +12,7 @@ export default function Breadcrumb(
         {`
             .bread {
                 color: #000;
-                margin: 0 0 0.5rem 0;
+                margin: 0 0 1.5rem 0;
                 line-height: 1.5;
                 border-bottom: 3px solid #000;
                 padding-bottom: 0.1rem;

@@ -1,36 +1,46 @@
 import BackgroundCard from "../BackgroundCard.tsx";
+import Badge from "../Badge.tsx";
 import Project from "./Project.ts";
 
 export default function ProjectBlock(project: Project) {
   let linksBlock = null;
   if (typeof project.links == "object") {
     linksBlock = (
-      <div>
-        <br />
-        <label className="font-bold">
+      <div className="mt-3">
+        <label className="font-bold mr-2">
           Link{Object.entries(project.links).length > 1 ? "s" : ""}:
         </label>
-        {Object.entries(project.links).map(([name, link]) => (
-          <a
-            key={name}
-            className="text-blue-300 hover:text-blue-400"
-            href={link}
-            rel="noopener noreferrer"
-          >
-            {name}
-          </a>
-        ))}
+        <div className="inline-flex gap-3 flex-wrap">
+          {Object.entries(project.links).map(([name, link]) => (
+            <a
+              key={name}
+              className="text-blue-300 hover:text-blue-400 underline-offset-2 hover:underline"
+              href={link}
+              rel="noopener noreferrer"
+            >
+              {name}
+            </a>
+          ))}
+        </div>
       </div>
     );
   }
 
   return (
-    <BackgroundCard>
-      <h1 className="font-bold">{project.title}</h1>
-      <p className="text-violet-300 font-bold pb-1.5 pl-3">
-        {project.date.start} - {project.date.end}
-      </p>
-      <p>{project.description}</p>
+    <BackgroundCard className="hover:shadow-lg transition-shadow">
+      <div className="flex items-start justify-between gap-4">
+        <h3 className="font-semibold text-gray-100 text-base">
+          {project.title}
+        </h3>
+        <div className="flex items-center gap-2">
+          <Badge className="text-xs">
+            {project.date.start} - {project.date.end}
+          </Badge>
+        </div>
+      </div>
+
+      <p className="mt-2 text-gray-300 text-sm">{project.description}</p>
+
       {linksBlock}
     </BackgroundCard>
   );

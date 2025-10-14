@@ -6,18 +6,47 @@ import ProjectBlock from "../components/Projects/ProjectBlock.tsx";
 import projectsData from "../static/projects.json" with { type: "json" };
 
 import Project from "../components/Projects/Project.ts";
+import StyledPanel from "../components/BackgroundCard.tsx";
 
-const doot: Project[] = projectsData.map((project) => project as Project);
+// Helper: parse the end date; treat "Present" as the most recent
+function endDateValue(end: string) {
+  if (!end) return -Infinity;
+  if (end.toLowerCase().includes("present")) return Infinity;
+  // Try to parse Month Year pairs like "September 2025"
+  const parsed = Date.parse(end);
+  if (!isNaN(parsed)) return parsed;
+  // Fallback: try to parse as year-only
+  const year = parseInt(end.slice(-4));
+  if (!isNaN(year)) return new Date(year, 0).getTime();
+  return 0;
+}
+
+const projects: Project[] = (projectsData as Project[]).slice().sort((a, b) => {
+  const aVal = endDateValue(a.date.end);
+  const bVal = endDateValue(b.date.end);
+  return bVal - aVal; // descending: newest first
+});
 
 export default define.page(function Projects() {
   return (
     <div className="flex-col px-4 pt-4 md:px-36 md:pt-4">
       <Header subdirectory={["projects"]} />
 
-      <div className="flex justify-center items-center">
-        <div className="gap-3 justify-center md:flex-nowrap md:max-w-6xl">
-          <div className="flex flex-col ml-14 mr-14 gap-3 shrink text-sm justify-center md:gap-x-3">
-            {doot.map((project: Project, idx: number) => (
+      <div className="flex justify-center">
+        <div className="w-full md:max-w-6xl">
+          <StyledPanel className="mb-4">
+            <h2 className="text-lg font-semibold text-violet-400">
+              Selected Projects
+            </h2>
+            <p className="mt-2 text-gray-300 text-sm">
+              A curated list of principal projects and experiments focused on
+              systems programming, language design, and developer tooling.
+              Projects are ordered by most recent activity.
+            </p>
+          </StyledPanel>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {projects.map((project, idx) => (
               <ProjectBlock key={project.id ?? idx} {...project} />
             ))}
           </div>

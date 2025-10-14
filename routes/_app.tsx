@@ -15,7 +15,7 @@ export default define.page(function App({ Component }) {
           // fontSize: "calc(0.63rem + 0.2vw)",
           lineHeight: "calc(calc(0.63rem + 2.2vw) * .6)",
         }}
-        className="font-mono md:test-sm"
+        className="font-mono md:text-sm min-h-screen flex flex-col"
       >
         <Component />
       </body>

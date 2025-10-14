@@ -8,6 +8,7 @@
     "jsr:@denosaurs/emoji@~0.3.1": "0.3.1",
     "jsr:@fresh/build-id@1": "1.0.1",
     "jsr:@fresh/core@2": "2.1.2",
+    "jsr:@fresh/core@2.1.2": "2.1.2",
     "jsr:@fresh/core@^2.1.2": "2.1.2",
     "jsr:@fresh/plugin-vite@^1.0.5": "1.0.5",
     "jsr:@preact-icons/common@^1.1.0": "1.1.0",

@@ -1,11 +1,6 @@
 import Clock from "../../islands/Clock.tsx";
 import { TbBuilding, TbClock, TbMapPin } from "@preact-icons/tb";
-
-// const iconProps = {
-//   size: 24,
-//   color: "#f0f0f0",
-//   stroke: 1.75,
-// };
+import StyledPanel from "../BackgroundCard.tsx";
 
 const iconProps = {
   size: 20,
@@ -15,25 +10,17 @@ const iconProps = {
 
 export default function ProfileCard() {
   return (
-    <div
-      className="flex flex-col [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]"
-      style={{
-        background: "rgba(10, 8, 0, 0.70)",
-        color: "#f0f0f0",
-        borderRadius: "0.8rem",
-        border: "6.45px solid #2b2b2b",
-        padding: "25px",
-      }}
-    >
+    <StyledPanel className="flex flex-col text-shadow-[1px_1px_0_rgb(0_0_0_/_100%)]">
       <div className="pb-4">
         <img
           src="/svg/25267581.svg"
           alt="image of female knight holding a sword"
-          width="175px"
-          height="175px"
-          style={{ border: "6px solid #333", borderRadius: "29.97%" }}
+          width="175"
+          height="175"
+          className="border-4 border-neutral-800 rounded-[30%]"
         />
       </div>
+
       <div className="pb-4">
         <p className="text-base font-semibold pb-0">Ellie</p>
         <p className="text-sm pb-0">
@@ -42,36 +29,27 @@ export default function ProfileCard() {
           @chronobyte_
         </p>
       </div>
-      <style>
-        {`
-#profile-card-text {
-  height: 30px;
-  line-height: 30px;
-}
-      `}
-      </style>
+
       <div className="grid grid-rows-3 max-w-lg whitespace-break-spaces">
-        <div className="row-end-1 w-8">
-          <div className="m-1">
-            <TbBuilding {...iconProps} />
-          </div>
+        <div className="row-end-1 w-8 flex items-center">
+          <TbBuilding {...iconProps} />
         </div>
-        <span className="row-end-1">
+        <span className="row-end-1 flex items-center">
           Indiana University Indianapolis
         </span>
-        <div className="row-end-2 w-8">
-          <div className="m-1">
-            <TbMapPin {...iconProps} />
-          </div>
+        <div className="row-end-2 w-8 flex items-center">
+          <TbMapPin {...iconProps} />
         </div>
-        <span className="row-end-2">Indianapolis, IN, USA</span>
-        <div className="row-end-3 w-8">
-          <div className="m-1">
-            <TbClock {...iconProps} />
-          </div>
+        <span className="row-end-2 flex items-center">
+          Indianapolis, IN, USA
+        </span>
+        <div className="row-end-3 w-8 flex items-center">
+          <TbClock {...iconProps} />
         </div>
-        <Clock />
+        <span className="row-end-3 flex items-center">
+          <Clock />
+        </span>
       </div>
-    </div>
+    </StyledPanel>
   );
 }

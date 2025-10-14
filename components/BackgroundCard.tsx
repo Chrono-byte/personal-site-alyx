@@ -1,38 +1,32 @@
-import { Component, ErrorInfo } from "preact";
-import type { ComponentProps } from "preact/compat";
+// file: src/components/StyledPanel.tsx
+import type { ComponentChildren } from "preact";
 
-export default class BackgroundCard
-  extends Component<ComponentProps<"div">, { errored: boolean }> {
-  constructor(props: ComponentProps<"div">) {
-    super(props);
-    this.state = { errored: false };
-  }
+type StyledPanelProps = {
+  // The title is optional. If you don't provide it, the header won't render.
+  title?: string;
+  // Allows you to pass other div props like `id` or `style` if needed
+  className?: string;
+  children: ComponentChildren;
+};
 
-  static override getDerivedStateFromError(_error: Error) {
-    return { errored: true };
-  }
+export default function StyledPanel(
+  { title, children, className = "" }: StyledPanelProps,
+) {
+  // Harmonized base classes for cohesive panels across the site.
+  // Slightly thinner border and consistent padding so different cards align.
+  const baseClasses = "bg-[#33302a] rounded-xl border-4 border-gray-700 p-4";
 
-  override componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    console.error(error, errorInfo);
-  }
+  return (
+    <div className={`${baseClasses} ${className}`}>
+      {title && (
+        <h3 className="mb-4 text-lg font-semibold text-violet-400">
+          {title}
+        </h3>
+      )}
 
-  render(props: ComponentProps<"div">, state: { errored: boolean }) {
-    if (state.errored) {
-      return (
-        <div
-          className={`background-card text-white text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)`}
-        >
-          Something went catastrophically wrong.
-        </div>
-      );
-    }
-
-    return (
-      <div
-        className={`background-card text-white text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)`}
-      >
-        {props.children}
+      <div className="text-gray-200">
+        {children}
       </div>
-    );
-  }
+    </div>
+  );
 }

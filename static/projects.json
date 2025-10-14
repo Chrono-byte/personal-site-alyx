@@ -11,6 +11,17 @@
     }
   },
   {
+    "title": "Oats",
+    "date": {
+      "start": "September 2025",
+      "end": "Present"
+    },
+    "description": "An ahead-of-time (AOT) compiler for a language inspired by TypeScript with design influences from Swift and Rust. Targets native executables via LLVM for predictable performance and a small, safe runtime.",
+    "links": {
+      "Repo": "https://gitlab.com/Chrono-byte/oats"
+    }
+  },
+  {
     "title": "Boiler",
     "date": {
       "start": "January 2022",
