@@ -55,8 +55,9 @@ content.
 ### Styling Conventions
 
 - **Tailwind CSS v4** with Vite plugin (`@tailwindcss/vite`)
-- Primary theme: `color: #363f47`, `backgroundColor: #e9debb` (set in `_app.tsx`
-  body)
+- Use as little pure CSS as possible. Use Tailwind wherever possible.
+- Primary theme: `color: #363f47`, `backgroundColor: "#f3dfc1"` (set in
+  `_app.tsx` body)
 - Font: `font-mono` globally
 - Component-specific: `.markdown-box` for GFM content, `.background-card` for
   card layouts
