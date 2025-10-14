@@ -14,27 +14,27 @@ type CompetencyCategory = {
 
 const competenciesData: CompetencyCategory[] = [
   {
-    title: "Programming Languages & Paradigms",
-    skills: [
-      {
-        name: "C++/Rust & Systems Programming",
-        level: "Expert",
-        tags: ["rust", "systems", "safety", "ffi", "cli"],
-      },
-      {
-        name: "TypeScript (Language & Tooling)",
-        level: "Expert",
-        tags: ["typing", "deno", "compiler-api", "safety", "utility-types"],
-      },
-    ],
-  },
-  {
     title: "Infrastructure & Automation",
     skills: [
       {
         name: "Linux, Shell, & Networking",
         level: "Advanced",
-        tags: ["zsh", "linux", "fedora", "kvm", "devops", "ci/cd"],
+        tags: ["ci/cd", "devops", "fedora", "kvm", "linux", "zsh"],
+      },
+    ],
+  },
+  {
+    title: "Programming Languages & Paradigms",
+    skills: [
+      {
+        name: "C++/Rust & Systems Programming",
+        level: "Advanced",
+        tags: ["cli", "ffi", "rust", "safety", "systems"],
+      },
+      {
+        name: "TypeScript (Language & Tooling)",
+        level: "Advanced",
+        tags: ["compiler-api", "deno", "safety", "typing"],
       },
     ],
   },
