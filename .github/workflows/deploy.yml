@@ -1,9 +1,9 @@
 name: Deploy
 on:
   push:
-    branches: [main]
+    branches: main
   pull_request:
-    branches: [main]
+    branches: main
 
 jobs:
   deploy:
@@ -15,22 +15,22 @@ jobs:
       contents: read # Required to clone the repository
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - name: Clone repository
+        uses: actions/checkout@v4
 
-      - name: Set up Deno
-        uses: denoland/setup-deno@v1
+      - name: Install Deno
+        uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
 
-      - name: Install dependencies
-        run: deno cache main.ts
-
-      - name: Run build task
-        run: deno task build
+      - name: Build step
+        run: "deno task build"
 
       - name: Deploy to Deno Deploy
         uses: denoland/deployctl@v1
         with:
-          project: "personal-site-alyx-abcx" # Ensure this matches your Deno Deploy project name
-          entrypoint: "./main.ts"
+          project: "personal-site-alyx-abcx"
+          entrypoint: "_fresh/server.js"
+          root: ""
+
+
