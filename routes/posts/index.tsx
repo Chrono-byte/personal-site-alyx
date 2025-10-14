@@ -1,8 +1,8 @@
 import { join } from "$std/path/mod.ts";
 import { readContentItems, toPreview } from "../lib/content.ts";
 import { define } from "../../utils.ts";
-import ContentList from "../../components/ContentList.tsx";
-import PostListItem from "../../components/Posts/PostListItem.tsx";
+import ContentList from "../../components/content/ContentList.tsx";
+import ContentListItem from "../../components/content/ContentListItem.tsx";
 
 export default define.page(function PostsFeed() {
   const postsDir = join(Deno.cwd(), "static", "md") + "/";
@@ -18,16 +18,7 @@ export default define.page(function PostsFeed() {
       title="Posts"
       description="A collection of articles and writings on various topics, including technology, programming, and personal experiences."
       items={items}
-      renderItem={(post) => (
-        <PostListItem
-          key={post.slug}
-          slug={post.slug}
-          title={post.title}
-          date={post.date}
-          summary={post.summary}
-          tags={post.tags}
-        />
-      )}
+      itemComponent={ContentListItem}
     />
   );
 });

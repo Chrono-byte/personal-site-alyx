@@ -64,7 +64,7 @@ const competenciesData: CompetencyCategory[] = [
 ];
 
 import StyledPanel from "../../components/BackgroundCard.tsx";
-import Badge from "../../components/Badge.tsx";
+import Badge from "../../components/ui/Badge.tsx";
 
 export default function CompetenciesGrid() {
   return (

@@ -1,8 +1,9 @@
 import { define } from "../utils.ts";
-import Header from "../components/Header/Header.tsx";
-import Footer from "../components/Footer/Footer.tsx";
+import Header from "../components/layout/Header/Header.tsx";
+import Footer from "../components/layout/Footer/Footer.tsx";
 
-export default define.page(function App({ Component }) {
+export default define.layout(function App({ Component, state, url: _url }) {
+  const breadcrumb = state.breadcrumb || {};
   return (
     <html lang="en">
       <head>
@@ -31,7 +32,10 @@ export default define.page(function App({ Component }) {
           Skip to main content
         </a>
         <div className="flex-1 flex flex-col px-4 pt-4 md:px-8 lg:px-16">
-          <Header />
+          <Header
+            subdirectory={breadcrumb.subdirectory}
+            fileID={breadcrumb.fileID}
+          />
           <div className="flex-1 min-h-0 flex justify-center py-0">
             <main id="main-content" className="w-full max-w-6xl">
               <Component />

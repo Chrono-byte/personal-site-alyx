@@ -2,7 +2,7 @@ import type { FunctionalComponent } from "preact";
 import StyledPanel from "../BackgroundCard.tsx";
 import TitledCard from "../TitledCard.tsx";
 import { TbMail } from "@preact-icons/tb";
-import PostListItem from "../Posts/PostListItem.tsx";
+import ContentListItem from "../ContentListItem.tsx";
 import { PostPreview } from "../../routes/lib/posts.ts";
 
 type AboutContentProps = {
@@ -49,7 +49,7 @@ const LatestPostSection: FunctionalComponent<{ postPreviews: PostPreview[] }> =
     return (
       <TitledCard title="My Latest Posts">
         {postPreviews.map((post) => (
-          <PostListItem
+          <ContentListItem
             key={post.name}
             slug={post.name}
             title={post.title}

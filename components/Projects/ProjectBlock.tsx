@@ -1,5 +1,5 @@
 import BackgroundCard from "../BackgroundCard.tsx";
-import Badge from "../Badge.tsx";
+import Badge from "../ui/Badge.tsx";
 import Project from "./Project.ts";
 import LinkList from "../ui/LinkList.tsx";
 

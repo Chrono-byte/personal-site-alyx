@@ -25,6 +25,12 @@ const projects: Project[] = (projectsData as Project[]).slice().sort((a, b) => {
   return bVal - aVal; // descending: newest first
 });
 
+// deno-lint-ignore no-explicit-any
+export function handler(ctx: any) {
+  ctx.state.breadcrumb = { subdirectory: ["projects"] };
+  return ctx.render();
+}
+
 export default define.page(function Projects() {
   return (
     <>

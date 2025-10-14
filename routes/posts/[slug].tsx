@@ -2,7 +2,7 @@ import { join } from "$std/path/mod.ts";
 import { HttpError, PageProps } from "fresh";
 import { readMarkdownFile } from "../lib/content.ts";
 import { define } from "../../utils.ts";
-import ContentPage from "../../components/ContentPage.tsx";
+import ContentPage from "../../components/content/ContentPage.tsx";
 
 export default define.page(function PostPage(props: PageProps) {
   const slug = props.params.slug;
