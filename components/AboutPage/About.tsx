@@ -1,10 +1,11 @@
 import StyledPanel from "../BackgroundCard.tsx";
 import TitledCard from "../TitledCard.tsx"; // 1. Import the new component
 import SkillsVisual from "./CompetenciesGrid.tsx";
+import type { PostPreview } from "../../routes/index.tsx";
 
 import { TbMail } from "@preact-icons/tb";
 
-export default function About() {
+export default function About({ latestPost }: { latestPost?: PostPreview }) {
   return (
     <div className="flex flex-col gap-y-1 md:gap-3 text-base max-w-4xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
       <style>
@@ -41,8 +42,22 @@ export default function About() {
         </p>
       </StyledPanel>
 
-      {/* --- QUALIFICATIONS --- */}
-      <SkillsVisual />
+      {/* --- LATEST POST --- */}
+      {latestPost && (
+        <TitledCard title="Latest from the Blog">
+          <h3 className="text-xl font-semibold">{latestPost.title}</h3>
+          <p className="text-sm text-gray-400 mb-2">
+            {latestPost.date.toLocaleDateString()}
+          </p>
+          <p className="text-gray-300">{latestPost.summary}</p>
+          <a
+            href={`/posts/${latestPost.name}`}
+            className="text-sky-400 hover:text-sky-500 mt-2 inline-block font-bold"
+          >
+            Read more &rarr;
+          </a>
+        </TitledCard>
+      )}
 
       {/* --- SELECTED PROJECTS --- */}
       <TitledCard title="Selected Projects">
@@ -77,6 +92,9 @@ export default function About() {
           </a>.
         </p>
       </TitledCard>
+
+      {/* --- QUALIFICATIONS --- */}
+      <SkillsVisual />
 
       {/* --- EXTRACURRICULARS --- */}
       <TitledCard title="Robotics & Extracurriculars">
@@ -113,3 +131,4 @@ export default function About() {
     </div>
   );
 }
+
