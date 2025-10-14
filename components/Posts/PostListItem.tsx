@@ -1,6 +1,5 @@
 import BackgroundCard from "../BackgroundCard.tsx";
 import Tag from "../ui/Tag.tsx";
-import AvatarIcon from "../ui/AvatarIcon.tsx";
 
 type Props = {
   slug: string;
@@ -14,14 +13,8 @@ export default function PostListItem(
   { slug, title, date, summary, tags }: Props,
 ) {
   return (
-    <article className="flex gap-4 items-start py-4">
-      <div className="flex-shrink-0">
-        <a href="/" aria-hidden className="block">
-          <AvatarIcon />
-        </a>
-      </div>
-
-      <BackgroundCard className="flex-1 bg-[#272523] border-gray-700 shadow-md">
+    <article className="py-4">
+      <BackgroundCard className="bg-[#272523] border-gray-700 shadow-md">
         <div className="flex items-start justify-between">
           <a
             href={`/posts/${slug}`}

@@ -4,15 +4,16 @@ import Card from "./ui/Card.tsx";
 
 type TitledCardProps = {
   title?: string;
+  titleColor?: string;
   className?: string;
   children: ComponentChildren;
 };
 
 export default function TitledCard(
-  { title, children, className = "" }: TitledCardProps,
+  { title, children, className, titleColor = "" }: TitledCardProps,
 ) {
   return (
-    <Card title={title} className={className}>
+    <Card title={title} className={className} titleColor={titleColor}>
       {children}
     </Card>
   );

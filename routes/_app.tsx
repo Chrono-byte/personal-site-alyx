@@ -13,7 +13,7 @@ export default define.page(function App({ Component }) {
       <body
         style={{
           color: "#363f47",
-          backgroundColor: "#e9debb",
+          backgroundColor: "#f3dfc1",
           // fontSize: "calc(0.63rem + 0.2vw)",
           lineHeight: "calc(calc(0.63rem + 2.2vw) * .6)",
         }}

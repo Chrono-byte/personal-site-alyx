@@ -1,5 +1,6 @@
-// deno-lint-ignore-file react-no-danger
-import { CSS, render as renderMarkdown } from "@deno/gfm";
+// deno-lint-ignore-file
+import { remark } from "remark";
+import remarkHtml from "remark-html";
 
 export type Metadata = {
   title?: string;
@@ -15,12 +16,10 @@ interface Props {
 
 export default function MarkdownBlock({ markdown, metadata }: Props) {
   const content = markdown ?? "";
-  const html = renderMarkdown(content);
+  const html = remark().use(remarkHtml).processSync(content).toString();
 
   return (
     <div>
-      <style dangerouslySetInnerHTML={{ __html: CSS }} />
-
       <div>
         {metadata?.title
           ? <h1 className="font-bold m-0 text-3xl">{String(metadata.title)}</h1>

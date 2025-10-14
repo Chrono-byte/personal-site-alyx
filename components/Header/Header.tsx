@@ -36,7 +36,7 @@ export default function Header(
               {index !== 0 && (index % 3 != 0) && " / "}
               <a
                 href={item.href}
-                className="text-violet-700 hover:text-violet-400"
+                className="text-violet-400 hover:text-violet-700"
               >
                 {item.title}
               </a>

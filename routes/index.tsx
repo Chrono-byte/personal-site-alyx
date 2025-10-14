@@ -1,14 +1,14 @@
 import { define } from "../utils.ts";
 import About from "../components/AboutPage/About.tsx";
-import { type PostPreview, readLatestPostPreview } from "./lib/posts.ts";
+import { readLatestPostPreviews } from "./lib/posts.ts";
 
 export default define.page(function Home() {
-  const latestPost = readLatestPostPreview();
+  const latestPosts = readLatestPostPreviews(2);
 
   return (
     <>
-      {latestPost
-        ? <About postPreview={latestPost as PostPreview} />
+      {latestPosts.length > 0
+        ? <About postPreviews={latestPosts} />
         : <p className="text-gray-500">No recent posts available.</p>}
     </>
   );

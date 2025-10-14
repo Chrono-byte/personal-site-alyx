@@ -1,12 +1,13 @@
 import type { FunctionalComponent } from "preact";
 import ProfileCard from "./ProfileCard.tsx";
-import AboutContent, { PostPreview } from "./AboutContent.tsx";
+import AboutContent from "./AboutContent.tsx";
+import { PostPreview } from "../../routes/lib/posts.ts";
 
 type AboutProps = {
-  postPreview: PostPreview;
+  postPreviews: PostPreview[];
 };
 
-const About: FunctionalComponent<AboutProps> = ({ postPreview }) => {
+const About: FunctionalComponent<AboutProps> = ({ postPreviews }) => {
   return (
     <div className="w-full">
       <div className="md:flex md:items-start md:gap-6">
@@ -15,7 +16,7 @@ const About: FunctionalComponent<AboutProps> = ({ postPreview }) => {
         </aside>
 
         <main className="md:flex-1">
-          <AboutContent postPreview={postPreview} />
+          <AboutContent postPreviews={postPreviews} />
         </main>
       </div>
     </div>

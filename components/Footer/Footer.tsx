@@ -52,25 +52,25 @@ export default function Footer() {
     !["GitLab", "sourcehut", "GitHub"].includes(link.name)
   );
 
-  const builtWith = [
-    {
-      name: "Fresh",
-      href: "https://fresh.deno.dev",
-      icon: () => (
-        <img
-          src="https://fresh.deno.dev/logo.svg"
-          alt="Fresh logo"
-          className="w-4 h-4"
-        />
-      ),
-    },
-  ];
+  // const builtWith = [
+  //   {
+  //     name: "Fresh",
+  //     href: "https://fresh.deno.dev",
+  //     icon: () => (
+  //       <img
+  //         src="https://fresh.deno.dev/logo.svg"
+  //         alt="Fresh logo"
+  //         className="w-4 h-4"
+  //       />
+  //     ),
+  //   },
+  // ];
 
   // FooterSection handles rendering of section title + links
 
   return (
     <footer className="flex justify-center items-center mt-8">
-      <div className="bg-#e9debb flex flex-col w-full max-w-screen-lg gap-1 px-8 py-6 text-base md:text-xs [text-shadow:_.3px_.75px_0_rgb(255_255_255_/_90%)]">
+      <div className="bg-#e9debb flex flex-col w-full max-w-screen-lg gap-1 px-8 py-6 text-base md:text-xs [text-shadow:_.3px_.75px_0_rgba(255_255_255_/_90%)]">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="flex-1">
             <div className="font-bold text-2xl mb-1">Ellie</div>
@@ -88,7 +88,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row gap-6 md:gap-12 justify-center">
           <FooterSection title="Projects" links={projects} />
           <FooterSection title="Socials" links={socials} />
-          <FooterSection title="Built with" links={builtWith} />
+          {/* <FooterSection title="Built with" links={builtWith} /> */}
         </div>
       </div>
     </footer>

@@ -1,18 +1,12 @@
 import type { FunctionalComponent } from "preact";
 import StyledPanel from "../BackgroundCard.tsx";
 import TitledCard from "../TitledCard.tsx";
-import SkillsVisual from "./CompetenciesGrid.tsx";
 import { TbMail } from "@preact-icons/tb";
-
-export type PostPreview = {
-  name: string;
-  title?: string;
-  date: Date;
-  summary: string;
-};
+import PostListItem from "../Posts/PostListItem.tsx";
+import { PostPreview } from "../../routes/lib/posts.ts";
 
 type AboutContentProps = {
-  postPreview: PostPreview;
+  postPreviews: PostPreview[];
 };
 
 const InlineStyles: FunctionalComponent = () => (
@@ -46,28 +40,29 @@ const IntroSection: FunctionalComponent = () => (
   </StyledPanel>
 );
 
-const LatestPostSection: FunctionalComponent<{ postPreview: PostPreview }> = (
-  { postPreview },
-) => {
-  return (
-    <TitledCard title="My Latest Post">
-      <div className="flex flex-col gap-y-3">
-        <p className="indent-8">
-          <strong className="text-yellow-400">{postPreview.name}</strong>{" "}
-          <span className="text-sm text-gray-400">
-            ({postPreview.date.toLocaleDateString()})
-          </span>
-          <br />
-          {postPreview.summary}
+const LatestPostSection: FunctionalComponent<{ postPreviews: PostPreview[] }> =
+  (
+    { postPreviews },
+  ) => {
+    return (
+      <TitledCard title="My Latest Posts">
+        {postPreviews.map((post) => (
+          <PostListItem
+            key={post.name}
+            slug={post.name}
+            title={post.title}
+            date={post.date}
+            summary={post.summary}
+            tags={post.tags}
+          />
+        ))}
+        <p className="indent-8 mt-3 italic text-gray-400">
+          I have a few other things on my{" "}
+          <a href="/projects" className="link font-extrabold">projects page</a>.
         </p>
-      </div>
-      <p className="indent-8 mt-3 italic text-gray-400">
-        I have a few other things on my{" "}
-        <a href="/projects" className="link font-extrabold">projects page</a>.
-      </p>
-    </TitledCard>
-  );
-};
+      </TitledCard>
+    );
+  };
 
 const ExtracurricularsSection: FunctionalComponent = () => (
   <TitledCard title="Other Adventures">
@@ -99,14 +94,14 @@ const ContactSection: FunctionalComponent = () => (
 );
 
 const AboutContent: FunctionalComponent<AboutContentProps> = (
-  { postPreview },
+  { postPreviews },
 ) => {
   return (
     <div className="flex flex-col gap-y-1 md:gap-3 text-base max-w-4xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
       <InlineStyles />
       <IntroSection />
-      <LatestPostSection postPreview={postPreview} />
-      <SkillsVisual />
+      <LatestPostSection postPreviews={postPreviews} />
+      {/* <SkillsVisual /> */}
       <ExtracurricularsSection />
       <ContactSection />
     </div>
