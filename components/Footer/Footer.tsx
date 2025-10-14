@@ -70,7 +70,7 @@ export default function Footer() {
 
   return (
     <footer className="flex justify-center items-center mt-8">
-      <div className="bg-#e9debb flex flex-col w-full max-w-screen-lg gap-1 px-8 py-6 text-base md:text-xs [text-shadow:_1px_1px_0_rgba(255_255_255_/_90%)]">
+      <div className="flex flex-col w-full max-w-screen-lg gap-1 px-8 py-6 text-base md:text-xs [text-shadow:_1px_1px_0_rgba(255_255_255_/_90%)]">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <div className="flex-1">
             <div className="font-bold text-2xl mb-1">Ellie</div>

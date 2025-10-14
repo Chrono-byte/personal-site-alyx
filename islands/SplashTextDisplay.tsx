@@ -45,17 +45,18 @@ export default function SplashTextDisplay() {
 
   return (
     <>
-      <div
+      <button
         title="click this text for a new splash!"
-        className="hover:text-violet-600 list-none select-none"
+        className="hover:text-blue-600 underline hover:no-underline list-none select-none focus:outline-none focus:ring-2 focus:ring-blue-500 cursor-pointer bg-transparent border-none p-0 font-inherit text-left"
         onClick={handleClick}
+        type="button"
       >
         {splash.value.render ? splash.value.render(splash.value.text) : (
           <span>
             {splash.value.text}
           </span>
         )}
-      </div>
+      </button>
     </>
   );
 }
