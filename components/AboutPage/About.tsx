@@ -13,8 +13,8 @@ export default function About() {
         <p className="indent-8">
           Hi there! I'm Ellie, a software developer and computer science student
           at Indiana University Indianapolis. I focus on building tools and
-          applications that empower developers and end-users alike. My current
-          projects include an ahead-of-time compiler inspired by{" "}
+          programs that empower weird new ideas. My current projects include an
+          ahead-of-time compiler inspired by{" "}
           <span className="text-blue-400">TypeScript</span> and a{" "}
           <span className="text-blue-300">Deno</span>-based chat server. I enjoy
           leveraging languages like{" "}
