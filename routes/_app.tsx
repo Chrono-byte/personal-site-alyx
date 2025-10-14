@@ -1,4 +1,6 @@
 import { define } from "../utils.ts";
+import Header from "../components/Header/Header.tsx";
+import Footer from "../components/Footer/Footer.tsx";
 
 export default define.page(function App({ Component }) {
   return (
@@ -17,7 +19,15 @@ export default define.page(function App({ Component }) {
         }}
         className="font-mono md:text-sm min-h-screen flex flex-col"
       >
-        <Component />
+        <div className="flex-1 flex flex-col px-4 pt-4 md:px-8 lg:px-16">
+          <Header />
+          <div className="flex-1 min-h-0 flex justify-center py-0">
+            <main className="w-full max-w-6xl">
+              <Component />
+            </main>
+          </div>
+          <Footer />
+        </div>
       </body>
     </html>
   );

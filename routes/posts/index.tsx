@@ -1,93 +1,106 @@
-import Header from "../../components/Header/Header.tsx";
-import Footer from "../../components/Footer/Footer.tsx";
-import BackgroundCard from "../../components/BackgroundCard.tsx";
-
+import PostListItem from "../../components/Posts/PostListItem.tsx";
 import { join } from "$std/path/mod.ts";
 
-// Metadata used when interpreting metadata from the de-metafied file
-interface Metadata {
-  "name": string; // This is used as the file name without the extension
-  "id": string; // This is used as the file name in the breadcrumb header
-  "date": Date; // This is used to display the last edited date
+type Meta = {
+  title?: string;
+  date?: Date;
+  summary?: string;
+  tags?: string[] | string;
+};
 
-  "title": string; // This is used as the title of the post
-  "tags": string[]; // This is used to categorize the post
-
-  "summary": string; // This is used to display a summary of the post
-}
-
-export default function Home() {
-  // prepare posts directory path
-  const postsDir = join(Deno.cwd(), "static", "md") + "/";
-  // get all posts
-  const posts = [...Deno.readDirSync(postsDir)].filter((p) =>
-    p.isFile && p.name.endsWith(".md")
-  );
-
-  const postElements = [];
-
-  for (const post of posts) {
-    const postContent = Deno.readTextFileSync(join(postsDir, post.name));
-    const metadata: Partial<Metadata> = {};
-
-    const metadataBlock = postContent.match(/^---\n(.*?)\n---\n/s);
-
-    if (!metadataBlock) {
-      throw new Error(`Post ${post.name} is missing metadata block`);
+function parseFrontmatter(content: string): Partial<Meta> {
+  const meta: Partial<Meta> = {};
+  const m = content.match(/^---\n([\s\S]*?)\n---\n/);
+  if (!m) return meta;
+  for (const raw of m[1].split(/\n/)) {
+    const line = raw.trim();
+    if (!line) continue;
+    const i = line.indexOf(":");
+    if (i === -1) continue;
+    const key = line.slice(0, i).trim();
+    let val = line.slice(i + 1).trim();
+    if (
+      (val.startsWith('"') && val.endsWith('"')) ||
+      (val.startsWith("'") && val.endsWith("'"))
+    ) {
+      val = val.slice(1, -1);
     }
-
-    const metadataLines = metadataBlock[1].split("\n");
-
-    for (const line of metadataLines) {
-      const [key, value] = line.split(": ");
-
-      // check type of value
-      if (key && key == "tags") {
-        (metadata as Partial<Metadata>).tags = JSON.parse(value);
-      } else if (key && key == "date") {
-        (metadata as Partial<Metadata>).date = new Date(value);
-      } else if (key && typeof value == "string") {
-        // assign unknown keys into metadata safely
-        (metadata as Record<string, unknown>)[key] = value;
+    if (key === "date") {
+      const d = new Date(val);
+      if (!Number.isNaN(d.getTime())) meta.date = d;
+    } else if (key === "title") {
+      meta.title = val;
+    } else if (key === "summary") {
+      meta.summary = val;
+    } else if (key === "tags") {
+      try {
+        meta.tags = JSON.parse(val);
+      } catch {
+        meta.tags = val.split(/,\s*/);
       }
-
-      // add the post name without the extension to metadata
-      (metadata as Record<string, unknown>)["name"] = post.name.replace(
-        ".md",
-        "",
-      );
-    }
-
-    if (metadata.name && metadata.title) {
-      postElements.push(
-        (
-          <BackgroundCard key={metadata.name}>
-            <p className="font-bold">
-              <a href={`/posts/${metadata.name}`}>{metadata.title}</a>
-            </p>
-
-            <p>{metadata.date?.toLocaleDateString()}</p>
-
-            <p>{metadata.summary}</p>
-          </BackgroundCard>
-        ),
-      );
     }
   }
+  return meta;
+}
+
+import { define } from "../../utils.ts";
+
+export default define.page(function PostsFeed() {
+  const postsDir = join(Deno.cwd(), "static", "md") + "/";
+  const files = [...Deno.readDirSync(postsDir)].filter((e) =>
+    e.isFile && e.name.endsWith(".md")
+  );
+  files.sort((a, b) => {
+    const aT = Deno.statSync(join(postsDir, a.name)).mtime?.getTime() ?? 0;
+    const bT = Deno.statSync(join(postsDir, b.name)).mtime?.getTime() ?? 0;
+    return bT - aT;
+  });
+
+  const items = files.map((f) => {
+    try {
+      const raw = Deno.readTextFileSync(join(postsDir, f.name));
+      const meta = parseFrontmatter(raw);
+      const slug = f.name.replace(/\.md$/i, "");
+      const title = meta.title ?? slug;
+      const date = meta.date ?? Deno.statSync(join(postsDir, f.name)).mtime ??
+        new Date();
+      const summary = meta.summary ?? "";
+      const tags = Array.isArray(meta.tags)
+        ? meta.tags
+        : (typeof meta.tags === "string" ? [meta.tags] : []);
+
+      return (
+        <PostListItem
+          key={f.name}
+          slug={slug}
+          title={title}
+          date={date}
+          summary={summary}
+          tags={tags}
+        />
+      );
+    } catch (err) {
+      console.error("read post failed", f.name, err);
+      return null;
+    }
+  }).filter(Boolean);
 
   return (
-    <div className="flex-col px-4 pt-4 md:px-36 md:pt-4">
-      <Header subdirectory={["posts"]} />
+    <div className="w-full">
+      <div className="max-w-3xl mx-auto py-6 space-y-4">
+        <header>
+          <h1 className="text-2xl font-bold">Blog</h1>
+          <p className="text-sm text-gray-400">
+            A chronological feed of posts.
+          </p>
+        </header>
 
-      <div className="flex justify-center items-center">
-        <div className="md:flex-nowrap md:max-w-6xl">
-          <div className="flex flex-col gap-3 md:gap-x-3">
-            {postElements}
-          </div>
-        </div>
+        <section className="flex flex-col divide-y divide-gray-700">
+          {items.length
+            ? items
+            : <p className="text-gray-500">No posts yet.</p>}
+        </section>
       </div>
-
-      <Footer />
     </div>
   );
-}
+});

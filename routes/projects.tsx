@@ -1,6 +1,4 @@
 import { define } from "../utils.ts";
-import Header from "../components/Header/Header.tsx";
-import Footer from "../components/Footer/Footer.tsx";
 
 import ProjectBlock from "../components/Projects/ProjectBlock.tsx";
 import projectsData from "../static/projects.json" with { type: "json" };
@@ -29,30 +27,24 @@ const projects: Project[] = (projectsData as Project[]).slice().sort((a, b) => {
 
 export default define.page(function Projects() {
   return (
-    <div className="flex-col px-4 pt-4 md:px-36 md:pt-4">
-      <Header subdirectory={["projects"]} />
+    <>
+      <div className="flex flex-col gap-4">
+        <StyledPanel className="mb-4">
+          <h2 className="text-lg font-semibold text-violet-400">
+            Selected Projects
+          </h2>
+          <p className="mt-2 text-gray-300 text-sm">
+            Curated projects and experiments in systems programming, language
+            design, and developer tooling. Ordered by recent activity.
+          </p>
+        </StyledPanel>
 
-      <div className="flex justify-center">
-        <div className="w-full md:max-w-6xl">
-          <StyledPanel className="mb-4">
-            <h2 className="text-lg font-semibold text-violet-400">
-              Selected Projects
-            </h2>
-            <p className="mt-2 text-gray-300 text-sm">
-              Curated projects and experiments in systems programming, language
-              design, and developer tooling. Ordered by recent activity.
-            </p>
-          </StyledPanel>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {projects.map((project, idx) => (
-              <ProjectBlock key={project.id ?? idx} {...project} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {projects.map((project, idx) => (
+            <ProjectBlock key={project.id ?? idx} {...project} />
+          ))}
         </div>
       </div>
-
-      <Footer />
-    </div>
+    </>
   );
 });
