@@ -18,7 +18,7 @@ export default function PostListItem(
         <div className="flex items-start justify-between">
           <a
             href={`/posts/${slug}`}
-            className="text-lg font-semibold text-white hover:underline"
+            className="text-lg font-semibold text-blue-400 hover:text-blue-600 underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-blue-500"
           >
             {title}
           </a>

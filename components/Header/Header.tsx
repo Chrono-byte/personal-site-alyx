@@ -22,30 +22,30 @@ export default function Header(
     <header className="mt-1 pb-8 mb-0 w-full font-black [text-shadow:_1px_1px_0_rgba(255_255_255_/_90%)]">
       <Breadcrumb subdirectory={subdirectory} fileID={fileID} />
 
-      <div
-        className="header text-center"
-        style={{
-          margin: 0,
-          lineHeight: 1.5,
-          marginTop: 0,
-        }}
-      >
-        <p>
+      <nav aria-label="Main navigation" className="header text-center">
+        <ul
+          className="list-none inline"
+          style={{
+            margin: 0,
+            lineHeight: 1.5,
+            marginTop: 0,
+          }}
+        >
           {menus.map((item, index) => (
-            <span key={index}>
+            <li key={index} className="inline">
               {index !== 0 && (index % 3 != 0) && " / "}
               <a
                 href={item.href}
-                className="text-violet-400 hover:text-violet-700"
+                className="text-blue-600 hover:text-blue-800 underline hover:no-underline focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 {item.title}
               </a>
               {/* if more than 3 entires, inject linebreak */}
               {(index + 1) % 3 == 0 && <br />}
-            </span>
+            </li>
           ))}
-        </p>
-      </div>
+        </ul>
+      </nav>
     </header>
   );
 }
