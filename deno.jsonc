@@ -27,8 +27,8 @@
     "vite": "npm:vite@^7.1.10",
     "tailwindcss": "npm:tailwindcss@^4.1.14",
     "@tailwindcss/vite": "npm:@tailwindcss/vite@^4.1.14",
-    "remark": "npm:remark",
-    "remark-html": "npm:remark-html",
+    "remark": "npm:remark@15.0.1",
+    "remark-html": "npm:remark-html@16.0.1",
     "$std/": "https://deno.land/std@0.224.0/"
   },
   "compilerOptions": {
