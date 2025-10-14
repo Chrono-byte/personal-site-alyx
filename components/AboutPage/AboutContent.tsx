@@ -1,8 +1,8 @@
 import type { FunctionalComponent } from "preact";
 import StyledPanel from "../BackgroundCard.tsx";
-import TitledCard from "../TitledCard.tsx";
+import TitledCard from "../content/TitledCard.tsx";
 import { TbMail } from "@preact-icons/tb";
-import ContentListItem from "../ContentListItem.tsx";
+import ContentListItem from "../content/ContentListItem.tsx";
 import { PostPreview } from "../../routes/lib/posts.ts";
 
 type AboutContentProps = {

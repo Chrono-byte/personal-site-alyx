@@ -1,6 +1,6 @@
 import type { FunctionalComponent } from "preact";
 import TitledCard from "./TitledCard.tsx";
-import type { ContentItemPreview } from "../routes/lib/content.ts";
+import type { ContentItemPreview } from "../../routes/lib/content.ts";
 
 type ContentListProps = {
   title: string;
