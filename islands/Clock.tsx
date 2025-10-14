@@ -1,5 +1,5 @@
 import { useSignal } from "@preact/signals";
-import { useCallback, useEffect } from "preact/hooks";
+import { useEffect } from "preact/hooks";
 
 const timeOptions = {
   timeZone: "America/Indiana/Indianapolis",
@@ -7,25 +7,25 @@ const timeOptions = {
   timeStyle: "medium" as const,
 };
 
-export default function Countdown() {
+export default function Clock() {
   const now = useSignal(new Date());
 
-  const updateTime = useCallback(() => {
-    now.value = new Date();
-  }, [now]);
-
   useEffect(() => {
-    const timer = setInterval(updateTime, 1000);
-    return () => clearInterval(timer);
-  }, [updateTime]);
+    const timer = setInterval(() => {
+      now.value = new Date();
+    }, 1000);
 
-  const formatter = new Intl.DateTimeFormat("en-US", {
-    ...timeOptions,
-    timeZone: "UTC",
-  });
-  const utcTime = formatter.format(now.value);
-  const currentLocalTime = now.value.toLocaleString("en-US", timeOptions);
-  const deltaFromUTC = now.value.getTimezoneOffset() / -60;
+    return () => clearInterval(timer);
+  }, []); // empty dependency so it runs once
+
+  const currentLocalTime = now.value.toLocaleTimeString("en-US", timeOptions);
+
+  // Calculate UTC offset for Indiana/Indianapolis (Eastern Time)
+  const isDST = now.value.toLocaleString("en-US", {
+    timeZone: "America/Indiana/Indianapolis",
+    timeZoneName: "short",
+  }).includes("EDT");
+  const deltaFromUTC = isDST ? -4 : -5;
 
   return (
     <span>
