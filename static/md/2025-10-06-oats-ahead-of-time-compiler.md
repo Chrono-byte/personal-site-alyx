@@ -1,11 +1,9 @@
 ---
 title: "Oats: An Ahead-of-Time Compiler for a TypeScript-Inspired Language"
 tags: ["compilers", "typescript", "llvm", "systems-programming"]
-date: "2025-07-15"
+date: "2025-10-14"
 summary: "Exploring the design and implementation of Oats, an experimental ahead-of-time compiler that compiles a TypeScript-inspired language to native executables via LLVM."
 ---
-
-## Oats: Building an Ahead-of-Time Compiler
 
 **Oats** is my ongoing project to create an ahead-of-time (AOT) compiler for a
 programming language inspired by TypeScript, with influences from Swift and

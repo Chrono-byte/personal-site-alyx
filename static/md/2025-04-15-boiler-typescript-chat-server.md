@@ -5,8 +5,6 @@ date: "2025-04-15"
 summary: "My experience building Boiler, a TypeScript-based chat server using Deno, WebSockets, and REST APIs - designed for extensibility and developer experimentation."
 ---
 
-## Boiler: A TypeScript Chat Server
-
 **Boiler** was my exploration into building real-time communication systems
 using modern TypeScript and Deno. This chat server project combined WebSocket
 connections for real-time messaging with REST APIs for administrative functions,

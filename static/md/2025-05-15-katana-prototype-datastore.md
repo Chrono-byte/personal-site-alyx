@@ -5,8 +5,6 @@ date: "2025-05-15"
 summary: "Exploring the design and implementation of Katana, a lightweight datastore storing string arrays in JSON format, built for rapid prototyping and experimentation."
 ---
 
-## Katana: Lightweight Prototyping Datastore
-
 **Katana** was a focused experiment in building a minimal yet functional
 datastore designed specifically for rapid prototyping scenarios. This project
 explored the boundaries of simplicity while maintaining useful functionality for
