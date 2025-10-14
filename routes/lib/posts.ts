@@ -1,10 +1,20 @@
 import { join } from "$std/path/mod.ts";
+import { readContentItems, toPreview } from "./content.ts";
+
+export interface Metadata {
+  title?: string;
+  date?: string;
+  tags?: string[] | string;
+  summary?: string;
+  [key: string]: unknown;
+}
 
 export interface PostPreview {
   name: string;
   title: string;
   date: Date;
   summary: string;
+  tags: string[];
 }
 
 export function listMarkdownFilesSorted(
@@ -23,8 +33,8 @@ export function listMarkdownFilesSorted(
   }
 }
 
-export function parseFrontmatter(content: string): Partial<PostPreview> {
-  const metadata: Partial<PostPreview> = {};
+export function parseFrontmatter(content: string): Metadata {
+  const metadata: Metadata = {};
   const match = content.match(/^-{3}\s*\r?\n([\s\S]*?)\r?\n-{3}/m);
 
   if (!match) return metadata;
@@ -48,45 +58,90 @@ export function parseFrontmatter(content: string): Partial<PostPreview> {
       value = value.slice(1, -1);
     }
 
-    switch (key) {
-      case "title":
-        metadata.title = value;
-        break;
-      case "date": {
-        const parsedDate = new Date(value);
-        if (!Number.isNaN(parsedDate.getTime())) {
-          metadata.date = parsedDate;
-        }
-        break;
+    if (key === "tags") {
+      try {
+        metadata[key] = JSON.parse(value);
+      } catch {
+        metadata[key] = value;
       }
-      case "summary":
-        metadata.summary = value;
-        break;
+    } else if (key === "date") {
+      metadata[key] = value; // Keep as string for flexibility
+    } else {
+      metadata[key] = value;
     }
   });
 
   return metadata;
 }
 
-export function readLatestPostPreview(): PostPreview | undefined {
+export function readLatestPostPreviews(limit = 1): PostPreview[] {
   try {
     const postsDir = join(Deno.cwd(), "static", "md");
-    const files = listMarkdownFilesSorted(postsDir);
+    const items = readContentItems(postsDir);
+    const previews = items.slice(0, limit).map(toPreview).map((item) => ({
+      name: item.slug,
+      title: item.title,
+      date: item.date,
+      summary: item.summary,
+      tags: item.tags,
+    }));
 
-    if (files.length === 0) return undefined;
+    return previews;
+  } catch (error) {
+    console.error("Error reading latest posts:", error);
+    return [];
+  }
+}
 
-    const latestFile = files[0];
-    const rawContent = Deno.readTextFileSync(join(postsDir, latestFile.name));
+export function readLatestPostPreview(): PostPreview | undefined {
+  const previews = readLatestPostPreviews(1);
+  return previews[0];
+}
+
+export async function getAllPostPreviews(): Promise<PostPreview[]> {
+  const postsDir = join(Deno.cwd(), "static", "md");
+  const files = listMarkdownFilesSorted(postsDir);
+
+  const allPreviews: PostPreview[] = [];
+
+  for (const file of files) {
+    const rawContent = await Deno.readTextFile(join(postsDir, file.name));
+    const metadata = parseFrontmatter(rawContent);
+
+    allPreviews.push({
+      name: file.name.replace(/\.md$/i, ""),
+      title: metadata.title ?? "Untitled Post",
+      date: metadata.date ? new Date(metadata.date) : new Date(),
+      summary: metadata.summary ?? "No summary available.",
+      tags: Array.isArray(metadata.tags)
+        ? metadata.tags
+        : (typeof metadata.tags === "string" ? [metadata.tags] : []),
+    });
+  }
+
+  return allPreviews;
+}
+
+export async function getPostPreviewByName(
+  name: string,
+): Promise<PostPreview | undefined> {
+  const postsDir = join(Deno.cwd(), "static", "md");
+  const filePath = join(postsDir, `${name}.md`);
+
+  try {
+    const rawContent = await Deno.readTextFile(filePath);
     const metadata = parseFrontmatter(rawContent);
 
     return {
-      name: latestFile.name.replace(/\.md$/i, ""),
+      name: filePath,
       title: metadata.title ?? "Untitled Post",
-      date: metadata.date ?? new Date(),
+      date: metadata.date ? new Date(metadata.date) : new Date(),
       summary: metadata.summary ?? "No summary available.",
+      tags: Array.isArray(metadata.tags)
+        ? metadata.tags
+        : (typeof metadata.tags === "string" ? [metadata.tags] : []),
     };
-  } catch (error) {
-    console.error("Error reading latest post:", error);
+  } catch {
     return undefined;
   }
 }
