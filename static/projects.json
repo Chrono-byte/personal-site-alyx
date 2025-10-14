@@ -25,7 +25,7 @@
     "title": "Boiler",
     "date": {
       "start": "January 2022",
-      "end": "Present"
+      "end": "January 2023"
     },
     "description": "TypeScript-based chat server built on Deno that uses WebSockets and REST APIs. Designed for extensibility and developer experimentation.",
     "links": {
