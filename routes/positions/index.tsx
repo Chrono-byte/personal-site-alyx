@@ -1,6 +1,7 @@
 import BackgroundCard from "../../components/BackgroundCard.tsx";
 
-const linkStyle = "text-md font-bold text-violet-300 hover:text-white";
+const linkStyle =
+  "text-md font-bold text-blue-400 hover:text-blue-600 underline hover:no-underline";
 
 export default function Home() {
   return (
@@ -10,9 +11,16 @@ export default function Home() {
           Essays and positions on technology, policy, and design.
         </h1>
 
-        <a href="/positions/philosophy" className={linkStyle}>Philosophy</a>
-        <br />
-        <a href="/positions/politics" className={linkStyle}>Politics</a>
+        <nav aria-label="Position essays">
+          <ul className="list-none space-y-2">
+            <li>
+              <a href="/positions/philosophy" className={linkStyle}>Philosophy</a>
+            </li>
+            <li>
+              <a href="/positions/politics" className={linkStyle}>Politics</a>
+            </li>
+          </ul>
+        </nav>
       </BackgroundCard>
     </div>
   );

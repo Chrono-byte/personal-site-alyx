@@ -69,7 +69,7 @@ import Badge from "../../components/Badge.tsx";
 export default function CompetenciesGrid() {
   return (
     <StyledPanel>
-      <h3 className="mb-4 text-lg font-semibold text-violet-400">
+      <h3 className="mb-4 text-lg font-semibold text-gray-100">
         Education & Areas of Focus
       </h3>
 
@@ -90,18 +90,18 @@ export default function CompetenciesGrid() {
         {competenciesData.map((category) => (
           <div key={category.title}>
             <h4 className="font-semibold text-gray-200">{category.title}</h4>
-            <div className="mt-2 flex flex-col gap-y-3 pl-4 border-l border-gray-600">
+            <ul className="mt-2 flex flex-col gap-y-3 pl-4 border-l border-gray-600 list-none">
               {category.skills.map((skill) => (
-                <div key={skill.name}>
+                <li key={skill.name}>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-100">{skill.name}</span>
                   </div>
                   <div className="mt-2 flex flex-wrap gap-x-2 gap-y-1">
                     {skill.tags.map((tag) => <Badge key={tag}>{tag}</Badge>)}
                   </div>
-                </div>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         ))}
       </div>
