@@ -1,17 +1,7 @@
-// components/AboutPage/ProfileCard.tsx
-
-import type { ComponentChildren, FunctionalComponent } from "preact";
-import { TbBuilding, TbClock, TbMapPin } from "@preact-icons/tb";
-import Clock from "../../islands/Clock.tsx";
-import StyledPanel from "../BackgroundCard.tsx";
+import type { FunctionalComponent } from "preact";
+import { TbLocationPlus, TbSchool } from "@preact-icons/tb";
 
 // --- Constants for Styling & Defaults ---
-
-/** Properties for the icons used in the info rows. */
-const ICON_PROPS = {
-  size: 16,
-  color: "#f0f0f0",
-} as const;
 
 /** Default properties for the avatar image. */
 const AVATAR_DEFAULTS = {
@@ -19,13 +9,22 @@ const AVATAR_DEFAULTS = {
   alt: "avatar: stylized knight illustration holding a sword",
   width: 144,
   height: 144,
-  className:
-    "border-4 border-neutral-800 rounded-2xl w-16 h-16 md:w-32 md:h-32 object-cover",
+  className: "w-24 h-24 rounded-3xl border-4 border-white object-cover",
 } as const;
 
 /** Base Tailwind classes for the main card container. */
-const CARD_STYLES =
-  "max-h-full w-full md:w-56 flex flex-row md:flex-col items-center md:items-start text-shadow mb-6 rounded-3xl p-3 md:p-4 [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]";
+const CARD_STYLES = [
+  "w-full",
+  "mx-auto",
+  "bg-[#33302a]",
+  "rounded-xl",
+  "border-4",
+  "border-gray-700",
+  "p-4",
+  "[box-shadow:_0_8px_16px_-4px_rgba(0,_0,_0,_0.5),_0_4px_8px_-2px_rgba(0,_0,_0,_0.4)]",
+  "[text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]",
+  "text-gray-200",
+].join(" ");
 
 // --- Type Definitions ---
 
@@ -35,25 +34,44 @@ export type ProfileCardProps = {
   handle?: string;
   avatarSrc?: string;
   avatarAlt?: string;
+  bannerSrc?: string;
+  bio?: string;
   institution?: string;
   location?: string;
+  osSystems?: string[];
   className?: string;
+  pronouns?: string;
 };
 
 // --- Helper Components ---
 
 /**
- * A reusable list item component for displaying a piece of profile information
- * with a leading icon.
+ * A reusable info block component for displaying categorized information.
  */
-const InfoRow: FunctionalComponent<{
-  Icon: typeof TbBuilding; // Using the exact type of the icon components
-  children: ComponentChildren;
-}> = ({ Icon, children }) => (
-  <li className="flex items-center gap-3">
-    <Icon {...ICON_PROPS} aria-hidden="true" />
-    <span className="text-base">{children}</span>
-  </li>
+const InfoBlock: FunctionalComponent<{
+  title: string;
+  content: string;
+  link?: string;
+  icon?: typeof TbLocationPlus | typeof TbSchool;
+}> = ({ title, content, link, icon: Icon }) => (
+  <div className="bg-[#2a2721] rounded-lg p-3 mb-3 border border-gray-600">
+    <h3 className="text-sm font-semibold text-gray-300 tracking-wide mb-1 flex items-center gap-2">
+      {Icon && <Icon size={14} className="text-gray-400" />}
+      {title}
+    </h3>
+    <div className="flex items-center gap-1">
+      {link
+        ? (
+          <a
+            href={link}
+            className="text-gray-200 hover:text-blue-400 transition-colors"
+          >
+            {content}
+          </a>
+        )
+        : <span className="text-gray-200">{content}</span>}
+    </div>
+  </div>
 );
 
 /**
@@ -62,7 +80,7 @@ const InfoRow: FunctionalComponent<{
 const Avatar: FunctionalComponent<{ src: string; alt: string }> = (
   { src, alt },
 ) => (
-  <figure className="shrink-0 mb-3 md:mb-0">
+  <div className="relative">
     <img
       src={src}
       alt={alt}
@@ -72,57 +90,66 @@ const Avatar: FunctionalComponent<{ src: string; alt: string }> = (
       loading="lazy"
       decoding="async"
     />
-  </figure>
+  </div>
 );
 
 // --- Main Component ---
 
 /**
- * A responsive profile card component that displays user information.
- * It's horizontal on mobile and stacks vertically on larger screens.
+ * A Mastodon-style profile card component that displays comprehensive user information.
  */
 const ProfileCard: FunctionalComponent<ProfileCardProps> = ({
   name = "Ellie",
   handle = "@chrono__",
   avatarSrc = AVATAR_DEFAULTS.src,
   avatarAlt = AVATAR_DEFAULTS.alt,
+  bannerSrc = "/svg/banner-placeholder.svg", // Placeholder - will need to add actual banner
   institution = "Indiana University Indianapolis",
   location = "Indianapolis, IN, USA",
   className = "",
 }) => {
-  // We define the info list content once to avoid repetition.
-  const infoContent = (
-    <ul className="mt-3 w-full space-y-3 text-lg">
-      <InfoRow Icon={TbBuilding}>{institution}</InfoRow>
-      <InfoRow Icon={TbMapPin}>{location}</InfoRow>
-      <InfoRow Icon={TbClock}>
-        <Clock /> {/* Client-side interactive island */}
-      </InfoRow>
-    </ul>
-  );
-
   return (
-    <StyledPanel className={`${CARD_STYLES} ${className}`.trim()}>
-      {/* Avatar: Positioned left on mobile, top on desktop */}
-      <Avatar src={avatarSrc} alt={avatarAlt} />
-
-      {/* Main content block */}
-      <div className="ml-3 md:ml-0 text-left w-full">
-        <p className="text-lg font-semibold">{name}</p>
-        <p className="text-base text-fuchsia-200 mt-1">{handle}</p>
-
-        {/* Mobile View: Collapsible details to save space */}
-        <details open className="block md:hidden mt-3">
-          <summary className="text-sm text-slate-300 cursor-pointer select-none">
-            More
-          </summary>
-          {infoContent}
-        </details>
-
-        {/* Desktop View: Always visible */}
-        <div className="hidden md:block mt-3">{infoContent}</div>
+    <div className={`${CARD_STYLES} ${className}`.trim()}>
+      {/* Banner Image */}
+      <div className="relative h-32 bg-gradient-to-r from-purple-800 via-pink-800 to-red-800">
+        {bannerSrc && (
+          <img
+            src={bannerSrc}
+            alt="Profile banner"
+            className="w-full h-full object-cover"
+          />
+        )}
       </div>
-    </StyledPanel>
+
+      {/* Profile Picture - Overlapping Banner */}
+      <div className="relative -mt-12 px-4">
+        <Avatar src={avatarSrc} alt={avatarAlt} />
+      </div>
+
+      {/* Profile Content */}
+      <div className="px-4 pb-4">
+        {/* Name and Handle */}
+        <div className="mt-2">
+          <h1 className="text-xl font-bold text-gray-100">{name}</h1>
+          <div className="flex items-center gap-2 mt-1">
+            <span className="text-gray-400">{handle}</span>
+          </div>
+        </div>
+
+        {/* Info Blocks */}
+        <InfoBlock
+          title="Institution"
+          content={institution}
+          icon={TbSchool}
+        />
+
+        <InfoBlock
+          title="Location"
+          content={location}
+          icon={TbLocationPlus}
+        />
+      </div>
+    </div>
   );
 };
 
