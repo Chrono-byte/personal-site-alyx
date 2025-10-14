@@ -10,7 +10,7 @@ const iconProps = {
 
 export default function ProfileCard() {
   return (
-    <StyledPanel className="max-h-1/3 w-54 md:w-16/12 flex flex-col items-start text-shadow-[1px_1px_0_rgb(0_0_0_/_100%)] mb-6 rounded-3xl">
+    <StyledPanel className="max-h-full w-1/3 md:w-4/12 flex flex-col items-start text-shadow mb-6 rounded-3xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
       <img
         src="/svg/25267581.svg"
         alt="avatar: stylized knight illustration holding a sword"
@@ -20,12 +20,10 @@ export default function ProfileCard() {
       />
 
       <div className="text-left w-full">
-        <p className="text-lg font-semibold leading-none">Ellie</p>
-        <p className="text-base text-slate-200 leading-none mt-1">
-          @chrono__ <span className="font-extrabold text-violet-300">/</span>
-          {" "}
-          @chronobyte_
-        </p>
+        <p className="text-lg font-semibold">Ellie</p>
+        <div className="text-base text-slate-200 mt-1 space-y-1">
+          <span className="text-fuchsia-200">@chrono__</span>
+        </div>
       </div>
 
       <div className="mt-3 w-full space-y-3 text-lg">

@@ -12,14 +12,14 @@ export default function Header(
       title: "current & past projects",
       href: "/projects/",
     },
-    //    {
-    //      title: "political notes",
-    //      href: "/positions/",
-    //    },
+    //  {
+    //  title: "political notes",
+    //  href: "/positions/",
+    //  },
   ];
 
   return (
-    <header className="pb-8 mb-0 w-full font-black">
+    <header className="mt-1 pb-8 mb-0 w-full font-black">
       <Breadcrumb subdirectory={subdirectory} fileID={fileID} />
 
       <div

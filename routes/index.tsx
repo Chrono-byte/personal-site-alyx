@@ -16,7 +16,10 @@ function listMarkdownFilesSorted(dir: string) {
   try {
     const entries = [...Deno.readDirSync(dir)]
       .filter((e) => e.isFile && e.name.endsWith(".md"))
-      .map((e) => ({ name: e.name, mtime: Deno.statSync(join(dir, e.name)).mtime }))
+      .map((e) => ({
+        name: e.name,
+        mtime: Deno.statSync(join(dir, e.name)).mtime,
+      }))
       .sort((a, b) => (b.mtime?.getTime() ?? 0) - (a.mtime?.getTime() ?? 0));
     return entries;
   } catch (_err) {
@@ -40,7 +43,10 @@ function parseFrontmatter(content: string): Partial<PostPreview> {
     const key = line.slice(0, idx).trim();
     let value = line.slice(idx + 1).trim();
     // strip surrounding quotes if present
-    if ((value.startsWith('"') && value.endsWith('"')) || (value.startsWith("'") && value.endsWith("'"))) {
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
       value = value.slice(1, -1);
     }
 
@@ -88,7 +94,7 @@ export default define.page(function Home() {
         <main className="flex flex-col md:flex-row gap-4 md:gap-6 px-2 justify-center items-start">
           <ProfileCard />
           {latestPost
-            ? <About latestPost={latestPost} />
+            ? <About postPreview={latestPost} />
             : <p className="text-gray-500">No recent posts available.</p>}
         </main>
       </div>
