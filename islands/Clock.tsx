@@ -19,13 +19,18 @@ export default function Countdown() {
     return () => clearInterval(timer);
   }, [updateTime]);
 
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    ...timeOptions,
+    timeZone: "UTC",
+  });
+  const utcTime = formatter.format(now.value);
   const currentLocalTime = now.value.toLocaleString("en-US", timeOptions);
-  const currentLocalHours = parseInt(currentLocalTime.split(":")[0]);
-  const deltaFromUTC = now.value.getUTCHours() - currentLocalHours;
+  const deltaFromUTC = now.value.getTimezoneOffset() / -60;
 
   return (
     <span>
-      {currentLocalTime} ({"UTC-" + deltaFromUTC})
+      {currentLocalTime}{" "}
+      ({"UTC" + (deltaFromUTC >= 0 ? "+" : "") + deltaFromUTC})
     </span>
   );
 }
