@@ -1,10 +1,10 @@
 import { JSX } from "preact/jsx-runtime";
 
 // Icons
-import SocialIcons from "../icons/SocialIcons.tsx";
+import SocialIcons from "../../icons/SocialIcons.tsx";
 
 // SplashText
-import SplashTextDisplay from "../../islands/SplashTextDisplay.tsx";
+import SplashTextDisplay from "../../../islands/SplashTextDisplay.tsx";
 import FooterSection from "./FooterSection.tsx";
 
 interface SocialLink {

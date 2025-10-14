@@ -6,19 +6,32 @@ type ContentListProps = {
   title: string;
   description: string;
   items: ContentItemPreview[];
-  renderItem: (item: ContentItemPreview) => preact.ComponentChild;
+  itemComponent: FunctionalComponent<
+    ContentItemPreview & Record<string, unknown>
+  >;
   emptyMessage?: string;
   headingLevel?: 1 | 2 | 3 | 4 | 5 | 6;
+  itemProps?: Record<string, unknown>;
 };
 
 const ContentList: FunctionalComponent<ContentListProps> = ({
   title,
   description,
   items,
-  renderItem,
+  itemComponent: ItemComponent,
   emptyMessage = "No content yet.",
   headingLevel = 1,
+  itemProps = {},
 }) => {
+  const renderItems = () =>
+    items.length > 0
+      ? (
+        items.map((item) => (
+          <ItemComponent key={item.slug} {...item} {...itemProps} />
+        ))
+      )
+      : <p className="text-gray-500">{emptyMessage}</p>;
+
   return (
     <div className="w-full">
       <div className="max-w-3xl mx-auto py-6 space-y-4">
@@ -33,9 +46,7 @@ const ContentList: FunctionalComponent<ContentListProps> = ({
         </header>
 
         <section className="flex flex-col divide-y divide-gray-500">
-          {items.length
-            ? items.map(renderItem)
-            : <p className="text-gray-500">{emptyMessage}</p>}
+          {renderItems()}
         </section>
       </div>
     </div>

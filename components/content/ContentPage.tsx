@@ -1,7 +1,7 @@
 import type { FunctionalComponent } from "preact";
-import BackgroundCard from "./BackgroundCard.tsx";
+import BackgroundCard from "../BackgroundCard.tsx";
 import MarkdownBlock from "./MarkdownBlock.tsx";
-import type { Metadata } from "../routes/lib/posts.ts";
+import type { Metadata } from "../../routes/lib/posts.ts";
 
 type ContentPageProps = {
   content: string;

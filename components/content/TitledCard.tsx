@@ -1,6 +1,6 @@
 // file: src/components/TitledCard.tsx
 import type { ComponentChildren } from "preact";
-import Card from "./ui/Card.tsx";
+import Card from "../ui/Card.tsx";
 
 type TitledCardProps = {
   title?: string;

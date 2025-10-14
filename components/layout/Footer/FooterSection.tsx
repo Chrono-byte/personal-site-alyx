@@ -1,5 +1,5 @@
 import type { JSX } from "preact/jsx-runtime";
-import DividerTitle from "../ui/DividerTitle.tsx";
+import DividerTitle from "../../ui/DividerTitle.tsx";
 
 interface SocialLink {
   name: string;
