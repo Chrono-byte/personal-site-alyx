@@ -14,7 +14,7 @@ export default function PostListItem(
 ) {
   return (
     <article className="py-4">
-      <BackgroundCard className="bg-[#272523] border-gray-700 shadow-md">
+      <BackgroundCard className="bg-[#272523] border-gray-700 hover:shadow-2xl transition-shadow">
         <div className="flex items-start justify-between">
           <a
             href={`/posts/${slug}`}

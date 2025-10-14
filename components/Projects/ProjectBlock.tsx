@@ -10,7 +10,7 @@ export default function ProjectBlock(project: Project) {
   }
 
   return (
-    <BackgroundCard className="hover:shadow-lg transition-shadow">
+    <BackgroundCard className="hover:shadow-2xl transition-shadow">
       <div className="flex items-start justify-between gap-4">
         <h3 className="font-semibold text-gray-100 text-base">
           {project.title}
