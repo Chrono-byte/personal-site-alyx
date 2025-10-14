@@ -1,5 +1,5 @@
 import type { ComponentChildren, FunctionalComponent } from "preact";
-import { TbLocationPlus, TbSchool, TbClock } from "@preact-icons/tb";
+import { TbClock, TbLocationPlus, TbSchool } from "@preact-icons/tb";
 import Clock from "../../islands/Clock.tsx";
 
 // --- Constants for Styling & Defaults ---
