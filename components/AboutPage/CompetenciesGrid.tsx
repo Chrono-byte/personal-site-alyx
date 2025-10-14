@@ -3,7 +3,6 @@
 // A more detailed data structure to represent the new design
 type SkillEntry = {
   name: string;
-  level: "Expert" | "Advanced" | "Intermediate" | "Familiar" | "Beginner";
   tags: string[];
 };
 
@@ -18,7 +17,6 @@ const competenciesData: CompetencyCategory[] = [
     skills: [
       {
         name: "Systems Programming",
-        level: "Advanced",
         tags: [
           "Rust",
           "C++",
@@ -31,18 +29,15 @@ const competenciesData: CompetencyCategory[] = [
       },
       {
         name: "Full-Stack Development",
-        level: "Advanced",
         tags: ["Frontend", "Backend", "API Design", "Database Integration"],
       },
       {
         name: "Deno & Deno Fresh",
-        level: "Advanced",
         tags: ["Island Architecture", "SSR", "TypeScript", "Vite"],
       },
       {
-        name: "TypeScript (Language & Tooling)",
-        level: "Advanced",
-        tags: ["Type Safety", "Static Typing"],
+        name: "TypeScript",
+        tags: ["Type Safety", "Static Typing", "Tooling"],
       },
     ],
   },
@@ -51,7 +46,6 @@ const competenciesData: CompetencyCategory[] = [
     skills: [
       {
         name: "Linux Administration & Networking",
-        level: "Advanced",
         tags: [
           "CI/CD Pipelines",
           "DevOps",
@@ -63,7 +57,6 @@ const competenciesData: CompetencyCategory[] = [
       },
       {
         name: "Containerization & Orchestration",
-        level: "Advanced",
         tags: ["DevOps Practices", "Podman", "Proxmox", "Docker"],
       },
     ],
@@ -77,7 +70,7 @@ export default function CompetenciesGrid() {
   return (
     <StyledPanel>
       <h3 className="mb-4 text-lg font-semibold text-violet-400">
-        Education & Key Competencies
+        Education & Areas of Focus
       </h3>
 
       {/* Education Section */}
@@ -102,9 +95,6 @@ export default function CompetenciesGrid() {
                 <div key={skill.name}>
                   <div className="flex justify-between items-center">
                     <span className="text-gray-100">{skill.name}</span>
-                    <Badge variant="level" level={skill.level}>
-                      {skill.level}
-                    </Badge>
                   </div>
                   <div className="mt-2 flex flex-wrap gap-x-2 gap-y-1">
                     {skill.tags.map((tag) => <Badge key={tag}>{tag}</Badge>)}

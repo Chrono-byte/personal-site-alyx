@@ -64,7 +64,9 @@ export default function About({ latestPost }: { latestPost?: PostPreview }) {
         <div className="flex flex-col gap-y-3">
           <p className="indent-8">
             <strong className="text-yellow-400">Oats</strong>{" "}
-            <span className="text-sm text-gray-400">(Sep 2025 – Present)</span>
+            <span className="text-sm text-gray-400">
+              (Sep 2025 – Present)
+            </span>
             <br />
             An ahead-of-time (AOT) compiler for a language inspired by{" "}
             <span className="text-blue-400">TypeScript</span>, with influences
@@ -76,10 +78,11 @@ export default function About({ latestPost }: { latestPost?: PostPreview }) {
           </p>
           <p className="indent-8">
             <strong className="text-yellow-400">Boiler</strong>{" "}
-            <span className="text-sm text-gray-400">(Jan 2023 – Jan 2024)</span>
-            <br />A{" "}
-            <span className="text-blue-400">TypeScript</span>-based chat server
-            built with{" "}
+            <span className="text-sm text-gray-400">
+              (Jan 2023 – Jan 2024)
+            </span>
+            <br />A <span className="text-blue-400">TypeScript</span>
+            -based chat server built with{" "}
             <span className="text-blue-300">Deno</span>, leveraging WebSockets
             and REST APIs for seamless communication. It is designed to be
             easily extendable.
@@ -131,4 +134,3 @@ export default function About({ latestPost }: { latestPost?: PostPreview }) {
     </div>
   );
 }
-
