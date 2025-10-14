@@ -11,10 +11,16 @@ type TitledCardProps = {
 };
 
 export default function TitledCard(
-  { title, children, className, titleColor = "", headingLevel }: TitledCardProps,
+  { title, children, className, titleColor = "", headingLevel }:
+    TitledCardProps,
 ) {
   return (
-    <Card title={title} className={className} titleColor={titleColor} headingLevel={headingLevel}>
+    <Card
+      title={title}
+      className={className}
+      titleColor={titleColor}
+      headingLevel={headingLevel}
+    >
       {children}
     </Card>
   );

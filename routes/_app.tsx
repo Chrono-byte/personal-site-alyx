@@ -8,7 +8,10 @@ export default define.page(function App({ Component }) {
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="Personal website of Ellie, a software developer and computer science student." />
+        <meta
+          name="description"
+          content="Personal website of Ellie, a software developer and computer science student."
+        />
         <meta name="author" content="Ellie" />
         <title>Ellie</title>
       </head>

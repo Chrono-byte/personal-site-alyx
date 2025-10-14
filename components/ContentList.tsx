@@ -23,7 +23,11 @@ const ContentList: FunctionalComponent<ContentListProps> = ({
     <div className="w-full">
       <div className="max-w-3xl mx-auto py-6 space-y-4">
         <header>
-          <TitledCard title={title} titleColor="text-white" headingLevel={headingLevel}>
+          <TitledCard
+            title={title}
+            titleColor="text-white"
+            headingLevel={headingLevel}
+          >
             <p className="text-gray-400">{description}</p>
           </TitledCard>
         </header>

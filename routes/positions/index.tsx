@@ -14,7 +14,9 @@ export default function Home() {
         <nav aria-label="Position essays">
           <ul className="list-none space-y-2">
             <li>
-              <a href="/positions/philosophy" className={linkStyle}>Philosophy</a>
+              <a href="/positions/philosophy" className={linkStyle}>
+                Philosophy
+              </a>
             </li>
             <li>
               <a href="/positions/politics" className={linkStyle}>Politics</a>
