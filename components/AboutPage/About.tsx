@@ -11,13 +11,13 @@ export default function About() {
       {/* BackgroundCard is perfect for simple, untitiled content blocks. */}
       <StyledPanel>
         <p className="indent-8">
-          Hi, I'm Ellie. I'm a computer science student at Indiana University
-          Indianapolis with a passion for building practical, full-stack
-          projects with an emphasis on reliability. I primarily work with{" "}
-          <span className="text-blue-400">TypeScript</span> and{" "}
-          <span className="text-blue-300">C++</span>, and I enjoy contributing
-          to open-source tools that help teams move faster and improve developer
-          workflows.
+          Hi, I'm Ellie. I'm studying computer science at Indiana University
+          Indianapolis, and I love creating full-stack projects that are both
+          practical and reliable. I spend most of my time working with{" "}
+          <span className="text-blue-400">TypeScript</span>,{" "}
+          <span className="text-blue-300">C++</span>, and{"  "}
+          <span className="text-orange-400">Rust</span>. I enjoy pursuing my own
+          projects that make development smoother and more efficient.
         </p>
       </StyledPanel>
 
@@ -33,17 +33,22 @@ export default function About() {
             <strong>Oats</strong>{" "}
             <span className="text-sm text-gray-400">(Sep 2025 – Present)</span>
             <br />
-            An ahead-of-time (AOT) compiler for a language inspired by
-            TypeScript, with influences from Swift and Rust. It compiles to
-            native executables using LLVM, targeting predictable performance and
-            a small, safe runtime.
+            An ahead-of-time (AOT) compiler for a language inspired by{" "}
+            <span className="text-blue-400">TypeScript</span>, with influences
+            from <span className="text-purple-400">Swift</span> and{" "}
+            <span className="text-orange-400">Rust</span>. It compiles to native
+            executables using LLVM, targeting predictable performance and a
+            small, safe runtime.
           </p>
           <p className="indent-8">
             <strong>Boiler</strong>{" "}
             <span className="text-sm text-gray-400">(Jan 2023 – Jan 2024)</span>
-            <br />A TypeScript-based chat server built with Deno, leveraging
-            WebSockets and REST APIs for seamless communication. It is designed
-            to be easily extendable.
+            <br />A{" "}
+            <span className="text-blue-400">TypeScript</span>-based chat server
+            built with{" "}
+            <span className="text-blue-300">Deno</span>, leveraging WebSockets
+            and REST APIs for seamless communication. It is designed to be
+            easily extendable.
           </p>
         </div>
         <p className="indent-8 mt-3 italic text-gray-400">
@@ -57,8 +62,10 @@ export default function About() {
         <p className="indent-8">
           I competed in VEX Robotics for four years as a programmer and
           designer, qualifying for the Indiana State Championship in 2023. I
-          programmed our robot in C++ (PROS), contributed to mechanical design,
-          and helped develop open-source libraries for my team.
+          programmed our robot in <span className="text-blue-300">C++</span>
+          {" "}
+          (PROS), contributed to mechanical design, and helped develop
+          open-source libraries for my team.
         </p>
       </TitledCard>
 
