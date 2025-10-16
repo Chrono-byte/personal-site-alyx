@@ -18,7 +18,7 @@
     },
     "description": "Ahead-of-time compiler for a TypeScript-inspired language, influenced by Swift and Rust. Compiles to native executables via LLVM for predictable performance and a minimal runtime.",
     "links": {
-      "Repo": "https://gitlab.com/Chrono-byte/oats"
+      "GitLab": "https://gitlab.com/Chrono-byte/oats"
     }
   },
   {
