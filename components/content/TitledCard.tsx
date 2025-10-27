@@ -1,4 +1,3 @@
-// file: src/components/TitledCard.tsx
 import type { ComponentChildren } from "preact";
 import Card from "../ui/Card.tsx";
 

@@ -1,12 +1,17 @@
 import { join } from "$std/path/mod.ts";
-import { HttpError, PageProps } from "fresh";
+import { HttpError } from "fresh";
 import { readMarkdownFile } from "../lib/content.ts";
 import { define } from "../../utils.ts";
 import ContentPage from "../../components/content/ContentPage.tsx";
 
-export default define.page(function PostPage(props: PageProps) {
+export default define.page(function PostPage(props) {
   const slug = props.params.slug;
   const filePath = join(Deno.cwd(), "static", "positions", `${slug}.md`);
+
+  props.state.breadcrumb = {
+    subdirectory: ["positions"],
+    fileID: `${slug}.md`,
+  };
 
   try {
     const fileInfo = Deno.statSync(filePath);

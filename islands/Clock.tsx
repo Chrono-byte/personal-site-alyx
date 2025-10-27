@@ -1,84 +1,87 @@
-import { useSignal } from "@preact/signals";
-import { useEffect, useMemo } from "preact/hooks";
+import { useComputed, useSignal } from "@preact/signals";
+import { useEffect } from "preact/hooks";
+
+// NOTE: Temporal API requires a polyfill for full browser support.
+import { Temporal } from "@js-temporal/polyfill";
 
 /**
  * Clock component that displays the current time in Indiana/Indianapolis timezone.
  *
  * Features:
- * - SSR-compatible with proper hydration
- * - Automatic DST detection
- * - Accessible with proper ARIA labels and semantic markup
- * - Updates every second on the client
- * - Error handling for timezone formatting issues
+ * - SSR-compatible: Renders a placeholder on server, preventing hydration mismatch.
+ * - Automatic DST detection for the specified time zone.
+ * - Accessible with proper ARIA labels and semantic markup.
+ * - Updates every second on the client using signals.
+ * - NOTE: Requires a polyfill for the Temporal API (e.g., @js-temporal/polyfill)
+ * to work in all browsers.
  */
 
 const TIME_ZONE = "America/Indiana/Indianapolis";
+const INDIANAPOLIS_STANDARD_OFFSET = "-05:00";
+
+// **FIX 1: Removed timeZone from options, as it's redundant**
 const TIME_OPTIONS = {
-  timeZone: TIME_ZONE,
   hour12: false,
   timeStyle: "medium" as const,
 };
 
-// More robust DST detection using timezone offset comparison
-function isDaylightSavingTime(date: Date): boolean {
-  const jan = new Date(date.getFullYear(), 0, 1);
-  const jul = new Date(date.getFullYear(), 6, 1);
-  const stdOffset = Math.max(
-    jan.getTimezoneOffset(),
-    jul.getTimezoneOffset(),
-  );
-  return date.getTimezoneOffset() < stdOffset;
-}
-
 export default function Clock() {
-  const now = useSignal(new Date());
+  // Start with null to ensure server and initial client render are identical
+  const now = useSignal<Temporal.Instant | null>(null);
 
   useEffect(() => {
-    // Update time every second on client
-    // Note: Server renders with server time, client hydrates and updates immediately
+    // On client mount, set the actual current time and start the timer
+    now.value = Temporal.Now.instant();
+
     const timer = setInterval(() => {
-      now.value = new Date();
+      now.value = Temporal.Now.instant();
     }, 1000);
 
     return () => clearInterval(timer);
   }, []);
 
-  // Memoize expensive calculations to avoid unnecessary re-computations
-  const timeData = useMemo(() => {
-    try {
-      const currentLocalTime = now.value.toLocaleTimeString(
-        "en-US",
-        TIME_OPTIONS,
-      );
-      const isDST = isDaylightSavingTime(now.value);
-      const utcOffset = isDST ? -4 : -5;
-      const utcOffsetString = `UTC${utcOffset >= 0 ? "+" : ""}${utcOffset}`;
-
-      return {
-        timeString: currentLocalTime,
-        utcOffsetString,
-        isDST,
-        isoString: now.value.toISOString(),
-      };
-    } catch (error) {
-      // Fallback for any timezone formatting errors
-      console.warn("Clock: Error formatting time:", error);
-      return {
-        timeString: now.value.toLocaleTimeString(),
-        utcOffsetString: "UTC-5",
-        isDST: false,
-        isoString: now.value.toISOString(),
-      };
+  const timeData = useComputed(() => {
+    if (!now.value) {
+      return null;
     }
-  }, [now.value]);
+
+    const zonedDateTime = now.value.toZonedDateTimeISO(TIME_ZONE);
+
+    // This call is now correct
+    const timeString = zonedDateTime.toLocaleString("en-US", TIME_OPTIONS);
+    const utcOffsetString = zonedDateTime.offset;
+
+    // **FIX 2: Use your original, correct logic for this time zone**
+    const isDST = zonedDateTime.offset !== INDIANAPOLIS_STANDARD_OFFSET;
+    const isoString = zonedDateTime.toInstant().toString();
+
+    return {
+      timeString,
+      utcOffsetString,
+      isDST,
+      isoString,
+    };
+  });
+
+  // Render a placeholder on server and for initial client render
+  if (!timeData.value) {
+    return (
+      <time aria-label="Loading current time...">
+        --:--:--
+      </time>
+    );
+  }
+
+  // Once hydrated, render the dynamic time
+  const { isoString, timeString, utcOffsetString, isDST } = timeData.value;
 
   return (
     <time
-      dateTime={timeData.isoString}
-      aria-label={`Current time in Indiana: ${timeData.timeString} (${timeData.utcOffsetString})`}
-      title={`Eastern Time${timeData.isDST ? " (DST)" : ""}`}
+      dateTime={isoString}
+      aria-label={`Current time in Indiana: ${timeString} (${utcOffsetString})`}
+      title={`Eastern Time${isDST ? " (DST)" : ""}`}
     >
-      {timeData.timeString} ({timeData.utcOffsetString})
+      {timeString} ({utcOffsetString})
     </time>
   );
 }

@@ -33,7 +33,7 @@ const IntroSection: FunctionalComponent = () => (
       <span className="text-rose-400 font-semibold">
         Indiana University Indianapolis
       </span>. I enjoy building creative and meaningful projects with code. My
-      favorite tools include{" "}
+      favorite languages include{" "}
       <span className="text-blue-500 font-semibold">TypeScript</span>,{" "}
       <span className="text-blue-400 font-semibold">C++</span>, and{" "}
       <span className="text-red-400 font-semibold">Rust</span>, which I use to
@@ -67,7 +67,18 @@ const LatestPostSection: FunctionalComponent<{ postPreviews: PostPreview[] }> =
   };
 
 const ExtracurricularsSection: FunctionalComponent = () => (
-  <TitledCard title="Other Adventures">
+  <TitledCard title="Adventures">
+    <p>
+      {/* check out my linkedin */}
+      career info available on{" "}
+      <a
+        href="https://www.linkedin.com/in/ellie-gummere/"
+        className="link font-extrabold"
+      >
+        LinkedIn
+      </a>
+      !
+    </p>
     <p className="indent-8">
       I spent four years doing{" "}
       <span className="text-rose-600 font-semibold">VEX Robotics</span>{" "}
@@ -89,8 +100,8 @@ const ContactSection: FunctionalComponent = () => (
       <p>
         I'm always open to making new friends and collaborating. You can reach
         me at:{" "}
-        <a className="link" href="mailto:hello@unknownhost.name">
-          <span className="font-semibold">hello@unknownhost.name</span>
+        <a className="link" href="mailto:ellie.gummere@unknownhost.name">
+          <span className="font-semibold">ellie.gummere@unknownhost.name</span>
         </a>.
       </p>
     </div>

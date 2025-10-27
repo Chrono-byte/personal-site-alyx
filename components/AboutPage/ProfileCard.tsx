@@ -99,14 +99,14 @@ const Avatar: FunctionalComponent<{ src: string; alt: string }> = (
 // --- Main Component ---
 
 /**
- * A Mastodon-style profile card component that displays comprehensive user information.
+ * A Mastodon-style profile card component that displays comprehensive information.
  */
 const ProfileCard: FunctionalComponent<ProfileCardProps> = ({
   name = "Ellie",
   handle = "@chrono__",
   avatarSrc = AVATAR_DEFAULTS.src,
   avatarAlt = AVATAR_DEFAULTS.alt,
-  bannerSrc = "/svg/banner-placeholder.svg", // Placeholder - will need to add actual banner
+  bannerSrc = undefined,
   institution = "Indiana University Indianapolis",
   location = "Indianapolis, IN, USA",
   className = "",
@@ -114,7 +114,7 @@ const ProfileCard: FunctionalComponent<ProfileCardProps> = ({
   return (
     <div className={`${CARD_STYLES} ${className}`.trim()}>
       {/* Banner Image */}
-      <div className="relative h-32 bg-gradient-to-r from-purple-800 via-pink-800 to-red-800">
+      <div className="relative h-32 bg-gradient-to-r from-violet-300 via-pink-300 to-red-200 rounded-2xl border-4 border-gray-200">
         {bannerSrc && (
           <img
             src={bannerSrc}

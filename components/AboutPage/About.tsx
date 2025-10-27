@@ -34,11 +34,16 @@ const IntroSection: FunctionalComponent = () => (
       <span className="text-rose-400 font-semibold">
         Indiana University Indianapolis
       </span>. I enjoy building creative and meaningful projects with code. My
-      favorite tools include{" "}
+      favorite languages include{" "}
       <span className="text-blue-500 font-semibold">TypeScript</span>,{" "}
       <span className="text-blue-400 font-semibold">C++</span>, and{" "}
       <span className="text-red-400 font-semibold">Rust</span>, which I use to
-      turn ideas into reality.
+      turn ideas into reality. When I'm not coding, I participate and manage the
+      Overwatch eSports program at{" "}
+      <span className="text-rose-400 font-semibold">
+        IUI
+      </span>, for which I built a custom scheduling platform to help keep
+      everything organized.
     </p>
   </StyledPanel>
 );
@@ -68,7 +73,16 @@ const LatestPostSection: FunctionalComponent<{ postPreviews: PostPreview[] }> =
   };
 
 const ExtracurricularsSection: FunctionalComponent = () => (
-  <TitledCard title="Other Adventures">
+  <TitledCard title="Adventures">
+    <p className="indent-8">
+      For current career info, check out my{" "}
+      <a
+        href="https://www.linkedin.com/in/ellie-gummere/"
+        className="link font-extrabold"
+      >
+        LinkedIn
+      </a>. It's kept up to date.
+    </p>
     <p className="indent-8">
       I spent four years doing{" "}
       <span className="text-rose-600 font-semibold">VEX Robotics</span>{" "}
@@ -78,20 +92,22 @@ const ExtracurricularsSection: FunctionalComponent = () => (
       </span>{" "}
       in 2023! I got to program our robot in{" "}
       <span className="text-blue-300 font-semibold">C++</span>{" "}
-      (PROS) and help out with the mechanical side of things.
+      (PROS) and help out with the mechanical side of things. I designed major
+      systems of our robot, following research and brainstorming sessions with
+      my team.
     </p>
   </TitledCard>
 );
 
 const ContactSection: FunctionalComponent = () => (
   <StyledPanel title="Let's Connect">
-    <div className="flex items-center gap-2">
-      <TbMail className="text-fuchsia-50 text-lg" />
+    <div className="flex items-start gap-4">
+      <TbMail size={24} className="text-sky-400 flex-shrink-0 mt-1" />
       <p>
         I'm always open to making new friends and collaborating. You can reach
         me at:{" "}
-        <a className="link" href="mailto:hello@unknownhost.name">
-          <span className="font-semibold">hello@unknownhost.name</span>
+        <a className="link" href="mailto:ellie.gummere@unknownhost.name">
+          <span className="font-semibold">ellie.gummere@unknownhost.name</span>
         </a>.
       </p>
     </div>

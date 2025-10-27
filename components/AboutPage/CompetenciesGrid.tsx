@@ -1,5 +1,3 @@
-// file: src/islands/CompetenciesGrid.tsx
-
 // A more detailed data structure to represent the new design
 type SkillEntry = {
   name: string;

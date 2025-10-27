@@ -11,6 +11,18 @@
     }
   },
   {
+    "title": "when2scrim",
+    "date": {
+      "start": "September 2025",
+      "end": "Present"
+    },
+    "description": "Web application for scheduling Overwatch scrims, built with NExt.js, TypeScript, and Tailwind CSS. Features user authentication, team management, and calendar integration.",
+    "links": {
+      "GitLab": "https://github.com/Chrono-byte/when2scrim",
+      "Website": "https://w2s.unknownhost.name"
+    }
+  },
+  {
     "title": "Oats",
     "date": {
       "start": "September 2025",
