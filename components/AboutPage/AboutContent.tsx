@@ -17,9 +17,8 @@ const IntroSection: FunctionalComponent = () => (
       favorite languages include{" "}
       <span className="text-blue-500 font-semibold">TypeScript</span>,{" "}
       <span className="text-blue-400 font-semibold">C++</span>, and{" "}
-      <span className="text-red-400 font-semibold">Rust</span>, which I use to
-      turn ideas into reality. When I'm not coding, I participate and manage the
-      Overwatch eSports program at{" "}
+      <span className="text-red-400 font-semibold">Rust</span>. When I'm not
+      coding, I participate and manage the Overwatch eSports program at{" "}
       <span className="text-rose-400 font-semibold">
         IUI
       </span>, for which I built a custom scheduling platform to help keep
