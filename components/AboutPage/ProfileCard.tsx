@@ -39,9 +39,7 @@ export type ProfileCardProps = {
   bio?: string;
   institution?: string;
   location?: string;
-  osSystems?: string[];
   className?: string;
-  pronouns?: string;
 };
 
 // --- Helper Components ---
