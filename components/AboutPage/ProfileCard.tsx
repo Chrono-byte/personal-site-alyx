@@ -114,7 +114,7 @@ const ProfileCard: FunctionalComponent<ProfileCardProps> = ({
   return (
     <div className={`${CARD_STYLES} ${className}`.trim()}>
       {/* Banner Image */}
-      <div className="relative h-32 bg-gradient-to-r from-violet-300 via-pink-300 to-red-200 rounded-2xl border-4 border-gray-200">
+      <div className="relative h-32 bg-linear-to-r from-violet-300 via-pink-300 to-red-200 rounded-2xl border-4 border-gray-200">
         {bannerSrc && (
           <img
             src={bannerSrc}

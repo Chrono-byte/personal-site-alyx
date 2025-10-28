@@ -36,8 +36,7 @@ const IntroSection: FunctionalComponent = () => (
       favorite languages include{" "}
       <span className="text-blue-500 font-semibold">TypeScript</span>,{" "}
       <span className="text-blue-400 font-semibold">C++</span>, and{" "}
-      <span className="text-red-400 font-semibold">Rust</span>, which I use to
-      turn ideas into reality.
+      <span className="text-red-400 font-semibold">Rust</span>.
     </p>
   </StyledPanel>
 );
@@ -112,7 +111,7 @@ const AboutContent: FunctionalComponent<AboutContentProps> = (
   { postPreviews },
 ) => {
   return (
-    <div className="flex flex-col gap-y-1 md:gap-3 text-base max-w-4xl [text-shadow:_1px_1px_0_rgb(0_0_0_/_100%)]">
+    <div className="flex flex-col gap-y-1 md:gap-3 text-base max-w-4xl [text-shadow:1px_1px_0_rgb(0_0_0/100%)]">
       <InlineStyles />
       <IntroSection />
       <LatestPostSection postPreviews={postPreviews} />
@@ -123,4 +122,10 @@ const AboutContent: FunctionalComponent<AboutContentProps> = (
   );
 };
 
-export default AboutContent;
+export {
+  AboutContent,
+  ContactSection,
+  ExtracurricularsSection,
+  IntroSection,
+  LatestPostSection,
+};
