@@ -5,25 +5,6 @@ import { TbMail } from "@preact-icons/tb";
 import ContentListItem from "../content/ContentListItem.tsx";
 import { PostPreview } from "../../routes/lib/posts.ts";
 
-type AboutContentProps = {
-  postPreviews: PostPreview[];
-};
-
-const InlineStyles: FunctionalComponent = () => (
-  <style>
-    {`
-			.link {
-				color: #38bdf8; /* Tailwind's sky-400 */
-				text-decoration: underline;
-				transition: color 0.2s ease;
-			}
-			.link:hover {
-				color: #0ea5e9; /* Tailwind's sky-500 */
-			}
-			`}
-  </style>
-);
-
 const IntroSection: FunctionalComponent = () => (
   <StyledPanel>
     <p className="indent-8">
@@ -36,7 +17,13 @@ const IntroSection: FunctionalComponent = () => (
       favorite languages include{" "}
       <span className="text-blue-500 font-semibold">TypeScript</span>,{" "}
       <span className="text-blue-400 font-semibold">C++</span>, and{" "}
-      <span className="text-red-400 font-semibold">Rust</span>.
+      <span className="text-red-400 font-semibold">Rust</span>, which I use to
+      turn ideas into reality. When I'm not coding, I participate and manage the
+      Overwatch eSports program at{" "}
+      <span className="text-rose-400 font-semibold">
+        IUI
+      </span>, for which I built a custom scheduling platform to help keep
+      everything organized.
     </p>
   </StyledPanel>
 );
@@ -67,16 +54,14 @@ const LatestPostSection: FunctionalComponent<{ postPreviews: PostPreview[] }> =
 
 const ExtracurricularsSection: FunctionalComponent = () => (
   <TitledCard title="Adventures">
-    <p>
-      {/* check out my linkedin */}
-      career info available on{" "}
+    <p className="indent-8">
+      For current career info, check out my{" "}
       <a
         href="https://www.linkedin.com/in/ellie-gummere/"
         className="link font-extrabold"
       >
         LinkedIn
-      </a>
-      !
+      </a>. It's kept up to date.
     </p>
     <p className="indent-8">
       I spent four years doing{" "}
@@ -87,15 +72,17 @@ const ExtracurricularsSection: FunctionalComponent = () => (
       </span>{" "}
       in 2023! I got to program our robot in{" "}
       <span className="text-blue-300 font-semibold">C++</span>{" "}
-      (PROS) and help out with the mechanical side of things.
+      (PROS) and help out with the mechanical side of things. I designed major
+      systems of our robot, following research and brainstorming sessions with
+      my team.
     </p>
   </TitledCard>
 );
 
 const ContactSection: FunctionalComponent = () => (
   <StyledPanel title="Let's Connect">
-    <div className="flex items-center gap-2">
-      <TbMail className="text-fuchsia-50 text-lg" />
+    <div className="flex items-start gap-4">
+      <TbMail size={24} className="text-sky-400 shrink-0 mt-1" />
       <p>
         I'm always open to making new friends and collaborating. You can reach
         me at:{" "}
@@ -107,23 +94,7 @@ const ContactSection: FunctionalComponent = () => (
   </StyledPanel>
 );
 
-const AboutContent: FunctionalComponent<AboutContentProps> = (
-  { postPreviews },
-) => {
-  return (
-    <div className="flex flex-col gap-y-1 md:gap-3 text-base max-w-4xl [text-shadow:1px_1px_0_rgb(0_0_0/100%)]">
-      <InlineStyles />
-      <IntroSection />
-      <LatestPostSection postPreviews={postPreviews} />
-      {/* <SkillsVisual /> */}
-      <ExtracurricularsSection />
-      <ContactSection />
-    </div>
-  );
-};
-
 export {
-  AboutContent,
   ContactSection,
   ExtracurricularsSection,
   IntroSection,

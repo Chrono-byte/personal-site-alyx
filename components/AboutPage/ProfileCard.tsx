@@ -157,7 +157,7 @@ const ProfileCard: FunctionalComponent<ProfileCardProps> = ({
           content=""
           icon={TbClock}
         >
-          <Clock />
+          {/* <Clock /> */}
         </InfoBlock>
       </div>
     </div>

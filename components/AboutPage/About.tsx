@@ -8,8 +8,6 @@ import {
   LatestPostSection,
 } from "./AboutContent.tsx";
 
-import Clock from "../../islands/Clock.tsx";
-
 type AboutProps = {
   postPreviews: PostPreview[];
 };
@@ -37,7 +35,6 @@ const About: FunctionalComponent<AboutProps> = ({ postPreviews }) => {
         {/* Profile Card - spans columns on the left */}
         <div className="col-span-12 md:col-span-4 lg:col-span-5 order-1">
           <ProfileCard />
-          <Clock />
         </div>
 
         {/* Main Content Sections - flow in the remaining space */}
@@ -45,7 +42,6 @@ const About: FunctionalComponent<AboutProps> = ({ postPreviews }) => {
           <InlineStyles />
           <IntroSection />
           <LatestPostSection postPreviews={postPreviews} />
-          {/* <SkillsVisual /> */}
           <ExtracurricularsSection />
           <ContactSection />
         </div>

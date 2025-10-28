@@ -2,7 +2,7 @@ import { useComputed, useSignal } from "@preact/signals";
 import { useEffect } from "preact/hooks";
 
 // NOTE: Temporal API requires a polyfill for full browser support.
-import "@js-temporal/polyfill";
+import { Temporal } from "@js-temporal/polyfill";
 
 /**
  * Clock component that displays the current time in Indiana/Indianapolis timezone.
